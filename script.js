@@ -1,30 +1,41 @@
-/* Golden floating particles */
-function createParticle() {
-    const particle = document.createElement("div");
-    particle.style.position = "fixed";
-    particle.style.width = "4px";
-    particle.style.height = "4px";
-    particle.style.background = "gold";
-    particle.style.borderRadius = "50%";
-    particle.style.left = Math.random() * 100 + "vw";
-    particle.style.top = "-10px";
-    particle.style.opacity = "0.8";
-    particle.style.animation = "fall linear";
-    particle.style.animationDuration = (3 + Math.random() * 5) + "s";
+// Scroll reveal animation
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
 
-    document.body.appendChild(particle);
-
-    setTimeout(() => particle.remove(), 8000);
+    reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < windowHeight - 100) {
+            el.classList.add('active');
+        }
+    });
 }
 
-setInterval(createParticle, 250);
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 
-/* Add falling animation */
+// Jasmine petal fall
+function createPetal() {
+    const petal = document.createElement("div");
+    petal.innerHTML = "🌸";
+    petal.style.position = "fixed";
+    petal.style.top = "-20px";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.fontSize = "20px";
+    petal.style.animation = "fall 6s linear forwards";
+    document.body.appendChild(petal);
+
+    setTimeout(() => petal.remove(), 6000);
+}
+
+setInterval(createPetal, 600);
+
+// Falling animation
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes fall {
     to {
-        transform: translateY(110vh);
+        transform: translateY(110vh) rotate(360deg);
         opacity: 0;
     }
 }`;

@@ -3,204 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Sai Kumar & Hemalatha</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-body {
-    margin: 0;
-    font-family: 'Cinzel', serif;
-    background: linear-gradient(180deg, #4b0000, #1a0000);
-    color: #ffd700;
-    overflow-x: hidden;
-}
-
-/* Gold animated border frame */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 15px;
-    border: 3px solid gold;
-    pointer-events: none;
-    animation: borderGlow 3s infinite alternate;
-}
-
-@keyframes borderGlow {
-    from { box-shadow: 0 0 10px gold; }
-    to { box-shadow: 0 0 30px gold; }
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 80px 20px 40px;
-}
-
-.ganesha {
-    font-size: 80px;
-    margin-bottom: 20px;
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from { text-shadow: 0 0 10px gold; }
-    to { text-shadow: 0 0 40px #fff2a8; }
-}
-
-.names {
-    font-size: 3.5em;
-    font-weight: 900;
-    letter-spacing: 3px;
-    text-shadow: 0 0 25px gold;
-}
-
-.subtitle {
-    font-family: 'Noto Serif Telugu', serif;
-    font-size: 1.4em;
-    margin-top: 20px;
-    line-height: 1.8em;
-}
-
-/* Invitation Card Scroll Effect */
-.invite-card {
-    max-width: 800px;
-    margin: 60px auto;
-    background: linear-gradient(135deg, #fff3c4, #ffe28a);
-    color: #5a0000;
-    padding: 50px;
-    border-radius: 15px;
-    box-shadow: 0 0 40px rgba(255,215,0,0.5);
-    animation: cardReveal 2s ease;
-}
-
-@keyframes cardReveal {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.invite-card h2 {
-    margin-top: 0;
-    font-size: 2em;
-}
-
-.details {
-    font-size: 1.2em;
-    line-height: 2em;
-}
-
-/* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 40px;
-}
-
-.gallery img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border: 6px solid gold;
-    border-radius: 15px;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-
-.gallery img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 30px gold;
-}
-
-/* Diyas */
-.diya {
-    position: fixed;
-    bottom: 20px;
-    font-size: 45px;
-    animation: flicker 1.5s infinite alternate;
-}
-
-.left-diya { left: 30px; }
-.right-diya { right: 30px; }
-
-@keyframes flicker {
-    from { text-shadow: 0 0 10px orange; }
-    to { text-shadow: 0 0 35px yellow; }
-}
-
-/* Golden shimmer particles */
-.sparkle {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background: gold;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: fall linear infinite;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh);
-        opacity: 0;
-    }
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    font-family: 'Noto Serif Telugu', serif;
-    font-size: 1.1em;
-}
-</style>
+<title>Aditya & Hemalatha Wedding</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="hero">
+<div class="temple-glow"></div>
+
+<header class="hero">
     <div class="ganesha">🕉️</div>
-    <div class="names">Aditya Sai Kumar<br>&<br>Hemalatha</div>
-    <div class="subtitle">
+    <h1 class="names">Aditya Sai Kumar<br>&<br>Hemalatha</h1>
+    <p class="telugu-text">
         శ్రీమతి శ్రీమాన్‌ల ఆశీర్వాదములతో<br>
         మా వివాహ మహోత్సవానికి ఆహ్వానం
-    </div>
-</div>
+    </p>
+</header>
 
-<div class="invite-card">
+<section class="scroll-card">
     <h2>Wedding Ceremony</h2>
-    <div class="details">
+    <p>
         🗓️ March 7, 2026<br>
         ⏰ 02:38 AM<br>
         📍 Sri Vasavi Arya Vysya Kalyana Mandapam<br><br>
         మీ సాన్నిధ్యం మా ఆనందాన్ని మరింత పెంచును
-    </div>
-</div>
+    </p>
+</section>
 
-<div class="gallery">
+<section class="gallery">
     <img src="groom.jpe" alt="Groom">
     <img src="bride.jpeg" alt="Bride">
     <img src="couple.jpeg" alt="Couple">
     <img src="family.jpeg" alt="Family">
-</div>
+</section>
 
 <footer>
     దివ్య ఆశీస్సులతో మిమ్మల్ని ఆహ్వానిస్తున్నాము 🪔
 </footer>
 
-<div class="diya left-diya">🪔</div>
-<div class="diya right-diya">🪔</div>
+<div class="diya left">🪔</div>
+<div class="diya right">🪔</div>
 
-<script>
-/* Golden Sparkle Effect */
-function createSparkle() {
-    const sparkle = document.createElement("div");
-    sparkle.classList.add("sparkle");
-    sparkle.style.left = Math.random() * 100 + "vw";
-    sparkle.style.animationDuration = (3 + Math.random() * 5) + "s";
-    document.body.appendChild(sparkle);
-    setTimeout(() => sparkle.remove(), 8000);
-}
-setInterval(createSparkle, 300);
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

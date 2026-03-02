@@ -3,97 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya & Hemalatha Wedding</title>
+<title>Aditya Sai Kumar & Hemalatha Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: 'Playfair Display', serif;
-    background: linear-gradient(135deg, #fff5f5, #fdebd3);
-    color: #4a2c2a;
+    font-family: 'Cinzel', serif;
+    background: radial-gradient(circle at center, #5a0000, #2b0000);
+    color: gold;
     text-align: center;
     overflow-x: hidden;
-    animation: fadeIn 2s ease-in;
+}
+
+/* Decorative Border */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    border: 15px solid gold;
+    pointer-events: none;
+}
+
+/* Entrance Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 2s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 4em;
-    color: #800000;
+    font-size: 3.8em;
     margin-top: 60px;
-    animation: glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 20px gold;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px #b22222; }
-    to { text-shadow: 0 0 25px #ffb6b9; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.section {
-    padding: 60px 20px;
-    animation: slideUp 1.5s ease forwards;
-}
-
-@keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+.subheading {
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: 1.6em;
+    margin-top: 20px;
 }
 
 .details {
     font-size: 1.3em;
-    margin-top: 20px;
+    margin-top: 30px;
+    line-height: 1.8em;
 }
 
-.countdown {
-    font-size: 1.5em;
-    margin-top: 20px;
-    color: #b22222;
+/* Gold Divider */
+.divider {
+    width: 200px;
+    height: 3px;
+    background: gold;
+    margin: 30px auto;
+    box-shadow: 0 0 15px gold;
 }
 
-.rsvp {
-    background: rgba(255,255,255,0.9);
-    padding: 30px;
-    max-width: 400px;
-    margin: 40px auto;
+/* Gallery */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 40px 20px;
+}
+
+.gallery img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    border: 5px solid gold;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
-input, select {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px gold;
 }
 
-button {
-    background: #800000;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #b22222;
-    transform: scale(1.05);
-}
-
-/* Floating petals */
-.petal {
+/* Jasmine Flowers Falling */
+.flower {
     position: fixed;
     top: -10px;
-    font-size: 20px;
+    font-size: 22px;
     animation: fall linear infinite;
 }
 
@@ -103,71 +104,61 @@ button:hover {
         opacity: 0;
     }
 }
+
+footer {
+    margin: 50px 0;
+    font-size: 1.2em;
+}
 </style>
 </head>
 
 <body>
 
-<div class="section">
-    <h1>Aditya Sai Kumar & Hemalatha</h1>
-    <p class="details">
-        We joyfully invite you to our wedding celebration
-        <br><br>
-        🗓️ March 7, 2026<br>
-        ⏰ 02:38 AM<br>
-        📍 Sri Vasavi Arya Vysya Kalyana Mandapadam
-    </p>
+<div class="fade-in">
+    <h1>Aditya Sai Kumar <br> & <br> Hemalatha</h1>
+    <div class="divider"></div>
 
-    <div class="countdown" id="countdown"></div>
+    <div class="subheading">
+        శ్రీమతి శ్రీమాన్‌ల ఆశీర్వాదములతో<br>
+        మా వివాహ మహోత్సవానికి ఆహ్వానం
+    </div>
+
+    <div class="details">
+        🗓️ March 7, 2026 <br>
+        ⏰ 02:38 AM <br>
+        📍 Sri Vasavi Arya Vysya Kalyana Mandapam <br>
+        మీ సాన్నిధ్యం మా ఆనందాన్ని మరింత పెంచును
+    </div>
 </div>
 
-<div class="rsvp">
-    <h2>RSVP</h2>
-    <input type="text" placeholder="Your Name">
-    <select>
-        <option>Will you attend?</option>
-        <option>Yes</option>
-        <option>No</option>
-    </select>
-    <br>
-    <button onclick="celebrate()">Submit</button>
+<div class="divider"></div>
+
+<h2>Our Sacred Moments</h2>
+
+<div class="gallery">
+    <img src="image1.jpg" alt="Couple Photo 1">
+    <img src="image2.jpg" alt="Couple Photo 2">
+    <img src="image3.jpg" alt="Couple Photo 3">
 </div>
 
-<footer class="section">
-    Join us for a day filled with love, laughter & blessings ❤️
+<footer>
+    With Divine Blessings & Love 🪔
 </footer>
 
 <script>
-// Countdown Timer
-var weddingDate = new Date("March 7, 2026 02:38:00").getTime();
-var x = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = weddingDate - now;
-
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("countdown").innerHTML =
-  "⏳ " + days + " days to go!";
-}, 1000);
-
-// Petals animation
-function createPetal() {
-    const petal = document.createElement("div");
-    petal.classList.add("petal");
-    petal.innerHTML = "🌸";
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.animationDuration = (3 + Math.random() * 5) + "s";
-    document.body.appendChild(petal);
+function createFlower() {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML = "🌼";
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (4 + Math.random() * 6) + "s";
+    document.body.appendChild(flower);
 
     setTimeout(() => {
-        petal.remove();
-    }, 8000);
+        flower.remove();
+    }, 9000);
 }
-setInterval(createPetal, 300);
-
-// Celebration effect
-function celebrate() {
-    alert("Thank you! We can't wait to celebrate with you 💖");
-}
+setInterval(createFlower, 400);
 </script>
 
 </body>

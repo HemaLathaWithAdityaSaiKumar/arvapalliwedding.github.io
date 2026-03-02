@@ -5,60 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aditya & Hemalatha</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;500&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Opening Overlay -->
+<!-- Intro Screen -->
 <div id="intro">
-    <div class="intro-content">
-        <div class="mandala-intro"></div>
-        <h1>Aditya & Hemalatha</h1>
-        <p>Wedding Invitation</p>
-    </div>
+  <div class="intro-box">
+    <h1>Aditya & Hemalatha</h1>
+    <p>Wedding Invitation</p>
+  </div>
 </div>
 
 <!-- Background Music -->
 <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button id="musicToggle">♪</button>
+<button id="musicBtn">♪</button>
 
 <!-- Mandala Watermark -->
-<div class="mandala-bg"></div>
+<div class="mandala"></div>
 
-<section class="hero parallax">
-    <div class="hero-inner">
-        <div class="symbol">ॐ</div>
-        <h2>Aditya Sai Kumar <span>&</span> Hemalatha</h2>
-        <p class="telugu">
-            శ్రీమతి శ్రీమాన్‌ల ఆశీర్వాదములతో<br>
-            మా వివాహ మహోత్సవానికి ఆహ్వానం
-        </p>
-    </div>
+<section class="hero">
+  <div class="hero-content">
+    <div class="om">ॐ</div>
+    <h2>Aditya Sai Kumar <span>&</span> Hemalatha</h2>
+    <p class="telugu">
+      శ్రీమతి శ్రీమాన్‌ల ఆశీర్వాదములతో<br>
+      మా వివాహ మహోత్సవానికి ఆహ్వానం
+    </p>
+  </div>
 </section>
 
 <section class="details reveal">
-    <h3>Wedding Ceremony</h3>
-    <p>
-        March 7, 2026<br>
-        02:38 AM<br>
-        Sri Vasavi Arya Vysya Kalyana Mandapam
-    </p>
+  <h3>Wedding Ceremony</h3>
+  <p>
+    March 7, 2026<br>
+    02:38 AM<br>
+    Sri Vasavi Arya Vysya Kalyana Mandapam
+  </p>
 </section>
 
 <section class="gallery">
-    <div class="card float reveal"><img src="groom.jpeg"></div>
-    <div class="card float reveal"><img src="bride.jpeg"></div>
-    <div class="card float reveal"><img src="couple.jpeg"></div>
-    <div class="card float reveal"><img src="family.jpeg"></div>
+  <div class="card reveal"><img src="groom.jpeg"></div>
+  <div class="card reveal"><img src="bride.jpeg"></div>
+  <div class="card reveal"><img src="couple.jpeg"></div>
+  <div class="card reveal"><img src="family.jpeg"></div>
 </section>
 
-<footer class="reveal">
-    With divine blessings
+<footer>
+  With Divine Blessings
 </footer>
 
 <script src="script.js"></script>

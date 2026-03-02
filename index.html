@@ -1,3 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arvapalli’s Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Mandala Background -->
+<div class="mandala"></div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+
+    <div class="ganesha">
+      <img src="ganesh.webp" alt="Lord Ganesha">
+    </div>
+
+    <p class="family-line">Arvapalli’s Invitation</p>
+
+    <h2>Hemalatha <span>&</span> Aditya Sai Kumar</h2>
+
+    <p class="telugu">
+      శ్రీమతి శ్రీమాన్‌ల ఆశీర్వాదములతో<br>
+      మా ప్రియమైన కుమార్తె వివాహ మహోత్సవానికి ఆహ్వానం
+    </p>
+
+    <div class="family-details">
+      <p>Daughter of</p>
+      <p><strong>Srinivasa Rao</strong> & <strong>Ratna Kumari</strong></p>
+      <p>Sister of <strong>Bala Prasanna</strong></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CEREMONY DETAILS -->
+<section class="details reveal">
+  <h3>Wedding Ceremony</h3>
+  <p>
+    March 7, 2026<br>
+    02:38 AM<br>
+    Sri Vasavi Arya Vysya Kalyana Mandapam
+  </p>
+</section>
+
+<!-- BRIDE & GROOM PORTRAITS -->
 <section class="portrait-section">
 
   <h3 class="portrait-title">The Bride & The Groom</h3>
@@ -17,3 +70,25 @@
   </div>
 
 </section>
+
+<footer>
+  With Divine Blessings
+</footer>
+
+<!-- Reveal Script -->
+<script>
+function reveal() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>

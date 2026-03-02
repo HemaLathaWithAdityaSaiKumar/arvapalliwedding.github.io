@@ -98,23 +98,42 @@ body {
   background: #ffffff;
 }
 
-/* DINNER */
+/* DINNER SECTION — REFINED */
+
 .dinner-section {
-  padding: 90px 20px;
-  text-align: center;
-  background: #fdfaf5;
+  padding: 110px 20px;
+  background: #f7f1e8;
+  display: flex;
+  justify-content: center;
 }
 
-.telugu-heading {
+.dinner-card {
+  background: #ffffff;
+  max-width: 700px;
+  width: 100%;
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+.dinner-heading {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 1.8em;
-  margin-bottom: 25px;
+  font-size: 1.9em;
   color: #a87c1f;
+  margin-bottom: 30px;
 }
 
 .dinner-details {
-  font-size: 1.05em;
-  line-height: 1.8em;
+  font-size: 1.1em;
+  line-height: 1.9em;
+}
+
+.divider {
+  height: 2px;
+  width: 80px;
+  background: #a87c1f;
+  margin: 25px auto;
 }
 
 /* COUNTDOWN */

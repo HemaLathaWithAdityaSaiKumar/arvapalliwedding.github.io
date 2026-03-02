@@ -7,46 +7,77 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
             color: #333;
+        }
+        header {
+            background-color: #9C0000; /* Burgundy */
+            color: #FFD700; /* Gold */
             text-align: center;
             padding: 20px;
         }
         .invitation {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin: auto;
-            max-width: 600px;
+            margin: 20px;
             padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #b81d14;
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
-        .details {
+        .rsvp {
             margin: 20px 0;
+            text-align: center;
         }
-        .footer {
-            font-size: 0.9em;
-            color: #777;
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #9C0000;
+            color: #FFD700;
+        }
+        @media (max-width: 600px) {
+            .invitation {
+                margin: 10px;
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="invitation">
-        <h1>You're Invited!</h1>
-        <h2>Aditya Sai Kumar & Hemalatha</h2>
-        <div class="details">
-            <p>Join us to celebrate the wedding of</p>
-            <p><strong>Aditya Sai Kumar</strong></p>
-            <p>with</p>
-            <p><strong>Hemalatha</strong></p>
-            <p>on <strong>March 15th, 2026</strong></p>
-            <p>Venue: Grand Wedding Hall, Some City</p>
-            <p>Time: 4:00 PM</p>
-        </div>
-        <p>We look forward to celebrating this special day with you!</p>
-    </div>
-    <div class="footer">For more details, contact us at: contact@wedding.com</div>
+
+<header>
+    <h1>You're Invited!</h1>
+</header>
+
+<div class="invitation">
+    <h2>Join us for a beautiful wedding celebration</h2>
+    <p><strong>Date:</strong> Saturday, March 7, 2026</p>
+    <p><strong>Time:</strong> 2:38 AM</p>
+    <p><strong>Venue:</strong> Sri Vasavi Arya Vysya Kalyana Mandapadam</p>
+</div>
+
+<div class="gallery">
+    <h2>Photo Gallery</h2>
+    <img src="path/to/photo1.jpg" alt="Wedding Photo 1">
+    <img src="path/to/photo2.jpg" alt="Wedding Photo 2">
+    <img src="path/to/photo3.jpg" alt="Wedding Photo 3">
+</div>
+
+<div class="rsvp">
+    <h2>RSVP</h2>
+    <p>Please let us know if you can join us!</p>
+    <p><strong>Contact:</strong> [Your Contact Information Here]</p>
+</div>
+
+<footer>
+    <p>Thank you, and we hope to see you there!</p>
+</footer>
+
 </body>
 </html>

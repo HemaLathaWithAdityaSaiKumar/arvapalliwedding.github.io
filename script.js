@@ -38,21 +38,50 @@ updateCountdown();
 const music = document.getElementById("bg-music");
 const toggle = document.getElementById("music-toggle");
 
-let isPlaying = false;
+// Set soft volume
+music.volume = 0.25;
 
-// Try autoplay muted
+// Attempt autoplay
 window.addEventListener("load", () => {
-  music.volume = 0.2;
-  music.play().catch(() => {});
+  const playPromise = music.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      // Autoplay blocked — will wait for interaction
+    });
+  }
 });
 
+// Show button only after scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    toggle.classList.add("show");
+  }
+});
+
+// Toggle play/pause
 toggle.addEventListener("click", () => {
-  if (isPlaying) {
-    music.pause();
-    toggle.innerHTML = "♪";
-  } else {
+  if (music.paused) {
     music.play();
     toggle.innerHTML = "❚❚";
+  } else {
+    music.pause();
+    toggle.innerHTML = "♪";
   }
-  isPlaying = !isPlaying;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

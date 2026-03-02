@@ -11,10 +11,8 @@
 
 <body>
 
-<!-- Mandala Background -->
 <div class="mandala"></div>
 
-<!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-content">
 
@@ -40,7 +38,6 @@
   </div>
 </section>
 
-<!-- CEREMONY DETAILS -->
 <section class="details reveal">
   <h3>Wedding Ceremony</h3>
   <p>
@@ -50,13 +47,11 @@
   </p>
 </section>
 
-<!-- BRIDE & GROOM PORTRAITS -->
 <section class="portrait-section">
 
-  <h3 class="portrait-title">The Bride & The Groom</h3>
+  <h3 class="portrait-title reveal">The Bride & The Groom</h3>
 
   <div class="portrait-wrapper">
-
     <div class="portrait reveal">
       <img src="bride.jpeg" alt="Bride">
       <p class="portrait-name">Hemalatha</p>
@@ -66,7 +61,6 @@
       <img src="groom.jpeg" alt="Groom">
       <p class="portrait-name">Aditya Sai Kumar</p>
     </div>
-
   </div>
 
 </section>
@@ -75,20 +69,6 @@
   With Divine Blessings
 </footer>
 
-<!-- Reveal Script -->
-<script>
-function reveal() {
-  document.querySelectorAll('.reveal').forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add('active');
-    }
-  });
-}
-
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

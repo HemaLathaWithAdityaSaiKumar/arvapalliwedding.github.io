@@ -104,7 +104,17 @@ body {
   text-transform: uppercase;
   margin-bottom: 15px;
 }
+.family-details {
+  margin-top: 25px;
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6em;
+}
 
+.family-details strong {
+  font-weight: 500;
+  color: #222;
+}
 /* Bride & Groom Names */
 .hero h2 {
   font-family: 'Playfair Display', serif;
@@ -231,4 +241,29 @@ footer {
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.ganesha {
+  margin-bottom: 25px;
+  animation: ganeshFloat 6s ease-in-out infinite;
+}
+
+.ganesh-path {
+  animation: drawGanesh 3s ease forwards,
+             ganeshGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes drawGanesh {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ganeshGlow {
+  from { filter: drop-shadow(0 0 5px rgba(197,160,71,0.4)); }
+  to { filter: drop-shadow(0 0 20px rgba(197,160,71,0.8)); }
+}
+
+@keyframes ganeshFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
 }

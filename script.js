@@ -34,3 +34,25 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+// MUSIC CONTROL
+const music = document.getElementById("bg-music");
+const toggle = document.getElementById("music-toggle");
+
+let isPlaying = false;
+
+// Try autoplay muted
+window.addEventListener("load", () => {
+  music.volume = 0.2;
+  music.play().catch(() => {});
+});
+
+toggle.addEventListener("click", () => {
+  if (isPlaying) {
+    music.pause();
+    toggle.innerHTML = "♪";
+  } else {
+    music.play();
+    toggle.innerHTML = "❚❚";
+  }
+  isPlaying = !isPlaying;
+});

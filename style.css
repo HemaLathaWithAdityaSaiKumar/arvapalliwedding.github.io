@@ -29,18 +29,6 @@ body {
   animation: fadeUp 1.5s ease;
 }
 
-.intro-box h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  margin: 0;
-}
-
-.intro-box p {
-  letter-spacing: 3px;
-  margin-top: 10px;
-  color: #777;
-}
-
 @keyframes hideIntro {
   to { opacity: 0; visibility: hidden; }
 }
@@ -57,7 +45,7 @@ body {
   background: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Mandala_simple.svg') center/contain no-repeat;
   opacity: 0.04;
   transform: translate(-50%, -50%);
-  animation: rotateMandala 90s linear infinite;
+  animation: rotateMandala 120s linear infinite;
   pointer-events: none;
   z-index: 0;
 }
@@ -82,16 +70,29 @@ body {
 }
 
 .hero-content {
-  animation: fadeUp 1.8s ease;
   max-width: 800px;
   padding: 20px;
+  animation: fadeUp 1.8s ease;
 }
 
-/* Om symbol */
-.om {
-  font-size: 60px;
+/* Animated Ganesha */
+.ganesha {
+  font-size: 70px;
   color: #c5a047;
   margin-bottom: 20px;
+  animation: ganeshaFloat 6s ease-in-out infinite,
+             ganeshaGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes ganeshaFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes ganeshaGlow {
+  from { text-shadow: 0 0 10px rgba(197,160,71,0.4); }
+  to { text-shadow: 0 0 30px rgba(197,160,71,0.8); }
 }
 
 /* Family Name */
@@ -113,14 +114,6 @@ body {
 
 .hero h2 span {
   color: #c5a047;
-}
-
-/* Subtext */
-.subtext {
-  font-size: 0.95em;
-  letter-spacing: 1px;
-  color: #777;
-  margin-bottom: 15px;
 }
 
 /* Telugu Text */
@@ -162,15 +155,8 @@ body {
   gap: 50px;
   padding: 100px;
   background: #f7f1e8;
-  position: relative;
-  z-index: 1;
 }
 
-.card {
-  transition: transform 0.6s ease;
-}
-
-/* Images */
 .card img {
   width: 100%;
   height: 420px;
@@ -181,21 +167,19 @@ body {
   transition: transform 0.8s ease, box-shadow 0.8s ease;
 }
 
-/* Subtle floating */
 @keyframes floatImage {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
 
-/* Hover cinematic effect */
 .card img:hover {
   transform: scale(1.05);
   box-shadow: 0 35px 80px rgba(0,0,0,0.2);
 }
 
 /* ===============================
-   Scroll Reveal Animation
+   Scroll Reveal
 =================================*/
 .reveal {
   opacity: 0;

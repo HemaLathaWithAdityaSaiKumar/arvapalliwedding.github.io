@@ -5,66 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aditya Sai Kumar & Hemalatha Wedding</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
-    background: radial-gradient(circle at center, #5a0000, #2b0000);
+    background: radial-gradient(circle at center, #6b0000, #2b0000);
     color: gold;
     text-align: center;
     overflow-x: hidden;
 }
 
-/* Decorative Border */
+/* Golden Border Frame */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    border: 15px solid gold;
+    border: 18px solid gold;
     pointer-events: none;
+    box-shadow: inset 0 0 40px rgba(255,215,0,0.6);
 }
 
-/* Entrance Animation */
+/* Ganesha */
+.ganesha {
+    font-size: 70px;
+    margin-top: 40px;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 15px gold; }
+    to { text-shadow: 0 0 35px #ffd700; }
+}
+
+/* Entrance */
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     animation: fadeUp 2s forwards;
 }
 
 @keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
-    font-size: 3.8em;
-    margin-top: 60px;
-    text-shadow: 0 0 20px gold;
+    font-size: 4em;
+    margin-top: 20px;
+    text-shadow: 0 0 25px gold;
 }
 
 .subheading {
     font-family: 'Noto Serif Telugu', serif;
     font-size: 1.6em;
-    margin-top: 20px;
+    margin-top: 25px;
+    line-height: 1.8em;
 }
 
 .details {
     font-size: 1.3em;
     margin-top: 30px;
-    line-height: 1.8em;
+    line-height: 2em;
 }
 
-/* Gold Divider */
 .divider {
-    width: 200px;
-    height: 3px;
+    width: 250px;
+    height: 4px;
     background: gold;
-    margin: 30px auto;
-    box-shadow: 0 0 15px gold;
+    margin: 35px auto;
+    box-shadow: 0 0 20px gold;
 }
 
 /* Gallery */
@@ -72,22 +82,38 @@ h1 {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
-    margin: 40px 20px;
+    gap: 30px;
+    margin: 50px 20px;
 }
 
 .gallery img {
-    width: 260px;
-    height: 320px;
+    width: 280px;
+    height: 340px;
     object-fit: cover;
-    border: 5px solid gold;
-    border-radius: 15px;
-    transition: transform 0.4s, box-shadow 0.4s;
+    border: 6px solid gold;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px gold;
+    transform: scale(1.08);
+    box-shadow: 0 0 35px gold;
+}
+
+/* Diyas */
+.diya {
+    position: fixed;
+    bottom: 10px;
+    font-size: 40px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.left-diya { left: 20px; }
+.right-diya { right: 20px; }
+
+@keyframes flicker {
+    from { text-shadow: 0 0 10px orange; }
+    to { text-shadow: 0 0 30px yellow; }
 }
 
 /* Jasmine Flowers Falling */
@@ -106,16 +132,22 @@ h1 {
 }
 
 footer {
-    margin: 50px 0;
+    margin: 60px 0;
     font-size: 1.2em;
+    font-family: 'Noto Serif Telugu', serif;
 }
 </style>
 </head>
 
 <body>
 
+<div class="ganesha">🕉️ 🐘</div>
+
 <div class="fade-in">
-    <h1>Aditya Sai Kumar <br> & <br> Hemalatha</h1>
+    <h1>
+        Aditya Sai Kumar <br> & <br> Hemalatha
+    </h1>
+
     <div class="divider"></div>
 
     <div class="subheading">
@@ -133,17 +165,21 @@ footer {
 
 <div class="divider"></div>
 
-<h2>Our Sacred Moments</h2>
+<h2>Wedding Moments</h2>
 
 <div class="gallery">
-    <img src="image1.jpg" alt="Couple Photo 1">
-    <img src="image2.jpg" alt="Couple Photo 2">
-    <img src="image3.jpg" alt="Couple Photo 3">
+    <img src="bride.jpeg" alt="Bride">
+    <img src="groom.jpeg" alt="Groom">
+    <img src="couple.jpeg" alt="Couple">
 </div>
 
 <footer>
-    With Divine Blessings & Love 🪔
+    దివ్య ఆశీస్సులతో మిమ్మల్ని ఆహ్వానిస్తున్నాము 🪔
 </footer>
+
+<!-- Diyas -->
+<div class="diya left-diya">🪔</div>
+<div class="diya right-diya">🪔</div>
 
 <script>
 function createFlower() {

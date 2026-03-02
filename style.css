@@ -80,38 +80,35 @@ body {
    Animated Lord Ganesha
 =================================*/
 
+/* ===============================
+   Lord Ganesha Image Styling
+=================================*/
+
 .ganesha {
   margin-bottom: 30px;
-  animation: floatGanesh 6s ease-in-out infinite;
+  animation: ganeshFloat 6s ease-in-out infinite;
 }
 
-.ganesh-svg {
-  stroke: #c5a047;
-  stroke-width: 4;
-  fill: none;
-  filter: drop-shadow(0 0 10px rgba(197,160,71,0.5));
+.ganesha img {
+  width: 140px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
+  animation: ganeshGlow 4s ease-in-out infinite alternate;
 }
 
-.ganesh-path {
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1500;
-  animation: drawGanesh 3s ease forwards,
-             glowGanesh 3s ease-in-out infinite alternate;
-}
-
-@keyframes drawGanesh {
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes glowGanesh {
-  from { filter: drop-shadow(0 0 5px rgba(197,160,71,0.4)); }
-  to { filter: drop-shadow(0 0 25px rgba(197,160,71,0.9)); }
-}
-
-@keyframes floatGanesh {
+/* Subtle floating */
+@keyframes ganeshFloat {
   0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
   100% { transform: translateY(0px); }
+}
+
+/* Soft divine glow */
+@keyframes ganeshGlow {
+  from { filter: drop-shadow(0 0 5px rgba(197,160,71,0.3)); }
+  to { filter: drop-shadow(0 0 25px rgba(197,160,71,0.7)); }
 }
 
 /* Family Name */

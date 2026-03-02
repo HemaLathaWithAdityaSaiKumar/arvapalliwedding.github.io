@@ -94,11 +94,12 @@ body {
 ========================================== */
 .family-line {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  color: #c5a047;
+  font-size: 1.35em;              /* slightly bigger */
+  font-weight: 600;               /* stronger presence */
+  letter-spacing: 1px;            /* less airy */
+  color: #a87c1f;                 /* deeper gold */
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 /* ==========================================

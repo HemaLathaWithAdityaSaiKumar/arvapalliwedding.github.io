@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -10,7 +8,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Mandala background */
+/* Mandala */
 .mandala {
   position: fixed;
   top: 50%;
@@ -32,59 +30,42 @@ body {
 
 /* Hero */
 .hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 80px 20px 120px;
+  background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
   text-align: center;
-  background: linear-gradient(to bottom, #fffaf2, #f4efe6);
-  padding: 100px 20px;
-  position: relative;
-  z-index: 1;
 }
 
-.hero-content {
-  max-width: 800px;
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Ganesh */
-.ganesha {
-  margin-bottom: 30px;
-  position: relative;
+.ganesha-wrapper img {
+  width: 120px;
+  padding: 15px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Invitation line */
+.invitation-line {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
 }
 
-.ganesha::before {
-  content: "";
-  position: absolute;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,175,55,0.2), transparent 70%);
-  z-index: 0;
+.invitation-line span {
+  width: 60px;
+  height: 1px;
+  background: #c5a047;
 }
 
-.ganesha img {
-  width: 115px;
-  position: relative;
-  z-index: 1;
-  animation: floatGanesh 8s ease-in-out infinite;
-}
-
-@keyframes floatGanesh {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
-}
-
-/* Shimmer invitation title */
-.family-line {
+.invitation-line p {
   font-family: 'Playfair Display', serif;
-  font-size: 1.35em;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 18px;
+  font-size: 1.2em;
   background: linear-gradient(90deg, #a87c1f, #f0d58a, #a87c1f);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -97,50 +78,61 @@ body {
 }
 
 /* Names */
-.hero h2 {
+.main-names {
   font-family: 'Playfair Display', serif;
-  font-size: 2.8em;
-  margin: 10px 0;
+  font-size: 3em;
 }
 
-.hero h2 span {
-  color: #c5a047;
-}
+.main-names span { color: #c5a047; }
 
-.telugu {
-  font-family: 'Noto Serif Telugu', serif;
-  margin-top: 15px;
-  line-height: 1.7em;
-}
+.telugu { font-family: 'Noto Serif Telugu', serif; }
 
-.family-details {
-  margin-top: 28px;
-  line-height: 1.7em;
-}
+.family-details { margin-top: 25px; }
 
-/* Details section */
+/* Details */
 .details {
   padding: 100px 20px;
+  background: #fff;
   text-align: center;
-  background: white;
 }
 
-.details h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2em;
-}
-
-/* Portrait section */
-.portrait-section {
-  padding: 120px 20px;
+/* Countdown */
+.countdown-section {
+  padding: 100px 20px;
   background: #f7f1e8;
   text-align: center;
 }
 
-.portrait-title {
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.time-box span {
   font-family: 'Playfair Display', serif;
-  font-size: 2em;
-  margin-bottom: 70px;
+  font-size: 2.5em;
+  color: #a87c1f;
+}
+
+.time-box p {
+  margin: 8px 0 0;
+  font-size: 0.85em;
+}
+
+/* Portraits */
+.portrait-section {
+  padding: 120px 20px;
+  background: #fdfaf5;
+  text-align: center;
 }
 
 .portrait-wrapper {
@@ -168,12 +160,17 @@ body {
 }
 
 .portrait-name {
-  margin-top: 20px;
+  margin-top: 15px;
   font-family: 'Playfair Display', serif;
-  font-size: 1.2em;
 }
 
-/* Reveal animation */
+footer {
+  padding: 60px;
+  text-align: center;
+  background: #fff;
+}
+
+/* Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -183,12 +180,4 @@ body {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 60px;
-  font-family: 'Playfair Display', serif;
-  background: #ffffff;
 }

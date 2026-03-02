@@ -1,38 +1,19 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #fdfaf5;
   color: #222;
-  overflow-x: hidden;
 }
 
-/* Mandala */
-.mandala {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 450px;
-  height: 450px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Mandala_simple.svg') center/contain no-repeat;
-  opacity: 0.04;
-  transform: translate(-50%, -50%);
-  animation: rotateMandala 160s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-}
-
-@keyframes rotateMandala {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* Hero */
+/* HERO */
 .hero {
   padding: 80px 20px 120px;
-  background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
   text-align: center;
+  background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
 
 .hero-inner {
@@ -40,15 +21,23 @@ body {
   margin: 0 auto;
 }
 
+/* GANESH FIXED SIZE */
+.ganesha-wrapper {
+  margin-bottom: 25px;
+}
+
 .ganesha-wrapper img {
-  width: 120px;
-  padding: 15px;
+  width: 140px;          /* Controlled size */
+  height: auto;
+  display: block;
+  margin: 0 auto;
   border-radius: 50%;
-  background: #fff;
+  padding: 15px;
+  background: #ffffff;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* Invitation line */
+/* INVITATION LINE */
 .invitation-line {
   display: flex;
   justify-content: center;
@@ -66,37 +55,42 @@ body {
 .invitation-line p {
   font-family: 'Playfair Display', serif;
   font-size: 1.2em;
-  background: linear-gradient(90deg, #a87c1f, #f0d58a, #a87c1f);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 5s linear infinite;
+  color: #a87c1f;
+  margin: 0;
 }
 
-@keyframes shimmer {
-  to { background-position: 200% center; }
-}
-
-/* Names */
+/* NAMES */
 .main-names {
   font-family: 'Playfair Display', serif;
   font-size: 3em;
+  margin: 10px 0 20px;
 }
 
-.main-names span { color: #c5a047; }
+.main-names span {
+  color: #c5a047;
+}
 
-.telugu { font-family: 'Noto Serif Telugu', serif; }
+/* TELUGU */
+.telugu {
+  font-family: 'Noto Serif Telugu', serif;
+  line-height: 1.8em;
+  margin-top: 10px;
+}
 
-.family-details { margin-top: 25px; }
+/* FAMILY */
+.family-details {
+  margin-top: 30px;
+  line-height: 1.8em;
+}
 
-/* Details */
+/* DETAILS */
 .details {
   padding: 100px 20px;
-  background: #fff;
+  background: #ffffff;
   text-align: center;
 }
 
-/* Countdown */
+/* COUNTDOWN */
 .countdown-section {
   padding: 100px 20px;
   background: #f7f1e8;
@@ -111,7 +105,7 @@ body {
 }
 
 .time-box {
-  background: #fff;
+  background: #ffffff;
   padding: 25px 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
@@ -124,11 +118,11 @@ body {
 }
 
 .time-box p {
-  margin: 8px 0 0;
-  font-size: 0.85em;
+  margin-top: 8px;
+  font-size: 0.9em;
 }
 
-/* Portraits */
+/* PORTRAITS */
 .portrait-section {
   padding: 120px 20px;
   background: #fdfaf5;
@@ -152,11 +146,6 @@ body {
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-  transition: transform 1s ease;
-}
-
-.portrait img:hover {
-  transform: scale(1.05);
 }
 
 .portrait-name {
@@ -164,13 +153,14 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
+/* FOOTER */
 footer {
   padding: 60px;
   text-align: center;
-  background: #fff;
+  background: #ffffff;
 }
 
-/* Reveal */
+/* REVEAL */
 .reveal {
   opacity: 0;
   transform: translateY(40px);

@@ -11,7 +11,7 @@ body {
 
 /* HERO */
 .hero {
-  padding: 80px 20px 120px;
+  padding: 90px 20px 130px;
   text-align: center;
   background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
@@ -21,49 +21,56 @@ body {
   margin: 0 auto;
 }
 
-/* GANESH FIXED SIZE */
+/* GANESH */
 .ganesha-wrapper {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 
 .ganesha-wrapper img {
-  width: 140px;          /* Controlled size */
+  width: 180px;
   height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 50%;
-  padding: 15px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* INVITATION LINE */
-.invitation-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.invitation-line span {
-  width: 60px;
-  height: 1px;
-  background: #c5a047;
-}
-
-.invitation-line p {
+/* INVITATION TITLE */
+.invitation-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-weight: 600;
   color: #a87c1f;
-  margin: 0;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+.invitation-title::before,
+.invitation-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: #a87c1f;
+}
+
+.invitation-title::before {
+  left: -70px;
+}
+
+.invitation-title::after {
+  right: -70px;
 }
 
 /* NAMES */
 .main-names {
   font-family: 'Playfair Display', serif;
-  font-size: 3em;
-  margin: 10px 0 20px;
+  font-size: 3.3em;
+  margin: 20px 0;
+  font-weight: 600;
 }
 
 .main-names span {
@@ -73,21 +80,41 @@ body {
 /* TELUGU */
 .telugu {
   font-family: 'Noto Serif Telugu', serif;
-  line-height: 1.8em;
-  margin-top: 10px;
+  line-height: 1.9em;
+  margin-top: 15px;
 }
 
 /* FAMILY */
 .family-details {
-  margin-top: 30px;
+  margin-top: 35px;
   line-height: 1.8em;
+  font-size: 1.05em;
 }
 
-/* DETAILS */
+/* CEREMONY */
 .details {
   padding: 100px 20px;
-  background: #ffffff;
   text-align: center;
+  background: #ffffff;
+}
+
+/* DINNER */
+.dinner-section {
+  padding: 90px 20px;
+  text-align: center;
+  background: #fdfaf5;
+}
+
+.telugu-heading {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: #a87c1f;
+}
+
+.dinner-details {
+  font-size: 1.05em;
+  line-height: 1.8em;
 }
 
 /* COUNTDOWN */
@@ -158,16 +185,4 @@ footer {
   padding: 60px;
   text-align: center;
   background: #ffffff;
-}
-
-/* REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 1.2s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
 }

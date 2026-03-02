@@ -3,198 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Sai Kumar & Hemalatha Wedding</title>
+<title>Aditya Sai Kumar & Hemalatha</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
-    background: radial-gradient(circle at center, #6b0000, #2b0000);
-    color: gold;
-    text-align: center;
+    background: linear-gradient(180deg, #4b0000, #1a0000);
+    color: #ffd700;
     overflow-x: hidden;
 }
 
-/* Golden Border Frame */
+/* Gold animated border frame */
 body::before {
     content: "";
     position: fixed;
-    inset: 0;
-    border: 18px solid gold;
+    inset: 15px;
+    border: 3px solid gold;
     pointer-events: none;
-    box-shadow: inset 0 0 40px rgba(255,215,0,0.6);
+    animation: borderGlow 3s infinite alternate;
 }
 
-/* Ganesha */
+@keyframes borderGlow {
+    from { box-shadow: 0 0 10px gold; }
+    to { box-shadow: 0 0 30px gold; }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
 .ganesha {
-    font-size: 70px;
-    margin-top: 40px;
-    animation: glow 2s ease-in-out infinite alternate;
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-    from { text-shadow: 0 0 15px gold; }
-    to { text-shadow: 0 0 35px #ffd700; }
+    from { text-shadow: 0 0 10px gold; }
+    to { text-shadow: 0 0 40px #fff2a8; }
 }
 
-/* Entrance */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeUp 2s forwards;
-}
-
-@keyframes fadeUp {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-h1 {
-    font-size: 4em;
-    margin-top: 20px;
+.names {
+    font-size: 3.5em;
+    font-weight: 900;
+    letter-spacing: 3px;
     text-shadow: 0 0 25px gold;
 }
 
-.subheading {
+.subtitle {
     font-family: 'Noto Serif Telugu', serif;
-    font-size: 1.6em;
-    margin-top: 25px;
+    font-size: 1.4em;
+    margin-top: 20px;
     line-height: 1.8em;
 }
 
-.details {
-    font-size: 1.3em;
-    margin-top: 30px;
-    line-height: 2em;
+/* Invitation Card Scroll Effect */
+.invite-card {
+    max-width: 800px;
+    margin: 60px auto;
+    background: linear-gradient(135deg, #fff3c4, #ffe28a);
+    color: #5a0000;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(255,215,0,0.5);
+    animation: cardReveal 2s ease;
 }
 
-.divider {
-    width: 250px;
-    height: 4px;
-    background: gold;
-    margin: 35px auto;
-    box-shadow: 0 0 20px gold;
+@keyframes cardReveal {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.invite-card h2 {
+    margin-top: 0;
+    font-size: 2em;
+}
+
+.details {
+    font-size: 1.2em;
+    line-height: 2em;
 }
 
 /* Gallery */
 .gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin: 50px 20px;
+    padding: 40px;
 }
 
 .gallery img {
-    width: 280px;
-    height: 340px;
+    width: 100%;
+    height: 350px;
     object-fit: cover;
     border: 6px solid gold;
-    border-radius: 20px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 15px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .gallery img:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 35px gold;
+    box-shadow: 0 0 30px gold;
 }
 
 /* Diyas */
 .diya {
     position: fixed;
-    bottom: 10px;
-    font-size: 40px;
+    bottom: 20px;
+    font-size: 45px;
     animation: flicker 1.5s infinite alternate;
 }
 
-.left-diya { left: 20px; }
-.right-diya { right: 20px; }
+.left-diya { left: 30px; }
+.right-diya { right: 30px; }
 
 @keyframes flicker {
     from { text-shadow: 0 0 10px orange; }
-    to { text-shadow: 0 0 30px yellow; }
+    to { text-shadow: 0 0 35px yellow; }
 }
 
-/* Jasmine Flowers Falling */
-.flower {
+/* Golden shimmer particles */
+.sparkle {
     position: fixed;
-    top: -10px;
-    font-size: 22px;
+    width: 4px;
+    height: 4px;
+    background: gold;
+    border-radius: 50%;
+    opacity: 0.8;
     animation: fall linear infinite;
 }
 
 @keyframes fall {
     to {
-        transform: translateY(110vh) rotate(360deg);
+        transform: translateY(110vh);
         opacity: 0;
     }
 }
 
 footer {
-    margin: 60px 0;
-    font-size: 1.2em;
+    text-align: center;
+    padding: 40px;
     font-family: 'Noto Serif Telugu', serif;
+    font-size: 1.1em;
 }
 </style>
 </head>
 
 <body>
 
-<div class="ganesha">🕉️ 🐘</div>
-
-<div class="fade-in">
-    <h1>
-        Aditya Sai Kumar <br> & <br> Hemalatha
-    </h1>
-
-    <div class="divider"></div>
-
-    <div class="subheading">
+<div class="hero">
+    <div class="ganesha">🕉️</div>
+    <div class="names">Aditya Sai Kumar<br>&<br>Hemalatha</div>
+    <div class="subtitle">
         శ్రీమతి శ్రీమాన్‌ల ఆశీర్వాదములతో<br>
         మా వివాహ మహోత్సవానికి ఆహ్వానం
     </div>
+</div>
 
+<div class="invite-card">
+    <h2>Wedding Ceremony</h2>
     <div class="details">
-        🗓️ March 7, 2026 <br>
-        ⏰ 02:38 AM <br>
-        📍 Sri Vasavi Arya Vysya Kalyana Mandapam <br>
+        🗓️ March 7, 2026<br>
+        ⏰ 02:38 AM<br>
+        📍 Sri Vasavi Arya Vysya Kalyana Mandapam<br><br>
         మీ సాన్నిధ్యం మా ఆనందాన్ని మరింత పెంచును
     </div>
 </div>
 
-<div class="divider"></div>
-
-<h2>Wedding Moments</h2>
-
 <div class="gallery">
+    <img src="groom.jpe" alt="Groom">
     <img src="bride.jpeg" alt="Bride">
-    <img src="groom.jpeg" alt="Groom">
     <img src="couple.jpeg" alt="Couple">
+    <img src="family.jpeg" alt="Family">
 </div>
 
 <footer>
     దివ్య ఆశీస్సులతో మిమ్మల్ని ఆహ్వానిస్తున్నాము 🪔
 </footer>
 
-<!-- Diyas -->
 <div class="diya left-diya">🪔</div>
 <div class="diya right-diya">🪔</div>
 
 <script>
-function createFlower() {
-    const flower = document.createElement("div");
-    flower.classList.add("flower");
-    flower.innerHTML = "🌼";
-    flower.style.left = Math.random() * 100 + "vw";
-    flower.style.animationDuration = (4 + Math.random() * 6) + "s";
-    document.body.appendChild(flower);
-
-    setTimeout(() => {
-        flower.remove();
-    }, 9000);
+/* Golden Sparkle Effect */
+function createSparkle() {
+    const sparkle = document.createElement("div");
+    sparkle.classList.add("sparkle");
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.animationDuration = (3 + Math.random() * 5) + "s";
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 8000);
 }
-setInterval(createFlower, 400);
+setInterval(createSparkle, 300);
 </script>
 
 </body>

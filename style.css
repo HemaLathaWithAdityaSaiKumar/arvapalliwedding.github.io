@@ -1,6 +1,10 @@
-/* ===============================
-   Base Layout
-=================================*/
+/* ==========================================
+   GLOBAL BASE
+========================================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -10,9 +14,9 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ===============================
-   Intro Screen
-=================================*/
+/* ==========================================
+   INTRO SCREEN
+========================================== */
 #intro {
   position: fixed;
   inset: 0;
@@ -29,19 +33,31 @@ body {
   animation: fadeUp 1.5s ease;
 }
 
+.intro-box h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+.intro-box p {
+  letter-spacing: 3px;
+  margin-top: 10px;
+  color: #777;
+}
+
 @keyframes hideIntro {
   to { opacity: 0; visibility: hidden; }
 }
 
-/* ===============================
-   Mandala Watermark
-=================================*/
+/* ==========================================
+   MANDALA WATERMARK
+========================================== */
 .mandala {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   background: url('https://upload.wikimedia.org/wikipedia/commons/3/3a/Mandala_simple.svg') center/contain no-repeat;
   opacity: 0.04;
   transform: translate(-50%, -50%);
@@ -55,63 +71,65 @@ body {
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* ===============================
-   Hero Section
-=================================*/
+/* ==========================================
+   HERO SECTION
+========================================== */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   background: linear-gradient(to bottom, #fffaf2, #f4efe6);
+  padding: 80px 20px;
   position: relative;
   z-index: 1;
 }
 
 .hero-content {
   max-width: 800px;
-  padding: 20px;
-  animation: fadeUp 1.8s ease;
+  width: 100%;
+  animation: fadeUp 1.5s ease;
 }
 
-/* Animated Ganesha */
-/* ===============================
-   Animated Lord Ganesha
-=================================*/
-
-/* ===============================
-   Lord Ganesha Image Styling
-=================================*/
-
+/* ==========================================
+   GANESH IMAGE (STABLE VERSION)
+========================================== */
 .ganesha {
-  margin-bottom: 30px;
-  animation: ganeshFloat 6s ease-in-out infinite;
+  margin-bottom: 35px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.ganesha::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,175,55,0.25), transparent 70%);
+  z-index: 0;
 }
 
 .ganesha img {
-  width: 140px;
+  width: 150px;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15));
-  animation: ganeshGlow 4s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 1;
+  animation: floatGanesh 7s ease-in-out infinite;
 }
 
-/* Subtle floating */
-@keyframes ganeshFloat {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0px); }
+/* Floating animation */
+@keyframes floatGanesh {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
-/* Soft divine glow */
-@keyframes ganeshGlow {
-  from { filter: drop-shadow(0 0 5px rgba(197,160,71,0.3)); }
-  to { filter: drop-shadow(0 0 25px rgba(197,160,71,0.7)); }
-}
-
-/* Family Name */
+/* ==========================================
+   FAMILY LINE
+========================================== */
 .family-line {
   font-family: 'Playfair Display', serif;
   font-size: 1.2em;
@@ -120,18 +138,10 @@ body {
   text-transform: uppercase;
   margin-bottom: 15px;
 }
-.family-details {
-  margin-top: 25px;
-  font-size: 1em;
-  color: #555;
-  line-height: 1.6em;
-}
 
-.family-details strong {
-  font-weight: 500;
-  color: #222;
-}
-/* Bride & Groom Names */
+/* ==========================================
+   NAMES
+========================================== */
 .hero h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3em;
@@ -142,17 +152,27 @@ body {
   color: #c5a047;
 }
 
-/* Telugu Text */
+/* Telugu */
 .telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 1.1em;
   margin-top: 15px;
   line-height: 1.7em;
+  font-size: 1.1em;
 }
 
-/* ===============================
-   Details Section
-=================================*/
+/* ==========================================
+   FAMILY DETAILS
+========================================== */
+.family-details {
+  margin-top: 25px;
+  color: #555;
+  font-size: 1em;
+  line-height: 1.6em;
+}
+
+/* ==========================================
+   DETAILS SECTION
+========================================== */
 .details {
   padding: 100px 20px;
   text-align: center;
@@ -167,50 +187,48 @@ body {
   margin-bottom: 20px;
 }
 
-.details p {
-  line-height: 1.8em;
-  font-size: 1.1em;
-}
-
-/* ===============================
-   Gallery Section
-=================================*/
+/* ==========================================
+   GALLERY SECTION
+========================================== */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 50px;
-  padding: 100px;
+  padding: 100px 60px;
   background: #f7f1e8;
+  position: relative;
+  z-index: 1;
 }
 
 .card img {
   width: 100%;
   height: 420px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.1);
-  animation: floatImage 8s ease-in-out infinite;
-  transition: transform 0.8s ease, box-shadow 0.8s ease;
-}
-
-@keyframes floatImage {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  animation: floatImage 10s ease-in-out infinite;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 .card img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.2);
+  transform: scale(1.04);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
 }
 
-/* ===============================
-   Scroll Reveal
-=================================*/
+/* Subtle floating */
+@keyframes floatImage {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1.5s ease;
+  transform: translateY(40px);
+  transition: all 1.2s ease;
 }
 
 .reveal.active {
@@ -218,20 +236,20 @@ body {
   transform: translateY(0);
 }
 
-/* ===============================
-   Footer
-=================================*/
+/* ==========================================
+   FOOTER
+========================================== */
 footer {
   text-align: center;
-  padding: 70px;
+  padding: 60px;
   font-family: 'Playfair Display', serif;
   font-size: 1.2em;
   background: #ffffff;
 }
 
-/* ===============================
-   Music Button
-=================================*/
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
 #musicBtn {
   position: fixed;
   top: 20px;
@@ -251,35 +269,10 @@ footer {
   transform: scale(1.1);
 }
 
-/* ===============================
-   Base Fade Animation
-=================================*/
+/* ==========================================
+   FADE UP ANIMATION
+========================================== */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(40px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.ganesha {
-  margin-bottom: 25px;
-  animation: ganeshFloat 6s ease-in-out infinite;
-}
-
-.ganesh-path {
-  animation: drawGanesh 3s ease forwards,
-             ganeshGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes drawGanesh {
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes ganeshGlow {
-  from { filter: drop-shadow(0 0 5px rgba(197,160,71,0.4)); }
-  to { filter: drop-shadow(0 0 20px rgba(197,160,71,0.8)); }
-}
-
-@keyframes ganeshFloat {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0px); }
 }

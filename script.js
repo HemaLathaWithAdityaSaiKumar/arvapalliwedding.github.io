@@ -11,19 +11,9 @@ function reveal() {
 window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
 
-// Music fade in
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-
-btn.addEventListener("click", () => {
-  if (music.paused) {
-    music.volume = 0;
-    music.play();
-    let fade = setInterval(() => {
-      if (music.volume < 0.9) music.volume += 0.05;
-      else clearInterval(fade);
-    }, 200);
-  } else {
-    music.pause();
-  }
+// Light parallax effect
+window.addEventListener("scroll", function() {
+  const scrollY = window.scrollY;
+  const hero = document.querySelector(".hero-content");
+  hero.style.transform = "translateY(" + scrollY * 0.05 + "px)";
 });

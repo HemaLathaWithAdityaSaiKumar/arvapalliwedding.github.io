@@ -136,11 +136,18 @@ body {
   margin-top: 30px;
 }
 
+/* ================= SECTION BASE ================= */
+
+.details,
+.countdown-section,
+.portraits {
+  padding: 100px 20px;
+  text-align: center;
+}
+
 /* ================= CEREMONY ================= */
 
 .details {
-  padding: 100px 20px;
-  text-align: center;
   background: #ffffff;
 }
 
@@ -153,23 +160,43 @@ body {
 
 .details p {
   margin-bottom: 12px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================= DINNER ================= */
+
+.dinner-block {
+  margin: 40px auto 30px;
+  padding: 25px 30px;
+  background: #f7f1e8;
+  border-radius: 14px;
+  max-width: 500px;
+}
+
+.dinner-block h4 {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 1.3rem;
+  color: #a87c1f;
+  margin-bottom: 10px;
 }
 
 /* ================= MAP ================= */
 
 .map-wrapper {
-  margin: 40px auto 20px;
-  width: 85%;
-  max-width: 800px;
+  margin: 50px auto 25px;
+  width: 60%;
+  max-width: 700px;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
   transition: 0.3s ease;
 }
 
 .map-wrapper iframe {
   width: 100%;
-  height: 350px;
+  height: 320px;
   border: 0;
 }
 
@@ -197,8 +224,6 @@ body {
 /* ================= COUNTDOWN ================= */
 
 .countdown-section {
-  padding: 100px 20px;
-  text-align: center;
   background: #f7f1e8;
 }
 
@@ -241,49 +266,37 @@ body {
   letter-spacing: 1px;
 }
 
-/* ================= COUPLE SECTION (Refined Individual Design) ================= */
+/* ================= PORTRAITS ================= */
 
 .portraits {
-  padding: 120px 20px;
   background: #ffffff;
-  text-align: center;
 }
 
-.couple-title {
+.portraits h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  letter-spacing: 2px;
+  font-size: 1.9rem;
   color: #a87c1f;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .portrait-grid {
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
-/* Individual Panel */
-
 .portrait-panel {
   text-align: center;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
-}
-
-.portrait-panel:nth-child(2) {
-  animation-delay: 0.3s;
 }
 
 .portrait-inner {
-  padding: 8px;
+  padding: 6px;
+  border-radius: 20px;
   border: 2px solid #d4af37;
-  border-radius: 22px;
   background: white;
   box-shadow: 0 30px 70px rgba(0,0,0,0.08);
-  transition: 0.5s ease;
+  transition: 0.4s ease;
 }
 
 .portrait-inner img {
@@ -291,40 +304,51 @@ body {
   height: 440px;
   object-fit: cover;
   border-radius: 16px;
-  display: block;
 }
-
-/* Hover effect */
 
 .portrait-inner:hover {
   transform: translateY(-12px);
   box-shadow: 0 40px 90px rgba(0,0,0,0.15);
 }
 
-/* Name */
-
 .portrait-name {
   margin-top: 25px;
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
-  letter-spacing: 1px;
   color: #a87c1f;
 }
 
-/* Animation */
+/* ================= FOOTER ================= */
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+footer {
+  padding: 60px;
+  text-align: center;
+  background: #ffffff;
+  font-family: 'Playfair Display', serif;
 }
 
-/* Responsive */
+/* ================= ANIMATIONS ================= */
+
+@keyframes floatGlow {
+  from { transform: translate(-80px, -80px); }
+  to { transform: translate(80px, 80px); }
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
 
+  .map-wrapper {
+    width: 100%;
+  }
+
+  .map-wrapper iframe {
+    height: 260px;
+  }
+
   .portrait-grid {
+    flex-direction: column;
+    align-items: center;
     gap: 60px;
   }
 

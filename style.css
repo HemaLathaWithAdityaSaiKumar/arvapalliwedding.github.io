@@ -1,137 +1,50 @@
-/* ================= GLOBAL ================= */
-
 * { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #fdfaf5;
   color: #222;
-  line-height: 1.6;
 }
 
-/* ================= ENTRY ================= */
-
-#entry-screen {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #fdfaf5 0%, #e8dcc8 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-  overflow: hidden;
-  transition: opacity 1s ease;
-}
-
-#entry-screen.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.ambient-bg {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(168,124,31,0.25), transparent 70%);
-  animation: floatGlow 12s ease-in-out infinite alternate;
-  filter: blur(60px);
-}
-
-.entry-card {
-  position: relative;
-  padding: 70px 90px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(20px);
-  border-radius: 30px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
-  text-align: center;
-  animation: fadeInScale 1.5s ease forwards;
-}
-
-.welcome-text {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
-}
-
-.underline {
-  height: 3px;
-  width: 120px;
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  margin: 20px auto 50px;
-}
-
-#enter-btn {
-  padding: 16px 45px;
-  font-size: 1rem;
-  font-family: 'Playfair Display', serif;
-  border-radius: 50px;
-  border: 2px solid #a87c1f;
-  background: transparent;
-  color: #a87c1f;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#enter-btn:hover {
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-}
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero {
-  padding: 120px 20px 100px;
+  padding: 120px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
 
-.hero-inner {
-  max-width: 900px;
-  margin: auto;
-}
+.hero-inner { max-width: 900px; margin: auto; }
 
 .ganesha-wrapper img {
   width: 150px;
   border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  margin-bottom: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 .invitation-title {
   font-family: 'Playfair Display', serif;
   color: #a87c1f;
   margin: 25px 0;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .main-names {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  margin: 0;
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 8vw, 4rem);
+  font-weight: 400;
 }
 
 .main-names span { color: #c5a047; }
 
 .telugu {
   font-family: 'Noto Serif Telugu', serif;
-  line-height: 1.9;
   margin-top: 25px;
+  line-height: 1.9;
 }
 
-.family-details {
-  margin-top: 30px;
-}
-
-/* ================= DETAILS ================= */
+/* DETAILS */
 
 .details {
   padding: 100px 20px;
@@ -141,19 +54,54 @@ body {
 
 .details h3 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 30px;
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+  color: #a87c1f;
 }
 
-.details p {
-  margin-bottom: 12px;
+.details p { margin-bottom: 12px; }
+
+/* MAP */
+
+.map-wrapper {
+  margin: 40px auto 20px;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
-/* ================= COUNTDOWN ================= */
+.map-wrapper iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #a87c1f;
+  color: white;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
+/* COUNTDOWN */
 
 .countdown-section {
   padding: 100px 20px;
   text-align: center;
   background: #f7f1e8;
+}
+
+.countdown-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+  color: #a87c1f;
 }
 
 .countdown {
@@ -169,67 +117,23 @@ body {
   padding: 25px 30px;
   border-radius: 14px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
   min-width: 110px;
 }
 
-.time-box:hover {
-  transform: translateY(-6px);
-}
-
 .time-box span {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
   color: #a87c1f;
-  display: block;
 }
 
 .time-box p {
-  margin-top: 8px;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* ================= MAP ================= */
-
-.map-wrapper {
-  margin: 50px auto 20px;
-  width: 85%;
-  max-width: 800px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
-}
-
-.map-wrapper iframe {
-  width: 100%;
-  height: 350px;
-  border: 0;
-}
-
-.map-wrapper:hover {
-  transform: translateY(-6px);
-}
-
-.map-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  border-radius: 30px;
-  background: #a87c1f;
-  color: white;
-  text-decoration: none;
-  font-family: 'Playfair Display', serif;
-  transition: 0.3s ease;
-}
-
-.map-btn:hover {
-  background: #8f6618;
-  transform: translateY(-3px);
-}
-
-/* ================= PORTRAITS ================= */
+/* PORTRAITS */
 
 .portraits {
   padding: 100px 20px;
@@ -237,17 +141,20 @@ body {
   background: #ffffff;
 }
 
+.portraits h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: #a87c1f;
+}
+
 .portrait-container {
   display: flex;
   justify-content: center;
-  gap: 80px;
   align-items: center;
+  gap: 60px;
   flex-wrap: wrap;
   margin-top: 60px;
-}
-
-.portrait-card {
-  text-align: center;
 }
 
 .portrait-frame {
@@ -261,67 +168,26 @@ body {
   height: 380px;
   object-fit: cover;
   border-radius: 16px;
-  transition: 0.4s ease;
-}
-
-.portrait-frame img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 .portrait-card h4 {
-  margin-top: 18px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  margin-top: 22px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
   color: #a87c1f;
 }
 
 .ampersand {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
   color: #a87c1f;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer {
   padding: 60px;
   text-align: center;
   background: #ffffff;
   font-family: 'Playfair Display', serif;
-}
-
-/* ================= ANIMATIONS ================= */
-
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes floatGlow {
-  from { transform: translate(-80px, -80px); }
-  to { transform: translate(80px, 80px); }
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-  .portrait-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .portrait-frame img {
-    width: 240px;
-    height: 320px;
-  }
-
-  .map-wrapper {
-    width: 100%;
-  }
-
-  .map-wrapper iframe {
-    height: 280px;
-  }
 }

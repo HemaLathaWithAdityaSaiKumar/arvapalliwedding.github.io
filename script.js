@@ -1,46 +1,29 @@
-// script.js
+// script.js - SIMPLE AND RELIABLE
 
 (function() {
   
-  // Entry Screen
+  // Get elements
   const entryScreen = document.getElementById('entry-screen');
   const enterBtn = document.getElementById('enter-btn');
   const bgMusic = document.getElementById('bg-music');
-  const html = document.documentElement;
-  const body = document.body;
   
   if (bgMusic) bgMusic.volume = 0.2;
   
+  // Simple entry button click handler
   if (enterBtn && entryScreen) {
     enterBtn.addEventListener('click', function(e) {
       e.preventDefault();
       
-      if (bgMusic) bgMusic.play().catch(() => {});
+      // Try to play music
+      if (bgMusic) {
+        bgMusic.play().catch(() => {});
+      }
       
-      // Hide entry screen
-      entryScreen.classList.add('hide');
+      // Simply hide the entry screen
+      entryScreen.style.display = 'none';
       
-      // Allow scrolling on body
-      body.classList.add('entry-hidden');
-      
-      // Remove entry screen after animation
-      setTimeout(() => {
-        if (entryScreen.parentNode) {
-          entryScreen.style.display = 'none';
-        }
-      }, 500);
+      // No need for complex class management
     });
-  }
-  
-  // Prevent touch events on entry screen from reaching main content
-  if (entryScreen) {
-    entryScreen.addEventListener('touchmove', function(e) {
-      e.preventDefault();
-    }, { passive: false });
-    
-    entryScreen.addEventListener('scroll', function(e) {
-      e.preventDefault();
-    }, { passive: false });
   }
   
   // Countdown
@@ -79,14 +62,13 @@
     setInterval(updateCountdown, 1000);
   }
   
-  // Touch flip for mobile
+  // Simple flip for mobile
   const portraitCards = document.querySelectorAll('.portrait-card');
   
   portraitCards.forEach(card => {
     let isFlipped = false;
     
-    card.addEventListener('click', function(e) {
-      e.stopPropagation();
+    card.addEventListener('click', function() {
       const inner = this.querySelector('.portrait-inner');
       
       if (!isFlipped) {
@@ -97,11 +79,6 @@
         isFlipped = false;
       }
     });
-    
-    // Handle touch events properly
-    card.addEventListener('touchstart', function(e) {
-      e.preventDefault();
-    }, { passive: false });
   });
   
 })();

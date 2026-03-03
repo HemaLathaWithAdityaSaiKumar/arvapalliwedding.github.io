@@ -5,14 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arvapalli’s Invitation</title>
 
-<meta name="description" content="Wedding Invitation of Hemalatha & Aditya Sai Kumar – March 7, 2026.">
+<!-- SEO -->
+<meta name="description" content="Wedding Invitation of Hemalatha & Aditya Sai Kumar – March 7, 2026, Sri Vasavi Arya Vysya Kalyana Mandapam.">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400&family=Noto+Serif+Telugu:wght@400;600&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Open Graph -->
+<meta property="og:title" content="Hemalatha & Aditya Sai Kumar – Wedding Invitation">
+<meta property="og:description" content="You are cordially invited to our wedding ceremony.">
+<meta property="og:image" content="https://yourdomain.com/couple.jpeg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourdomain.com">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hemalatha & Aditya Sai Kumar – Wedding Invitation">
+<meta name="twitter:description" content="Join us on March 7, 2026 at 02:38 (Early hours of Sunday)">
+<meta name="twitter:image" content="https://yourdomain.com/couple.jpeg">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<!-- ENTRY SCREEN -->
+<div id="entry-screen">
+  <div class="ambient-bg"></div>
+
+  <div class="entry-card">
+    <h2 class="welcome-text">Welcome</h2>
+    <div class="underline"></div>
+    <button id="enter-btn" type="button">
+      Arvapalli's Marriage Invitation
+    </button>
+  </div>
+</div>
+
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <!-- HERO -->
 <section class="hero">
@@ -34,6 +68,12 @@
       మీరు విచ్చేసి వధూవరులను ఆశీర్వదించవలసిందిగా మనవి.
     </p>
 
+    <div class="family-details">
+      <p>Daughter of</p>
+      <p><strong>Srinivasa Rao</strong> & <strong>Ratna Kumari</strong></p>
+      <p>Sister of <strong>Bala Prasanna</strong></p>
+    </div>
+
   </div>
 </section>
 
@@ -54,10 +94,12 @@
     Valaparla Village, Martur (Mandal), Bapatla District
   </p>
 
+  <!-- Google Map -->
   <div class="map-wrapper">
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1918.3614865276022!2d80.0472545!3d15.9235777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4af500777331e1%3A0xfecbdc883cceaad!2sSri%20Vasavi%20Arya%20Vysya%20Kalyana%20Mandapam!5e0!3m2!1sen!2sin!4v1772526269358!5m2!1sen!2sin"
-      loading="lazy">
+      loading="lazy"
+      allowfullscreen>
     </iframe>
   </div>
 
@@ -74,10 +116,25 @@
   <h3>Countdown to the Wedding</h3>
 
   <div class="countdown">
-    <div class="time-box"><span id="days">00</span><p>Days</p></div>
-    <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
-    <div class="time-box"><span id="minutes">00</span><p>Minutes</p></div>
-    <div class="time-box"><span id="seconds">00</span><p>Seconds</p></div>
+    <div class="time-box">
+      <span id="days">00</span>
+      <p>Days</p>
+    </div>
+
+    <div class="time-box">
+      <span id="hours">00</span>
+      <p>Hours</p>
+    </div>
+
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <p>Minutes</p>
+    </div>
+
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <p>Seconds</p>
+    </div>
   </div>
 </section>
 
@@ -89,7 +146,7 @@
 
     <div class="portrait-card">
       <div class="portrait-frame">
-        <img src="bride.jpeg" alt="Hemalatha">
+        <img src="bride.jpeg" alt="Hemalatha" loading="lazy">
       </div>
       <h4>Hemalatha</h4>
     </div>
@@ -98,7 +155,7 @@
 
     <div class="portrait-card">
       <div class="portrait-frame">
-        <img src="groom.jpeg" alt="Aditya Sai Kumar">
+        <img src="groom.jpeg" alt="Aditya Sai Kumar" loading="lazy">
       </div>
       <h4>Aditya Sai Kumar</h4>
     </div>

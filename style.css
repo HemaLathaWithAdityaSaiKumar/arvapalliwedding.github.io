@@ -169,46 +169,78 @@ body {
 .time-box p {
   font-size: 0.8rem;
 }
-
-/* ================= PORTRAITS ================= */
+/* ================= PORTRAITS (Improved Scale) ================= */
 
 .portraits {
-  padding: 70px 20px;
+  padding: 90px 16px;
   background: white;
   text-align: center;
 }
 
 .portraits h3 {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   color: #a87c1f;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  font-family: 'Playfair Display', serif;
 }
+
+/* Mobile First */
 
 .portrait-grid {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
 }
 
+/* Make image dominant */
+
 .portrait-inner {
   width: 100%;
-  max-width: 340px;
-  border: 2px solid #d4af37;
-  border-radius: 18px;
+  max-width: 420px;          /* increased from 340 */
+  border-radius: 24px;
   overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
 }
 
 .portrait-inner img {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
 }
 
+/* Subtle lift */
+
+.portrait-inner:hover {
+  transform: translateY(-8px);
+}
+
+/* Name */
+
 .portrait-name {
-  margin-top: 15px;
-  font-size: 1.4rem;
+  margin-top: 20px;
+  font-size: 1.6rem;
   color: #a87c1f;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 1px;
+}
+
+/* Desktop */
+
+@media (min-width: 768px) {
+
+  .portrait-grid {
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  .portrait-inner {
+    max-width: 360px;
+  }
+
 }
 
 /* ================= FOOTER ================= */

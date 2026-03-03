@@ -3,7 +3,10 @@ const weddingDate = new Date("2026-03-08T02:38:00+05:30").getTime();
 function updateCountdown(){
   const now = Date.now();
   const gap = weddingDate - now;
-  if(gap <= 0) return;
+
+  if(gap <= 0){
+    return;
+  }
 
   const values = [
     Math.floor(gap/(1000*60*60*24)),

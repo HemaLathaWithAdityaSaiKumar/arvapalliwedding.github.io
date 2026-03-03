@@ -1,4 +1,4 @@
-/* style.css - Ganesha top right in all sections */
+/* style.css - Single Ganesha top right, balanced hero section */
 
 * {
   margin: 0;
@@ -19,29 +19,18 @@ body {
   padding: 0 20px;
 }
 
-/* ===== Ganesha Top Right Corner ===== */
+/* ===== Single Ganesha Top Right ===== */
 .ganesha-corner {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 20px;
   z-index: 10;
 }
 
-.ganesha-corner.top-right {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-
-.ganesha-corner.small .ganesha-small {
-  width: 50px;
-  height: auto;
-  opacity: 0.8;
-}
-
 .ganesha-img {
-  width: 70px;
+  width: 65px;
   height: auto;
+  filter: drop-shadow(0 4px 8px rgba(109,79,52,0.2));
 }
 
 /* Entry Screen */
@@ -77,17 +66,17 @@ body {
 
 .entry-ganesha-corner {
   position: absolute;
-  top: -20px;
+  top: -15px;
   right: -10px;
   background: white;
   border-radius: 50%;
-  padding: 8px;
+  padding: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .ganesha-corner-img {
-  width: 60px;
-  height: 60px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -121,6 +110,12 @@ body {
   border-radius: 40px 10px 40px 10px;
   color: white;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.entry-btn:hover {
+  background: #8b6b4d;
+  transform: translateY(-2px);
 }
 
 .btn-telugu {
@@ -135,13 +130,12 @@ body {
   opacity: 0.9;
 }
 
-/* Hero Section */
+/* Hero Section - Balanced height */
 .hero {
-  padding: 40px 0 30px;
+  padding: 50px 0 40px;
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
+  min-height: auto; /* Removed min-height: 100vh */
+  background: #fffbf5;
 }
 
 .invitation-badge {
@@ -149,7 +143,7 @@ body {
   font-size: 12px;
   letter-spacing: 4px;
   color: #9a7b5c;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .couple-name {
@@ -158,7 +152,7 @@ body {
   font-weight: 800;
   text-align: center;
   line-height: 1.3;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .couple-name .bride { color: #6d4f34; }
@@ -167,9 +161,9 @@ body {
 
 .telugu-invitation {
   background: #faf3ea;
-  padding: 30px 20px;
+  padding: 25px 20px;
   border-radius: 50px 10px 50px 10px;
-  margin: 30px 0;
+  margin: 25px 0 20px;
 }
 
 .telugu-text {
@@ -189,7 +183,6 @@ body {
 .wedding-section {
   padding: 50px 0;
   background: white;
-  position: relative;
 }
 
 .section-title {
@@ -204,13 +197,13 @@ body {
 
 .details-card {
   background: #faf3ea;
-  padding: 40px 20px;
+  padding: 35px 20px;
   border-radius: 50px 10px 50px 10px;
 }
 
 .date-block { text-align: center; }
 .day { font-size: 16px; letter-spacing: 3px; color: #9a7b5c; }
-.date { font-size: 32px; font-weight: 700; color: #6d4f34; margin: 10px 0; }
+.date { font-size: 32px; font-weight: 700; color: #6d4f34; margin: 8px 0; }
 .time { font-size: 48px; font-weight: 800; color: #8b6b4d; display: block; }
 .time-note { font-size: 14px; color: #9a7b5c; }
 
@@ -222,8 +215,8 @@ body {
 }
 
 .venue-block { text-align: center; }
-.venue-block i { font-size: 24px; color: #8b6b4d; }
-.venue-block h3 { font-size: 20px; margin: 10px 0 5px; }
+.venue-block i { font-size: 24px; color: #8b6b4d; margin-bottom: 10px; }
+.venue-block h3 { font-size: 20px; margin: 0 0 5px; }
 
 .dinner-card {
   background: #f9f1e7;
@@ -245,6 +238,7 @@ body {
   overflow: hidden;
   height: 200px;
   margin: 30px 0 20px;
+  box-shadow: 0 10px 20px -8px rgba(0,0,0,0.2);
 }
 
 .map-container iframe {
@@ -259,6 +253,12 @@ body {
   padding: 14px 35px;
   border-radius: 40px 8px 40px 8px;
   text-decoration: none;
+  transition: 0.2s;
+}
+
+.direction-btn:hover {
+  background: #8b6b4d;
+  transform: translateY(-2px);
 }
 
 /* Countdown Section */
@@ -276,11 +276,13 @@ body {
 
 .count-item {
   background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(5px);
   padding: 20px;
   border-radius: 30px 5px 30px 5px;
   min-width: 100px;
   text-align: center;
   color: white;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .count-item span {
@@ -288,12 +290,12 @@ body {
   font-size: 36px;
   font-weight: 800;
   font-family: 'Playfair Display', serif;
+  line-height: 1.2;
 }
 
 /* Portraits Section */
 .portraits-section {
   padding: 50px 0;
-  position: relative;
 }
 
 .portraits-grid {
@@ -319,7 +321,7 @@ body {
   width: 100%;
   height: auto;
   display: block;
-  transition: 0.4s;
+  transition: transform 0.4s ease;
 }
 
 .portrait-card:hover .portrait-img {
@@ -328,8 +330,9 @@ body {
 
 .portrait-name {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 20px;
   color: #6d4f34;
+  margin-bottom: 4px;
 }
 
 .portrait-role {
@@ -358,18 +361,32 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero { padding: 40px 0 30px; }
   .couple-name { font-size: 28px; }
-  .portraits-grid { grid-template-columns: 1fr; max-width: 350px; }
+  .couple-name .ampersand { font-size: 26px; }
+  
+  .portraits-grid { 
+    grid-template-columns: 1fr; 
+    max-width: 320px; 
+    gap: 25px;
+  }
+  
   .countdown-grid { gap: 10px; }
-  .count-item { min-width: 70px; padding: 15px; }
+  .count-item { 
+    min-width: 70px; 
+    padding: 15px 10px; 
+  }
   .count-item span { font-size: 28px; }
+  
   .ganesha-img { width: 50px; }
-  .ganesha-corner.small .ganesha-small { width: 40px; }
+  .ganesha-corner { top: 12px; right: 12px; }
 }
 
 @media (max-width: 480px) {
   .time { font-size: 40px; }
   .date { font-size: 26px; }
+  .section-title { font-size: 28px; }
+  .telugu-text { font-size: 14px; }
 }
 
 #bg-music { display: none; }

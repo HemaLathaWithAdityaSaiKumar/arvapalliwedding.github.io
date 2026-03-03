@@ -167,3 +167,52 @@ footer {
 @keyframes fadeOut {
   to { opacity: 0; visibility: hidden; }
 }
+
+/* ================= GOOGLE MAP ================= */
+
+.map-wrapper {
+  margin: 40px auto 20px;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+}
+
+.map-wrapper:hover {
+  transform: translateY(-6px);
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #a87c1f;
+  color: white;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  transition: 0.3s ease;
+}
+
+.map-btn:hover {
+  background: #8f6618;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .map-wrapper {
+    width: 100%;
+  }
+
+  .map-wrapper iframe {
+    height: 280px;
+  }
+}

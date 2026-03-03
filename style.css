@@ -1,4 +1,4 @@
-/* style.css - Clean, minimal, mobile-optimized */
+/* style.css - Ganesha top right in all sections */
 
 * {
   margin: 0;
@@ -7,10 +7,41 @@
 }
 
 body {
-  background-color: #fef9f2;
   font-family: 'Montserrat', sans-serif;
+  background: #fffbf5;
   color: #2c2419;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Ganesha Top Right Corner ===== */
+.ganesha-corner {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+.ganesha-corner.top-right {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.ganesha-corner.small .ganesha-small {
+  width: 50px;
+  height: auto;
+  opacity: 0.8;
+}
+
+.ganesha-img {
+  width: 70px;
+  height: auto;
 }
 
 /* Entry Screen */
@@ -19,352 +50,326 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(145deg, #dac09a 0%, #b39264 100%);
+  height: 100vh;
+  background: linear-gradient(145deg, #8b6b4d, #6d4f34);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
-  transition: opacity 0.5s ease;
-  padding: 16px;
+  z-index: 9999;
+  transition: 0.5s;
+  padding: 20px;
 }
 
 #entry-screen.hide {
   opacity: 0;
-  pointer-events: none;
+  visibility: hidden;
 }
 
 .entry-card {
-  background: rgba(255, 251, 240, 0.95);
-  backdrop-filter: blur(4px);
+  background: #fffaf0;
+  padding: 40px 25px;
+  border-radius: 50px 15px 50px 15px;
+  max-width: 400px;
   width: 100%;
-  max-width: 320px;
-  padding: 32px 24px;
-  border-radius: 40px 12px 40px 12px;
-  text-align: center;
-  box-shadow: 0 25px 40px -15px rgba(0,0,0,0.3);
+  position: relative;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.2);
 }
 
-.telugu-title {
+.entry-ganesha-corner {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.ganesha-corner-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.entry-telugu {
   font-family: 'Noto Serif Telugu', serif;
   font-size: 28px;
   font-weight: 700;
-  color: #7b5e38;
-  line-height: 1.2;
+  color: #6d4f34;
+  margin: 10px 0 5px;
 }
 
-.entry-sub {
-  font-family: 'Cormorant', serif;
+.entry-english {
+  font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: #9a7e55;
-  letter-spacing: 1px;
-  margin-top: 4px;
+  color: #9a7b5c;
 }
 
 .entry-decoration {
-  width: 50px;
+  width: 60px;
   height: 2px;
-  background: #c7a976;
-  margin: 20px auto 24px;
+  background: #d4b48c;
+  margin: 20px auto;
 }
 
-#enter-btn {
+.entry-btn {
   width: 100%;
-  background: #7b5e38;
+  background: #6d4f34;
   border: none;
+  padding: 15px;
+  border-radius: 40px 10px 40px 10px;
   color: white;
+  cursor: pointer;
+}
+
+.btn-telugu {
   font-family: 'Noto Serif Telugu', serif;
   font-size: 22px;
   font-weight: 600;
-  padding: 14px 10px;
-  border-radius: 40px 8px 40px 8px;
-  cursor: pointer;
-  transition: 0.2s;
-  border: 1px solid #9a7e55;
+  display: block;
 }
 
-#enter-btn:active {
-  transform: scale(0.97);
-  background: #634a2b;
-}
-
-/* Main Content - Minimal Padding */
-section {
-  padding: 28px 16px;
-}
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  font-weight: 700;
-  color: #7b5e38;
-  margin-bottom: 16px;
-  text-align: center;
+.btn-english {
+  font-size: 13px;
+  opacity: 0.9;
 }
 
 /* Hero Section */
 .hero {
-  padding: 24px 16px 20px;
+  padding: 40px 0 30px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.invitation-badge {
   text-align: center;
-  background: #fef9f2;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: #9a7b5c;
+  margin-bottom: 20px;
 }
 
-.ganesha-img {
-  width: 75px;
-  margin-bottom: 6px;
-}
-
-.invitation-label {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: #9a7e55;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.couple-names {
+.couple-name {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 800;
-  line-height: 1.2;
-  margin: 6px 0 14px;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 30px;
 }
 
-.couple-names span {
-  color: #b39264;
-  font-weight: 400;
-  font-size: 26px;
+.couple-name .bride { color: #6d4f34; }
+.couple-name .ampersand { color: #d4b48c; font-size: 32px; margin: 0 5px; }
+.couple-name .groom { color: #4a3a2a; }
+
+.telugu-invitation {
+  background: #faf3ea;
+  padding: 30px 20px;
+  border-radius: 50px 10px 50px 10px;
+  margin: 30px 0;
 }
 
-.telugu-invite {
+.telugu-text {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 14px;
-  background: #f5ede1;
-  padding: 16px 12px;
-  border-radius: 30px 6px 30px 6px;
-  margin: 12px 0 10px;
-  line-height: 1.6;
-}
-
-.family-info {
-  font-size: 13px;
-}
-
-.family-info p {
-  margin: 3px 0;
-}
-
-/* Wedding Details */
-.wedding-details {
-  background: white;
-  border-radius: 32px 32px 16px 16px;
-  margin: 0 0 8px;
-  padding: 28px 16px;
-}
-
-.date-time {
-  text-align: center;
-  margin-bottom: 18px;
-}
-
-.day-date {
   font-size: 16px;
-  font-weight: 600;
-  color: #4a3f32;
+  line-height: 2;
 }
 
-.time {
-  font-size: 28px;
-  font-weight: 700;
-  color: #7b5e38;
-  font-family: 'Playfair Display', serif;
-  line-height: 1.2;
-  margin: 4px 0 2px;
-}
-
-.time .small {
-  font-size: 14px;
-  font-weight: 400;
-  color: #8a7a64;
-}
-
-.nakshatra {
-  font-size: 14px;
-  color: #6d5c48;
-  font-style: italic;
-}
-
-.venue {
+.family-details {
   text-align: center;
-  margin: 18px 0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.venue strong {
-  color: #7b5e38;
-  display: block;
-  margin-bottom: 3px;
+.family-details strong { color: #8b6b4d; }
+
+/* Wedding Section */
+.wedding-section {
+  padding: 50px 0;
+  background: white;
+  position: relative;
 }
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #6d4f34;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title.light { color: white; }
+
+.details-card {
+  background: #faf3ea;
+  padding: 40px 20px;
+  border-radius: 50px 10px 50px 10px;
+}
+
+.date-block { text-align: center; }
+.day { font-size: 16px; letter-spacing: 3px; color: #9a7b5c; }
+.date { font-size: 32px; font-weight: 700; color: #6d4f34; margin: 10px 0; }
+.time { font-size: 48px; font-weight: 800; color: #8b6b4d; display: block; }
+.time-note { font-size: 14px; color: #9a7b5c; }
+
+.astro-info {
+  padding: 15px 0;
+  border-top: 1px solid #e8d9c8;
+  border-bottom: 1px solid #e8d9c8;
+  margin: 20px 0;
+}
+
+.venue-block { text-align: center; }
+.venue-block i { font-size: 24px; color: #8b6b4d; }
+.venue-block h3 { font-size: 20px; margin: 10px 0 5px; }
 
 .dinner-card {
   background: #f9f1e7;
-  padding: 16px 12px;
-  border-radius: 30px 6px 30px 6px;
-  margin: 20px 0;
-  text-align: center;
+  padding: 20px;
+  border-radius: 40px 8px 40px 8px;
+  margin: 30px 0;
+  border-left: 5px solid #8b6b4d;
 }
 
 .dinner-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: #7b5e38;
-  margin-bottom: 4px;
-}
-
-.dinner-info {
-  font-size: 14px;
+  font-size: 22px;
+  color: #6d4f34;
+  margin-bottom: 8px;
 }
 
 .map-container {
-  width: 100%;
-  height: 180px;
-  border-radius: 30px 6px 30px 6px;
+  border-radius: 40px 8px 40px 8px;
   overflow: hidden;
-  margin: 18px 0 14px;
-  box-shadow: 0 8px 15px -8px rgba(0,0,0,0.2);
+  height: 200px;
+  margin: 30px 0 20px;
 }
 
 .map-container iframe {
   width: 100%;
   height: 100%;
-  border: 0;
 }
 
 .direction-btn {
   display: inline-block;
-  background: #7b5e38;
+  background: #6d4f34;
   color: white;
+  padding: 14px 35px;
+  border-radius: 40px 8px 40px 8px;
   text-decoration: none;
-  padding: 12px 30px;
-  border-radius: 40px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  margin-top: 4px;
 }
 
 /* Countdown Section */
 .countdown-section {
-  background: #f9f2e8;
-  padding: 24px 16px;
+  padding: 50px 0;
+  background: linear-gradient(135deg, #6d4f34, #8b6b4d);
 }
 
 .countdown-grid {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.count-box {
-  background: white;
-  min-width: 70px;
-  padding: 12px 6px;
-  border-radius: 20px 4px 20px 4px;
+.count-item {
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 30px 5px 30px 5px;
+  min-width: 100px;
   text-align: center;
-  font-size: 12px;
-  font-weight: 500;
-  color: #5f513f;
-  box-shadow: 0 4px 8px -4px rgba(0,0,0,0.1);
+  color: white;
 }
 
-.count-box span {
+.count-item span {
   display: block;
+  font-size: 36px;
+  font-weight: 800;
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 700;
-  color: #7b5e38;
-  line-height: 1;
-  margin-bottom: 4px;
 }
 
 /* Portraits Section */
 .portraits-section {
-  padding: 28px 16px;
+  padding: 50px 0;
+  position: relative;
 }
 
-.portrait-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  align-items: center;
+.portraits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .portrait-card {
-  width: 240px;
   text-align: center;
 }
 
-.image-frame {
-  width: 100%;
+.image-wrapper {
   border-radius: 40px 8px 40px 8px;
   overflow: hidden;
-  box-shadow: 0 18px 25px -12px #5a4a36;
-  transition: transform 0.4s ease;
+  box-shadow: 0 20px 25px -10px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
 }
 
-.image-frame img {
+.portrait-img {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.5s ease, filter 0.3s;
-  filter: sepia(12%);
+  transition: 0.4s;
 }
 
-.portrait-card:hover .image-frame {
-  transform: translateY(-6px) rotate(1deg);
-}
-
-.portrait-card:hover img {
-  transform: scale(1.06);
-  filter: sepia(0%);
+.portrait-card:hover .portrait-img {
+  transform: scale(1.05);
 }
 
 .portrait-name {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: #7b5e38;
-  margin-top: 10px;
+  font-size: 18px;
+  color: #6d4f34;
+}
+
+.portrait-role {
+  font-size: 14px;
+  color: #9a7b5c;
 }
 
 /* Footer */
-footer {
-  background: #e3d5c4;
+.footer {
+  background: #4a3a2a;
+  color: white;
+  padding: 40px 0;
   text-align: center;
-  padding: 20px 16px;
-  font-size: 16px;
-  font-style: italic;
-  border-radius: 30px 30px 0 0;
 }
 
-/* Desktop */
-@media (min-width: 640px) {
-  .portrait-grid {
-    flex-direction: row;
-    gap: 40px;
-  }
-  
-  .countdown-grid {
-    gap: 20px;
-  }
-  
-  .map-container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.blessing {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.family-name {
+  font-size: 18px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .couple-name { font-size: 28px; }
+  .portraits-grid { grid-template-columns: 1fr; max-width: 350px; }
+  .countdown-grid { gap: 10px; }
+  .count-item { min-width: 70px; padding: 15px; }
+  .count-item span { font-size: 28px; }
+  .ganesha-img { width: 50px; }
+  .ganesha-corner.small .ganesha-small { width: 40px; }
+}
+
+@media (max-width: 480px) {
+  .time { font-size: 40px; }
+  .date { font-size: 26px; }
 }
 
 #bg-music { display: none; }

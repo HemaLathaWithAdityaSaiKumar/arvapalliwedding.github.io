@@ -1,4 +1,4 @@
-// script.js
+// script.js - Mobile-First with Touch Optimization
 
 (function() {
   
@@ -19,32 +19,87 @@
     });
   }
   
-  // Countdown
+  // Countdown Timer
   const weddingDate = new Date('2026-03-08T02:38:00+05:30').getTime();
   
-  const days = document.getElementById('days');
-  const hours = document.getElementById('hours');
-  const minutes = document.getElementById('minutes');
-  const seconds = document.getElementById('seconds');
+  const daysEl = document.getElementById('days');
+  const hoursEl = document.getElementById('hours');
+  const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
   
-  if (days && hours && minutes && seconds) {
+  if (daysEl && hoursEl && minutesEl && secondsEl) {
     function updateCountdown() {
       const now = Date.now();
-      const dist = weddingDate - now;
+      const distance = weddingDate - now;
       
-      if (dist < 0) {
-        days.textContent = hours.textContent = minutes.textContent = seconds.textContent = '00';
+      if (distance < 0) {
+        daysEl.textContent = '00';
+        hoursEl.textContent = '00';
+        minutesEl.textContent = '00';
+        secondsEl.textContent = '00';
         return;
       }
       
-      days.textContent = String(Math.floor(dist / (1000*60*60*24))).padStart(2,'0');
-      hours.textContent = String(Math.floor((dist/(1000*60*60))%24)).padStart(2,'0');
-      minutes.textContent = String(Math.floor((dist/(1000*60))%60)).padStart(2,'0');
-      seconds.textContent = String(Math.floor((dist/1000)%60)).padStart(2,'0');
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      daysEl.textContent = String(days).padStart(2, '0');
+      hoursEl.textContent = String(hours).padStart(2, '0');
+      minutesEl.textContent = String(minutes).padStart(2, '0');
+      secondsEl.textContent = String(seconds).padStart(2, '0');
     }
     
     updateCountdown();
     setInterval(updateCountdown, 1000);
   }
+  
+  // Touch-optimized flip for mobile
+  const portraitCards = document.querySelectorAll('.portrait-card');
+  
+  portraitCards.forEach(card => {
+    let isFlipped = false;
+    
+    // For touch devices
+    card.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      const inner = this.querySelector('.portrait-inner');
+      
+      if (!isFlipped) {
+        inner.style.transform = 'rotateY(180deg)';
+        isFlipped = true;
+      } else {
+        inner.style.transform = 'rotateY(0deg)';
+        isFlipped = false;
+      }
+    });
+    
+    // For mouse devices (desktop)
+    card.addEventListener('mouseenter', function() {
+      if (window.innerWidth > 768) {
+        const inner = this.querySelector('.portrait-inner');
+        inner.style.transform = 'rotateY(180deg)';
+      }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      if (window.innerWidth > 768) {
+        const inner = this.querySelector('.portrait-inner');
+        inner.style.transform = 'rotateY(0deg)';
+        isFlipped = false;
+      }
+    });
+  });
+  
+  // Reset flip state on window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      portraitCards.forEach(card => {
+        const inner = card.querySelector('.portrait-inner');
+        inner.style.transform = 'rotateY(0deg)';
+      });
+    }
+  });
   
 })();

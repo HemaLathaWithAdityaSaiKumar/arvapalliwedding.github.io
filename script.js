@@ -22,7 +22,7 @@ if (enterBtn && entryScreen) {
 
 /* COUNTDOWN */
 
-const weddingDate = new Date("2026-03-07T02:38:00+05:30").getTime();
+const weddingDate = new Date("2026-03-08T02:38:00+05:30").getTime();
 
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");

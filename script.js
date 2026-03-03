@@ -6,15 +6,28 @@
   const entryScreen = document.getElementById('entry-screen');
   const enterBtn = document.getElementById('enter-btn');
   const bgMusic = document.getElementById('bg-music');
+  const body = document.body;
+  
+  // Initially prevent scrolling on main content
+  body.classList.add('entry-active');
   
   if (bgMusic) bgMusic.volume = 0.2;
   
   if (enterBtn && entryScreen) {
     enterBtn.addEventListener('click', function() {
       if (bgMusic) bgMusic.play().catch(() => {});
+      
+      // Hide entry screen
       entryScreen.classList.add('hide');
+      
+      // Allow scrolling on main content
+      body.classList.remove('entry-active');
+      body.classList.add('main-active');
+      
       setTimeout(() => {
-        if (entryScreen.parentNode) entryScreen.style.display = 'none';
+        if (entryScreen.parentNode) {
+          entryScreen.style.display = 'none';
+        }
       }, 500);
     });
   }

@@ -10,39 +10,41 @@
 </head>
 
 <body>
-<audio id="bg-music" loop autoplay>
+
+<!-- ENTRY SCREEN -->
+<div id="entry-screen">
+  <div class="entry-content">
+    <h2>Welcome</h2>
+    <button id="enter-btn">Enter Invitation</button>
+  </div>
+</div>
+
+<audio id="bg-music" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<button id="music-toggle">❚❚</button>
 <!-- HERO -->
 <section class="hero">
-
   <div class="hero-inner">
 
-    <!-- GANESH -->
     <div class="ganesha-wrapper">
       <img src="ganesh.webp" alt="Lord Ganesha">
     </div>
 
-    <!-- INVITATION TITLE -->
     <div class="invitation-title">
       Arvapalli’s Invitation
     </div>
 
-    <!-- NAMES -->
     <h1 class="main-names">
       Hemalatha <span>&</span> Aditya Sai Kumar
     </h1>
 
-    <!-- TELUGU -->
     <p class="telugu">
       శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు<br><br>
       మా ప్రియమైన కుమార్తె వివాహ మహోత్సవమునకు<br>
       మీరు విచ్చేసి వధూవరులను ఆశీర్వదించవలసిందిగా మనవి.
     </p>
 
-    <!-- FAMILY -->
     <div class="family-details">
       <p>Daughter of</p>
       <p><strong>Srinivasa Rao</strong> & <strong>Ratna Kumari</strong></p>
@@ -50,97 +52,62 @@
     </div>
 
   </div>
-
 </section>
 
 <!-- CEREMONY -->
 <section class="details">
   <h3>Wedding Ceremony</h3>
-
   <p>
-  On the auspicious occasion<br>
-  of Saturday, March 7, 2026<br>
-  at <strong>02:38 A.M.</strong><br>
-  (Early hours of Sunday)
-</p>
-
-  <p>
-    Swathi Nakshatra Yukta Dhanur Lagna
+    On Saturday, March 7, 2026<br>
+    at <strong>02:38 A.M.</strong><br>
+    (Early hours of Sunday)
   </p>
-
+  <p>Swathi Nakshatra Yukta Dhanur Lagna</p>
   <p>
     Sri Vasavi Arya Vysya Kalyana Mandapam<br>
     Valaparla Village, Martur (Mandal), Bapatla District
   </p>
 </section>
 
+<!-- DINNER -->
 <section class="dinner-section">
-
   <div class="dinner-card">
-
     <div class="divider"></div>
-
-    <h3 class="dinner-heading">విందు</h3>
-
+    <h3 class="dinner-heading">భోజన కార్యక్రమం</h3>
     <p class="dinner-details">
       Dinner will be served on<br>
       <strong>Saturday, March 7, 2026</strong><br>
       from <strong>08:00 P.M. onwards</strong><br>
       at the same venue.
     </p>
-
     <div class="divider"></div>
-
   </div>
-
 </section>
 
 <!-- COUNTDOWN -->
 <section class="countdown-section">
-
   <h3 class="countdown-title">Countdown to the Wedding</h3>
-
   <div class="countdown">
-    <div class="time-box">
-      <span id="days">00</span>
-      <p>Days</p>
-    </div>
-
-    <div class="time-box">
-      <span id="hours">00</span>
-      <p>Hours</p>
-    </div>
-
-    <div class="time-box">
-      <span id="minutes">00</span>
-      <p>Minutes</p>
-    </div>
-
-    <div class="time-box">
-      <span id="seconds">00</span>
-      <p>Seconds</p>
-    </div>
+    <div class="time-box"><span id="days">00</span><p>Days</p></div>
+    <div class="time-box"><span id="hours">00</span><p>Hours</p></div>
+    <div class="time-box"><span id="minutes">00</span><p>Minutes</p></div>
+    <div class="time-box"><span id="seconds">00</span><p>Seconds</p></div>
   </div>
-
 </section>
 
 <!-- PORTRAITS -->
 <section class="portrait-section">
-
   <h3 class="portrait-title">The Bride & The Groom</h3>
-
   <div class="portrait-wrapper">
     <div class="portrait">
       <img src="bride.jpeg" alt="Bride">
       <p class="portrait-name">Hemalatha</p>
     </div>
-
     <div class="portrait">
       <img src="groom.jpeg" alt="Groom">
       <p class="portrait-name">Aditya Sai Kumar</p>
     </div>
   </div>
-
 </section>
 
 <footer>
@@ -148,6 +115,5 @@
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>

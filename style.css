@@ -1,4 +1,4 @@
-/* style.css - FIXED COUNTDOWN UI, PERFECT MOBILE DISPLAY */
+/* style.css - COMPLETE WITH PERFECT COUNTDOWN */
 
 * {
   margin: 0;
@@ -354,28 +354,33 @@ html, body {
   text-align: center;
 }
 
-/* ===== COUNTDOWN - FIXED UI ===== */
+/* ===== COUNTDOWN - PERFECT FOR MOBILE ===== */
 .countdown-section {
   padding: 60px 0;
   background: linear-gradient(135deg, #6d4f34, #8b6b4d);
+  width: 100%;
 }
 
 .countdown-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 15px;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .count-item {
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(5px);
-  padding: 20px 10px;
+  padding: 20px 15px;
   border-radius: 40px 8px 40px 8px;
   text-align: center;
   color: white;
   border: 2px solid rgba(255,255,255,0.3);
+  flex: 1 1 120px;
+  min-width: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,8 +392,9 @@ html, body {
   font-weight: 900;
   font-family: 'Playfair Display', serif;
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   color: white;
+  display: block;
 }
 
 .count-label {
@@ -537,49 +543,107 @@ html, body {
 }
 
 /* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  .countdown-grid {
+    gap: 12px;
+    padding: 0 15px;
+  }
+  
+  .count-item {
+    flex: 1 1 100px;
+    min-width: 80px;
+    padding: 15px 8px;
+  }
+  
+  .count-item span {
+    font-size: 40px;
+  }
+  
+  .count-label {
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 480px) {
+  /* Entry screen */
   .entry-telugu { font-size: 32px; }
   .entry-english { font-size: 22px; }
   .btn-telugu { font-size: 26px; }
+  .btn-english { font-size: 16px; }
   .ganesha-corner-img { width: 70px; height: 70px; }
   .ganesha-img { width: 60px; }
   
+  /* Hero section */
   .couple-name { font-size: 40px; }
   .telugu-text { font-size: 20px; }
   .family-names { font-size: 22px; }
   
+  /* Wedding section */
   .time { font-size: 60px; }
   .date { font-size: 40px; }
+  .section-title { font-size: 36px; }
   
-  /* Countdown mobile fix */
+  /* Countdown - PERFECT MOBILE */
+  .countdown-section {
+    padding: 50px 0;
+  }
+  
   .countdown-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    gap: 10px;
+    padding: 0 12px;
   }
   
   .count-item {
+    flex: 1 1 70px;
+    min-width: 70px;
     padding: 15px 5px;
+    border-radius: 30px 6px 30px 6px;
   }
   
   .count-item span {
-    font-size: 36px;
+    font-size: 32px;
+    margin-bottom: 5px;
   }
   
   .count-label {
     font-size: 12px;
+    letter-spacing: 0.5px;
   }
   
+  /* Portraits */
   .portrait-card { height: 450px; }
+  .portrait-overlay h3 { font-size: 24px; }
   .portrait-back h3 { font-size: 28px; }
-  .back-name { font-size: 22px; }
   
+  /* Footer */
   .blessing { font-size: 30px; }
   .family-name { font-size: 24px; }
-  .footer-note { font-size: 20px; }
 }
 
-/* ===== DESKTOP ===== */
-@media (min-width: 768px) {
+/* Very Small Mobile */
+@media (max-width: 360px) {
+  .countdown-grid {
+    gap: 8px;
+    padding: 0 10px;
+  }
+  
+  .count-item {
+    flex: 1 1 60px;
+    min-width: 60px;
+    padding: 12px 3px;
+  }
+  
+  .count-item span {
+    font-size: 26px;
+  }
+  
+  .count-label {
+    font-size: 10px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
   .couple-name .bride,
   .couple-name .groom {
     display: inline-block;
@@ -593,21 +657,11 @@ html, body {
   }
   .portraits-grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 1000px;
+    max-width: 900px;
     gap: 50px;
   }
   .portrait-card {
     height: 550px;
-  }
-}
-
-/* ===== VERY SMALL DEVICES ===== */
-@media (max-width: 360px) {
-  .count-item span {
-    font-size: 30px;
-  }
-  .count-label {
-    font-size: 10px;
   }
 }
 

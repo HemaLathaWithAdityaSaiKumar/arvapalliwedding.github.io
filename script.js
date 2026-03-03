@@ -1,21 +1,28 @@
-// script.js
+// script.js - SIMPLE AND RELIABLE
 
 (function() {
   
-  // Entry Screen
+  // Get elements
   const entryScreen = document.getElementById('entry-screen');
   const enterBtn = document.getElementById('enter-btn');
   const bgMusic = document.getElementById('bg-music');
   
   if (bgMusic) bgMusic.volume = 0.2;
   
+  // Simple entry button click handler
   if (enterBtn && entryScreen) {
-    enterBtn.addEventListener('click', function() {
-      if (bgMusic) bgMusic.play().catch(() => {});
-      entryScreen.classList.add('hide');
-      setTimeout(() => {
-        if (entryScreen.parentNode) entryScreen.style.display = 'none';
-      }, 500);
+    enterBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Try to play music
+      if (bgMusic) {
+        bgMusic.play().catch(() => {});
+      }
+      
+      // Simply hide the entry screen
+      entryScreen.style.display = 'none';
+      
+      // No need for complex class management
     });
   }
   
@@ -55,7 +62,7 @@
     setInterval(updateCountdown, 1000);
   }
   
-  // Touch flip for mobile
+  // Simple flip for mobile
   const portraitCards = document.querySelectorAll('.portrait-card');
   
   portraitCards.forEach(card => {

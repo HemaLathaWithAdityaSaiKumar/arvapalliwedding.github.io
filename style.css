@@ -1,6 +1,4 @@
-/* ================= style.css ================= */
-/* Mobile-first, minimal whitespace, special fonts, enhanced portrait animations */
-
+/* style.css - ZERO whitespace, ultra compact mobile */
 * {
   margin: 0;
   padding: 0;
@@ -8,332 +6,243 @@
 }
 
 body {
-  background: #fdf7f0;  /* warm sand */
-  color: #2b241b;
+  background: #fcf7f0;
+  color: #2a241c;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.3;
 }
 
-/* Minimal section padding */
-section {
-  padding: 2.5rem 1rem;
-}
-
-/* Typography with special fonts */
-h1, h2, h3, .main-names, .couple-title, .invitation-title, .portrait-name {
-  font-family: 'Playfair Display', serif;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.telugu, .family-details, .dinner-block h4, #enter-btn, .telugu-welcome {
-  font-family: 'Noto Serif Telugu', serif;
-}
-
-/* ================= ENTRY SCREEN ================= */
+/* ENTRY - minimal */
 #entry-screen {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 30% 30%, #f3e9db, #dacbb4);
+  background: #dacbb4;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  transition: opacity 0.8s ease, visibility 0.8s;
-  padding: 1rem;
+  transition: 0.4s;
+  padding: 12px;
 }
 #entry-screen.hide {
   opacity: 0;
   visibility: hidden;
 }
 .entry-card {
-  background: rgba(255, 248, 235, 0.92);
-  backdrop-filter: blur(8px);
-  padding: 2rem 1.5rem;
-  border-radius: 48px 16px 48px 16px;
-  width: 100%;
-  max-width: 360px;
+  background: #fffaf0;
+  padding: 24px 20px;
+  border-radius: 32px 8px 32px 8px;
+  width: 280px;
   text-align: center;
-  box-shadow: 0 30px 40px -25px #5f4d32, 0 0 0 1px #e9dac6 inset;
-}
-.welcome-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #7b623e;
 }
 .telugu-welcome {
-  font-size: 1.6rem;
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 24px;
   font-weight: 600;
-  color: #7b623e;
-  margin: 0.2rem 0 0.5rem;
+  color: #7b5f3a;
 }
 .underline {
-  width: 40px;
+  width: 32px;
   height: 2px;
   background: #c8aa73;
-  margin: 0.8rem auto 1.5rem;
+  margin: 10px auto 18px;
 }
 #enter-btn {
   width: 100%;
-  background: #7b623e;
+  background: #7b5f3a;
   border: none;
-  color: #fff9ef;
-  font-size: 1.3rem;
+  color: white;
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 40px 6px 40px 6px;
   font-weight: 600;
-  padding: 0.8rem 0.5rem;
-  border-radius: 50px 12px 50px 12px;
-  box-shadow: 0 8px 12px -5px #4f3f28;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-#enter-btn:active {
-  transform: scale(0.98);
-  background: #695437;
 }
 
-/* ================= HERO (tight) ================= */
+/* HERO - no padding */
 .hero {
-  padding: 2.8rem 1rem 2rem;
+  padding: 24px 12px 16px;
   text-align: center;
 }
-.ganesha-wrapper img {
-  width: 85px;
-  margin-bottom: 0.2rem;
-  opacity: 0.85;
+.ganesha {
+  width: 70px;
+  margin-bottom: 4px;
 }
 .invitation-title {
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #a5844b;
-  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #9b814d;
+  margin-bottom: 4px;
 }
 .main-names {
-  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
   font-weight: 800;
-  line-height: 1.2;
-  margin: 0.5rem 0 1rem;
+  line-height: 1.1;
+  margin: 4px 0 8px;
 }
 .main-names span {
-  font-weight: 300;
-  color: #a5844b;
-  font-size: 1.8rem;
+  color: #9b814d;
+  font-size: 24px;
 }
 .telugu {
-  background: rgba(210, 180, 140, 0.08);
-  padding: 1.2rem 0.8rem;
-  border-radius: 40px 8px 40px 8px;
-  font-size: 0.95rem;
-  margin: 1rem 0 0.8rem;
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 13px;
+  background: #f3ede3;
+  padding: 12px 8px;
+  border-radius: 28px 4px 28px 4px;
+  margin: 8px 0;
 }
-.family-details p {
-  font-size: 0.9rem;
-  margin: 0.2rem;
+.family {
+  font-size: 13px;
+  font-weight: 400;
 }
 
-/* ================= CEREMONY ================= */
+/* CEREMONY - tight */
 .details {
   background: white;
-  border-radius: 40px 40px 20px 20px;
-  padding: 2.2rem 1rem;
-  margin: 0 0 1rem;
-  box-shadow: 0 4px 20px -10px rgba(80,60,30,0.15);
+  padding: 24px 12px;
+  margin: 4px 0;
+  border-radius: 28px 28px 12px 12px;
 }
 .details h3 {
-  font-size: 1.8rem;
-  color: #7b623e;
-  margin-bottom: 0.8rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #7b5f3a;
+  margin-bottom: 8px;
 }
-.details p {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+.datetime {
+  font-size: 14px;
+  margin-bottom: 4px;
 }
-.dinner-block {
+.venue {
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.dinner {
   background: #faf2e6;
-  padding: 1.2rem 1rem;
-  border-radius: 30px 6px 30px 6px;
-  margin: 1.5rem 0;
-  border-left: 4px solid #c9af82;
+  padding: 12px;
+  border-radius: 24px 4px 24px 4px;
+  margin: 16px 0;
 }
-.dinner-block h4 {
-  font-size: 1.3rem;
-  color: #7b623e;
-  margin-bottom: 0.3rem;
+.dinner-title {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 18px;
+  color: #7b5f3a;
 }
-.map-wrapper {
-  width: 100%;
-  border-radius: 30px 8px 30px 8px;
+.map {
+  border-radius: 24px 4px 24px 4px;
   overflow: hidden;
-  box-shadow: 0 8px 18px -8px rgba(0,0,0,0.15);
-  margin: 1.5rem 0 1rem;
+  height: 160px;
+  margin: 12px 0;
 }
-.map-wrapper iframe {
+.map iframe {
   width: 100%;
-  height: 200px;
-  display: block;
+  height: 100%;
 }
-.map-btn {
+.dir-btn {
   display: inline-block;
-  background: #7b623e;
+  background: #7b5f3a;
   color: white;
-  font-weight: 500;
-  padding: 0.8rem 2rem;
+  padding: 10px 24px;
   border-radius: 40px;
   text-decoration: none;
-  font-size: 0.95rem;
-  box-shadow: 0 5px 10px -4px #5e4e33;
-  transition: 0.2s;
-}
-.map-btn:active {
-  transform: translateY(-2px);
-  background: #6d593b;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-/* ================= COUNTDOWN (compact) ================= */
-.countdown-section {
-  background: #faf4ea;
-  padding: 2.2rem 1rem;
-  text-align: center;
-}
-.countdown-section h3 {
-  font-size: 1.7rem;
-  color: #5f4d30;
-  margin-bottom: 1.2rem;
-}
+/* COUNTDOWN - ultra compact */
 .countdown {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.8rem;
-  max-width: 350px;
-  margin: 0 auto;
+  background: #faf4ea;
+  padding: 18px 12px;
+  text-align: center;
 }
-.time-box {
-  background: white;
-  padding: 1rem 0.2rem;
-  border-radius: 24px 4px 24px 4px;
-  box-shadow: 0 6px 12px -8px #b29e7c;
+.countdown h3 {
+  font-size: 22px;
+  color: #7b5f3a;
+  margin-bottom: 8px;
 }
-.time-box span {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #7b623e;
-  display: block;
-  font-family: 'Playfair Display', serif;
+.counter {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
-.time-box p {
-  font-size: 0.7rem;
+.counter div {
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #534c3f;
+  color: #5f4d30;
+}
+.counter span {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #7b5f3a;
+  display: block;
+  line-height: 1;
 }
 
-/* ================= PORTRAITS (enhanced animation) ================= */
+/* PORTRAITS - animated */
 .portraits {
-  background: #fdf7f0;
-  padding: 2.5rem 1rem 3rem;
+  padding: 24px 12px;
+  background: #fcf7f0;
 }
-.couple-title {
-  font-size: 2rem;
-  color: #7b623e;
-  margin-bottom: 2rem;
+.portraits h3 {
+  font-size: 24px;
+  color: #7b5f3a;
   text-align: center;
+  margin-bottom: 16px;
 }
 .portrait-grid {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 20px;
   align-items: center;
 }
-.portrait-panel {
+.portrait {
+  width: 220px;
   text-align: center;
-  width: 100%;
 }
-.portrait-inner {
-  position: relative;
-  max-width: 300px;
-  margin: 0 auto;
-  border-radius: 40px 8px 40px 8px;
-  overflow: hidden;
-  box-shadow: 0 20px 30px -15px #3f3322;
-  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  border: 2px solid #f0e1cf;
-}
-.portrait-inner img {
+.portrait img {
   width: 100%;
   height: auto;
-  display: block;
-  transition: transform 0.8s ease, filter 0.5s ease;
-  filter: grayscale(20%) sepia(10%);
+  border-radius: 32px 4px 32px 4px;
+  box-shadow: 0 12px 20px -12px #3f3322;
+  transition: 0.3s;
+  filter: sepia(8%);
 }
-.portrait-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(145deg, rgba(200, 170, 120, 0.1), rgba(100, 70, 30, 0.2));
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
+.portrait img:hover {
+  transform: scale(1.02) rotate(1deg);
+  filter: sepia(0%);
+  box-shadow: 0 18px 25px -12px #1f160e;
 }
-/* Cinematic 3D animation */
-.portrait-panel:hover .portrait-inner {
-  transform: perspective(800px) rotateY(2deg) rotateX(1deg) scale(1.02);
-  box-shadow: 0 30px 40px -15px #2b1f12;
-}
-.portrait-panel:hover .portrait-inner img {
-  transform: scale(1.05);
-  filter: grayscale(0%) sepia(0%);
-}
-.portrait-panel:hover .portrait-overlay {
-  opacity: 0.3;
-}
-.portrait-name {
+.name {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 18px;
   font-weight: 700;
-  color: #7b623e;
-  margin-top: 0.8rem;
-  letter-spacing: 0.5px;
-  text-shadow: 0 2px 4px rgba(150, 120, 70, 0.1);
+  color: #7b5f3a;
+  margin-top: 6px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
-  text-align: center;
-  padding: 1.8rem 1rem 2.2rem;
   background: #e8ddcf;
-  color: #4f4435;
-  font-size: 1rem;
+  padding: 16px;
+  text-align: center;
   font-style: italic;
-  border-radius: 30px 30px 0 0;
-  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  border-radius: 24px 24px 0 0;
 }
 
-/* ================= DESKTOP TWEAKS (minimal) ================= */
-@media (min-width: 768px) {
-  .main-names {
-    font-size: 2.8rem;
-  }
-  .countdown {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 500px;
-    gap: 1rem;
-  }
+/* DESKTOP */
+@media (min-width: 600px) {
   .portrait-grid {
     flex-direction: row;
-    gap: 3rem;
+    gap: 30px;
   }
-  .portrait-inner {
-    max-width: 280px;
-  }
-  .map-wrapper {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  .portrait {
+    width: 200px;
   }
 }
 
-/* Hide audio */
 #bg-music { display: none; }

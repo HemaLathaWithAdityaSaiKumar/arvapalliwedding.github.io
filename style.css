@@ -1,4 +1,4 @@
-/* style.css - LARGE TEXT, CLEAR DESIGN, MOBILE OPTIMIZED */
+/* style.css - BIG TEXT, CLEAR, MOBILE OPTIMIZED */
 
 * {
   margin: 0;
@@ -11,7 +11,7 @@ body {
   background: #fffbf5;
   color: #2c2419;
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .container {
@@ -29,12 +29,12 @@ body {
 }
 
 .ganesha-img {
-  width: 60px;
+  width: 70px;
   height: auto;
   filter: drop-shadow(0 4px 8px rgba(109,79,52,0.3));
 }
 
-/* ===== ENTRY SCREEN - LARGE TEXT ===== */
+/* ===== ENTRY SCREEN ===== */
 #entry-screen {
   position: fixed;
   top: 0;
@@ -57,9 +57,9 @@ body {
 
 .entry-card {
   background: #fffaf0;
-  padding: 40px 25px;
-  border-radius: 50px 15px 50px 15px;
-  max-width: 400px;
+  padding: 45px 30px;
+  border-radius: 60px 20px 60px 20px;
+  max-width: 450px;
   width: 100%;
   position: relative;
   box-shadow: 0 30px 40px rgba(0,0,0,0.3);
@@ -76,15 +76,15 @@ body {
 }
 
 .ganesha-corner-img {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .entry-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: #6d4f34;
   margin: 10px 0 5px;
@@ -92,65 +92,65 @@ body {
 
 .entry-english {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-size: 22px;
   color: #9a7b5c;
   font-weight: 500;
 }
 
 .entry-decoration {
-  width: 60px;
+  width: 70px;
   height: 3px;
   background: #d4b48c;
-  margin: 20px auto;
+  margin: 25px auto;
 }
 
 .entry-btn {
   width: 100%;
   background: #6d4f34;
   border: none;
-  padding: 16px;
-  border-radius: 40px 10px 40px 10px;
+  padding: 18px;
+  border-radius: 50px 12px 50px 12px;
   color: white;
   cursor: pointer;
 }
 
 .btn-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 600;
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .btn-english {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.9;
   letter-spacing: 1px;
 }
 
-/* ===== HERO SECTION - BIG TEXT ===== */
+/* ===== HERO SECTION ===== */
 .hero {
-  padding: 60px 0 40px;
+  padding: 70px 0 50px;
   position: relative;
   background: #fffbf5;
 }
 
 .invitation-badge {
   text-align: center;
-  font-size: 14px;
-  letter-spacing: 4px;
+  font-size: 16px;
+  letter-spacing: 5px;
   color: #9a7b5c;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .couple-name {
   font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  font-weight: 800;
+  font-size: 42px;
+  font-weight: 900;
   text-align: center;
   line-height: 1.3;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .couple-name .bride { 
@@ -160,9 +160,9 @@ body {
 
 .couple-name .ampersand { 
   color: #d4b48c; 
-  font-size: 32px; 
+  font-size: 38px; 
   display: block;
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 .couple-name .groom { 
@@ -172,68 +172,68 @@ body {
 
 .telugu-invitation {
   background: #faf3ea;
-  padding: 30px 20px;
-  border-radius: 50px 10px 50px 10px;
-  margin: 30px 0 25px;
+  padding: 35px 25px;
+  border-radius: 60px 12px 60px 12px;
+  margin: 35px 0 30px;
 }
 
 .telugu-text {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 2;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-weight: 500;
-}
-
-.telugu-text:last-child {
-  margin-bottom: 0;
 }
 
 .family-details {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 .family-card {
   background: #f5ede1;
-  padding: 20px;
-  border-radius: 30px 8px 30px 8px;
-  border-left: 5px solid #8b6b4d;
+  padding: 25px;
+  border-radius: 40px 10px 40px 10px;
+  border-left: 6px solid #8b6b4d;
 }
 
 .family-label {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: #8b6b4d;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 
 .family-names {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: #2c2419;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
-.mt-2 {
-  margin-top: 12px;
+.relation-tag {
+  font-size: 16px;
+  color: #8b6b4d;
+  font-weight: 500;
+  margin-left: 8px;
 }
 
 /* ===== WEDDING SECTION ===== */
 .wedding-section {
-  padding: 50px 0;
+  padding: 60px 0;
   background: white;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-size: 36px;
   color: #6d4f34;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   font-weight: 800;
 }
 
@@ -241,45 +241,45 @@ body {
 
 .details-card {
   background: #faf3ea;
-  padding: 40px 20px;
-  border-radius: 50px 10px 50px 10px;
+  padding: 45px 25px;
+  border-radius: 60px 12px 60px 12px;
 }
 
 .date-block { text-align: center; }
 .day { 
-  font-size: 18px; 
-  letter-spacing: 4px; 
+  font-size: 20px; 
+  letter-spacing: 5px; 
   color: #9a7b5c; 
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .date { 
-  font-size: 36px; 
-  font-weight: 800; 
+  font-size: 42px; 
+  font-weight: 900; 
   color: #6d4f34; 
-  margin: 10px 0; 
+  margin: 12px 0; 
 }
 .time { 
-  font-size: 56px; 
+  font-size: 64px; 
   font-weight: 900; 
   color: #8b6b4d; 
   display: block; 
   line-height: 1.1; 
 }
 .time-note { 
-  font-size: 16px; 
+  font-size: 18px; 
   color: #9a7b5c; 
   font-weight: 500;
-  margin-top: 5px;
+  margin-top: 8px;
   display: block;
 }
 
 .astro-info {
-  padding: 20px 0;
+  padding: 25px 0;
   border-top: 2px solid #e8d9c8;
   border-bottom: 2px solid #e8d9c8;
-  margin: 25px 0;
-  font-size: 18px;
+  margin: 30px 0;
+  font-size: 20px;
   text-align: center;
   font-weight: 600;
   color: #6d4f34;
@@ -287,80 +287,80 @@ body {
 
 .venue-block { text-align: center; }
 .venue-block i { 
-  font-size: 32px; 
+  font-size: 36px; 
   color: #8b6b4d; 
-  margin-bottom: 15px; 
+  margin-bottom: 20px; 
 }
 .venue-block h3 { 
-  font-size: 22px; 
+  font-size: 24px; 
   font-weight: 700;
-  margin: 0 0 8px; 
+  margin: 0 0 10px; 
   color: #2c2419;
 }
 .venue-block p { 
-  font-size: 18px; 
+  font-size: 20px; 
   color: #6d4f34;
   font-weight: 500;
 }
 
 .dinner-card {
   background: #f9f1e7;
-  padding: 25px 20px;
-  border-radius: 40px 10px 40px 10px;
-  margin: 35px 0;
+  padding: 30px 25px;
+  border-radius: 50px 12px 50px 12px;
+  margin: 40px 0;
   border-left: 6px solid #8b6b4d;
 }
 
 .dinner-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 26px;
+  font-size: 28px;
   color: #6d4f34;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 
 .dinner-details {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
 }
 
 .dinner-details i {
-  margin-right: 10px;
+  margin-right: 12px;
   color: #8b6b4d;
 }
 
 .map-container {
-  border-radius: 40px 10px 40px 10px;
+  border-radius: 50px 12px 50px 12px;
   overflow: hidden;
-  height: 220px;
-  margin: 30px 0 25px;
-  box-shadow: 0 15px 25px -10px rgba(0,0,0,0.3);
+  height: 250px;
+  margin: 35px 0 30px;
+  box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
 }
 
 .direction-btn {
   display: inline-block;
   background: #6d4f34;
   color: white;
-  padding: 18px 40px;
-  border-radius: 40px 10px 40px 10px;
+  padding: 20px 40px;
+  border-radius: 50px 12px 50px 12px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   width: 100%;
   text-align: center;
 }
 
 /* ===== COUNTDOWN ===== */
 .countdown-section {
-  padding: 50px 0;
+  padding: 60px 0;
   background: linear-gradient(135deg, #6d4f34, #8b6b4d);
 }
 
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 20px;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -368,8 +368,8 @@ body {
 .count-item {
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(5px);
-  padding: 20px 10px;
-  border-radius: 30px 8px 30px 8px;
+  padding: 25px 15px;
+  border-radius: 40px 10px 40px 10px;
   text-align: center;
   color: white;
   border: 2px solid rgba(255,255,255,0.3);
@@ -377,36 +377,36 @@ body {
 
 .count-item span {
   display: block;
-  font-size: 48px;
+  font-size: 56px;
   font-weight: 900;
   font-family: 'Playfair Display', serif;
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .count-label {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
 }
 
 /* ===== PORTRAITS ===== */
 .portraits-section {
-  padding: 50px 0;
+  padding: 60px 0;
   background: #fffbf5;
 }
 
 .portraits-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
-  max-width: 400px;
+  gap: 40px;
+  max-width: 450px;
   margin: 0 auto;
 }
 
 .portrait-card {
   perspective: 2000px;
-  height: 400px;
+  height: 450px;
 }
 
 .portrait-inner {
@@ -417,8 +417,8 @@ body {
   transition: transform 0.8s;
   transform-style: preserve-3d;
   cursor: pointer;
-  border-radius: 50px 12px 50px 12px;
-  box-shadow: 0 25px 35px -12px rgba(0,0,0,0.4);
+  border-radius: 60px 15px 60px 15px;
+  box-shadow: 0 30px 40px -15px rgba(0,0,0,0.4);
 }
 
 .portrait-card:hover .portrait-inner {
@@ -430,7 +430,7 @@ body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 50px 12px 50px 12px;
+  border-radius: 60px 15px 60px 15px;
   overflow: hidden;
 }
 
@@ -447,11 +447,11 @@ body {
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
   color: white;
-  padding: 25px 15px 15px;
+  padding: 30px 20px 20px;
 }
 
 .portrait-overlay h3 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -464,31 +464,31 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 20px;
+  padding: 35px 25px;
 }
 
 .portrait-back i {
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 55px;
+  margin-bottom: 25px;
   color: #ffd700;
 }
 
 .portrait-back h3 {
-  font-size: 26px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  margin-bottom: 20px;
   font-weight: 800;
 }
 
 .back-detail {
-  font-size: 18px;
+  font-size: 20px;
   opacity: 0.9;
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 .back-name {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 5px 0 10px;
+  margin: 8px 0 15px;
   color: #ffd700;
 }
 
@@ -496,26 +496,26 @@ body {
 .footer {
   background: #4a3a2a;
   color: white;
-  padding: 50px 0 40px;
+  padding: 60px 0 50px;
   text-align: center;
 }
 
 .blessing {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 32px;
+  margin-bottom: 25px;
   font-weight: 600;
 }
 
 .family-name {
-  font-size: 22px;
-  letter-spacing: 3px;
+  font-size: 24px;
+  letter-spacing: 4px;
   opacity: 0.9;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   font-weight: 500;
 }
 
 .footer-note {
-  font-size: 18px;
+  font-size: 20px;
   opacity: 0.8;
   font-style: italic;
 }
@@ -523,7 +523,7 @@ body {
 /* ===== DESKTOP ===== */
 @media (min-width: 768px) {
   .couple-name {
-    font-size: 48px;
+    font-size: 56px;
   }
   .couple-name .bride,
   .couple-name .groom {
@@ -531,20 +531,27 @@ body {
   }
   .couple-name .ampersand {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
   }
   .family-details {
     flex-direction: row;
   }
   .portraits-grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 800px;
-    gap: 40px;
+    max-width: 900px;
+    gap: 50px;
   }
   .countdown-grid {
     grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
   }
 }
 
-/* ===== HIDE AUDIO ===== */
+@media (max-width: 480px) {
+  .time { font-size: 48px; }
+  .date { font-size: 32px; }
+  .count-item span { font-size: 42px; }
+  .portrait-card { height: 400px; }
+}
+
 #bg-music { display: none; }

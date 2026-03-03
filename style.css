@@ -1,4 +1,5 @@
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -7,171 +8,104 @@ body {
   color: #222;
 }
 
-/* ===============================
-   CINEMATIC ENTRY SCREEN
-================================= */
+/* ================= ENTRY ================= */
 
 #entry-screen {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #fdfaf5, #f2eadf);
+  inset: 0;
+  background: radial-gradient(circle at center, #fdfaf5 0%, #e8dcc8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
   overflow: hidden;
-  text-align: center;
 }
 
-/* Subtle animated background glow */
-#entry-screen::before {
-  content: "";
+.ambient-bg {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(168,124,31,0.15), transparent 70%);
-  animation: glowMove 8s ease-in-out infinite alternate;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(168,124,31,0.25), transparent 70%);
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  filter: blur(60px);
 }
 
-/* Content */
-.entry-content {
+.entry-card {
   position: relative;
-  z-index: 2;
-  animation: fadeSlide 1.5s ease forwards;
+  padding: 70px 90px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeInScale 1.5s ease forwards;
 }
 
-/* Welcome Text */
-.entry-content h2 {
+.welcome-text {
   font-family: 'Playfair Display', serif;
-  font-size: 3.2em;
-  margin-bottom: 50px;
-  color: #a87c1f;
-  letter-spacing: 1px;
-  position: relative;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  background: linear-gradient(90deg, #a87c1f, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 
-/* Subtle underline animation */
-.entry-content h2::after {
-  content: "";
-  display: block;
-  width: 0;
+.underline {
   height: 3px;
-  background: #a87c1f;
-  margin: 15px auto 0;
-  animation: lineExpand 1.5s ease forwards;
+  width: 0;
+  background: linear-gradient(90deg, #a87c1f, #d4af37);
+  margin: 20px auto 50px;
+  animation: expandLine 1.5s ease forwards;
 }
 
-/* Button */
 #enter-btn {
-  padding: 18px 45px;
-  font-size: 1.15em;
+  padding: 18px 50px;
+  font-size: 1.1rem;
   font-family: 'Playfair Display', serif;
-  border-radius: 40px;
+  border-radius: 50px;
   border: 2px solid #a87c1f;
   background: transparent;
   color: #a87c1f;
   cursor: pointer;
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Gold shimmer effect */
-#enter-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-  transition: 0.8s;
-}
-
-#enter-btn:hover::before {
-  left: 100%;
 }
 
 #enter-btn:hover {
-  background: #a87c1f;
+  background: linear-gradient(90deg, #a87c1f, #d4af37);
   color: white;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* Hide animation */
 #entry-screen.hide {
   animation: fadeOut 1s ease forwards;
 }
 
-/* Animations */
+/* ================= HERO ================= */
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes glowMove {
-  from {
-    transform: translate(-100px, -100px);
-  }
-  to {
-    transform: translate(100px, 100px);
-  }
-}
-
-@keyframes lineExpand {
-  from { width: 0; }
-  to { width: 80px; }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-/* HERO */
 .hero {
-  padding: 90px 20px 130px;
+  padding: 100px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
 
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
+.hero-inner { max-width: 900px; margin: auto; }
 
 .ganesha-wrapper img {
   width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 .invitation-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  font-weight: 600;
   color: #a87c1f;
   margin: 30px 0;
 }
 
 .main-names {
   font-family: 'Playfair Display', serif;
-  font-size: 3.3em;
+  font-size: clamp(2.2rem, 6vw, 3.3rem);
 }
 
 .main-names span { color: #c5a047; }
@@ -181,53 +115,13 @@ body {
   line-height: 1.9em;
 }
 
-.family-details { margin-top: 35px; }
-
-/* CEREMONY */
-.details {
+.details, .countdown-section {
   padding: 100px 20px;
   text-align: center;
   background: #ffffff;
-}
-
-/* DINNER */
-.dinner-section {
-  padding: 110px 20px;
-  background: #f7f1e8;
-  display: flex;
-  justify-content: center;
-}
-
-.dinner-card {
-  background: #ffffff;
-  max-width: 700px;
-  padding: 60px 40px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-}
-
-.dinner-heading {
-  font-family: 'Noto Serif Telugu', serif;
-  font-size: 1.9em;
-  color: #a87c1f;
-}
-
-.dinner-details { line-height: 1.9em; }
-
-.divider {
-  height: 2px;
-  width: 80px;
-  background: #a87c1f;
-  margin: 25px auto;
 }
 
 /* COUNTDOWN */
-.countdown-section {
-  padding: 100px 20px;
-  background: #fff;
-  text-align: center;
-}
 
 .countdown {
   display: flex;
@@ -240,6 +134,7 @@ body {
   background: #f7f1e8;
   padding: 25px 20px;
   border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 .time-box span {
@@ -248,30 +143,27 @@ body {
   color: #a87c1f;
 }
 
-/* PORTRAITS */
-.portrait-section {
-  padding: 120px 20px;
-  background: #fdfaf5;
-  text-align: center;
-}
-
-.portrait-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-.portrait img {
-  width: 300px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-}
-
+/* FOOTER */
 footer {
   padding: 60px;
   text-align: center;
   background: #ffffff;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes expandLine { to { width: 120px; } }
+
+@keyframes floatGlow {
+  from { transform: translate(-100px, -100px); }
+  to { transform: translate(100px, 100px); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
 }

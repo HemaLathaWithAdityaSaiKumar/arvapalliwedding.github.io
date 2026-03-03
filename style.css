@@ -241,97 +241,112 @@ body {
   letter-spacing: 1px;
 }
 
-/* ================= PORTRAITS ================= */
+/* ================= COUPLE SECTION ================= */
 
 .portraits {
-  padding: 100px 20px;
+  padding: 120px 20px;
   text-align: center;
-  background: #ffffff;
+  background: linear-gradient(to bottom, #ffffff, #fdfaf5);
+  overflow: hidden;
 }
 
-.portraits h3 {
+.couple-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: #a87c1f;
+  letter-spacing: 2px;
+  margin-bottom: 70px;
 }
 
-.portrait-container {
+.couple-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
-  margin-top: 60px;
+  position: relative;
+  gap: 0;
 }
 
-.portrait-frame {
-  padding: 6px;
+/* Card Base */
+
+.couple-card {
+  position: relative;
+  width: 300px;
+  height: 420px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #a87c1f, #d4af37);
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 1s ease forwards;
 }
 
-.portrait-frame img {
-  width: 280px;
-  height: 380px;
+.couple-card img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 16px;
-  transition: 0.4s ease;
 }
 
-.portrait-frame img:hover {
-  transform: scale(1.04);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+/* Overlap effect */
+
+.bride {
+  z-index: 2;
+  margin-right: -60px;
+  animation-delay: 0.2s;
 }
 
-.portrait-card h4 {
-  margin-top: 18px;
+.groom {
+  z-index: 1;
+  margin-left: -60px;
+  animation-delay: 0.4s;
+}
+
+/* Name Overlay */
+
+.name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
-  color: #a87c1f;
+  letter-spacing: 1px;
 }
 
-.ampersand {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #a87c1f;
+/* Hover Effect */
+
+.couple-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
 }
 
-/* ================= FOOTER ================= */
+/* Animation */
 
-footer {
-  padding: 60px;
-  text-align: center;
-  background: #ffffff;
-  font-family: 'Playfair Display', serif;
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ================= ANIMATIONS ================= */
-
-@keyframes floatGlow {
-  from { transform: translate(-80px, -80px); }
-  to { transform: translate(80px, 80px); }
-}
-
-/* ================= RESPONSIVE ================= */
+/* Mobile */
 
 @media (max-width: 768px) {
 
-  .portrait-container {
+  .couple-wrapper {
     flex-direction: column;
     gap: 40px;
   }
 
-  .portrait-frame img {
-    width: 240px;
-    height: 320px;
+  .bride,
+  .groom {
+    margin: 0;
   }
 
-  .map-wrapper {
-    width: 100%;
+  .couple-card {
+    width: 260px;
+    height: 360px;
   }
-
-  .map-wrapper iframe {
-    height: 280px;
-  }
-
 }

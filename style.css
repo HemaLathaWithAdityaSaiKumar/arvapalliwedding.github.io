@@ -1,4 +1,10 @@
-* { box-sizing: border-box; }
+/* ===============================
+   GLOBAL RESET
+================================= */
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -7,28 +13,77 @@ body {
   color: #222;
 }
 
-/* HERO */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===============================
+   ENTRY SCREEN
+================================= */
+
+#entry-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #fdfaf5, #e8dcc8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 1s ease;
+}
+
+#entry-screen.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.entry-card {
+  text-align: center;
+}
+
+#enter-btn {
+  padding: 16px 40px;
+  border-radius: 40px;
+  border: 2px solid #a87c1f;
+  background: transparent;
+  color: #a87c1f;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#enter-btn:hover {
+  background: #a87c1f;
+  color: white;
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+
 .hero {
-  padding: 90px 20px;
+  padding: 100px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
 
 .hero-inner {
-  max-width: 750px;
+  max-width: 800px;
   margin: auto;
 }
 
 .ganesha-wrapper img {
   width: clamp(90px, 18vw, 130px);
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
   border-radius: 10px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .main-names {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 6vw, 3rem);
+  font-size: clamp(2.2rem, 6vw, 3rem);
+  margin: 0;
 }
 
 .main-names span {
@@ -41,11 +96,14 @@ body {
   margin-top: 25px;
 }
 
-/* PORTRAITS */
+/* ===============================
+   PORTRAIT SECTION
+================================= */
+
 .portrait-section {
-  padding: 110px 20px;
-  text-align: center;
+  padding: 100px 20px;
   background: #ffffff;
+  text-align: center;
 }
 
 .portrait-title {
@@ -62,23 +120,20 @@ body {
 }
 
 .image-frame {
-  padding: 8px;
+  padding: 6px;
   border-radius: 22px;
   background: linear-gradient(135deg, #a87c1f, #d4af37);
-  display: inline-block;
 }
 
 .image-frame img {
-  width: clamp(220px, 28vw, 300px);
-  height: auto;
+  width: clamp(220px, 30vw, 300px);
   border-radius: 18px;
-  display: block;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .image-frame img:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
 .portrait-name {
@@ -94,15 +149,87 @@ body {
 }
 
 .quote {
-  margin-top: 60px;
+  margin-top: 50px;
   font-style: italic;
   color: #a87c1f;
-  font-size: 1.1rem;
 }
 
-/* Mobile adjustment */
+/* Hide divider on mobile */
 @media (max-width: 768px) {
   .divider-vertical {
     display: none;
   }
+}
+
+/* ===============================
+   CEREMONY SECTION
+================================= */
+
+.details {
+  padding: 90px 20px;
+  text-align: center;
+  background: #fdfaf5;
+}
+
+.details em {
+  color: #a87c1f;
+  font-style: normal;
+}
+
+.buttons {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 40px;
+  border: 1px solid #a87c1f;
+  color: #a87c1f;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #a87c1f;
+  color: white;
+}
+
+/* ===============================
+   COUNTDOWN SECTION
+================================= */
+
+.countdown-section {
+  padding: 90px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #f7f1e8;
+  padding: 20px 25px;
+  border-radius: 12px;
+}
+
+.time-box span {
+  font-size: 2.2rem;
+  font-family: 'Playfair Display', serif;
+  color: #a87c1f;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+footer {
+  padding: 50px;
+  text-align: center;
+  background: #fdfaf5;
 }

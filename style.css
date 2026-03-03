@@ -7,35 +7,77 @@ body {
   color: #222;
 }
 
-/* ENTRY SCREEN */
+/* ===============================
+   ENTRY SCREEN – REFINED STYLE
+================================= */
+
 #entry-screen {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #fdfaf5;
+  background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  transition: opacity 1s ease;
+  transition: opacity 1.2s ease;
+  text-align: center;
 }
 
-.entry-content { text-align: center; }
+/* Center Content */
+.entry-content {
+  max-width: 600px;
+  animation: fadeInEntry 1.5s ease forwards;
+}
 
+/* Welcome Heading */
+.entry-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #a87c1f;
+  letter-spacing: 1px;
+}
+
+/* Main Invitation Button */
 #enter-btn {
-  margin-top: 20px;
-  padding: 12px 28px;
-  font-size: 16px;
-  border: none;
+  padding: 18px 40px;
+  font-size: 1.1em;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5px;
+  border: 2px solid #a87c1f;
+  background: transparent;
+  color: #a87c1f;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Hover Effect */
+#enter-btn:hover {
   background: #a87c1f;
   color: white;
-  cursor: pointer;
-  border-radius: 6px;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
+/* Hide Effect */
 #entry-screen.hide {
   opacity: 0;
   pointer-events: none;
+}
+
+/* Fade In Animation */
+@keyframes fadeInEntry {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* HERO */

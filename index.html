@@ -5,36 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arvapalli’s Invitation</title>
 
-<!-- SEO -->
-<meta name="description" content="Wedding Invitation of Hemalatha & Aditya Sai Kumar – March 7, 2026, Sri Vasavi Arya Vysya Kalyana Mandapam.">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Hemalatha & Aditya Sai Kumar – Wedding Invitation">
-<meta property="og:description" content="You are cordially invited to our wedding ceremony.">
-<meta property="og:image" content="https://yourdomain.com/couple.jpeg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yourdomain.com">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hemalatha & Aditya Sai Kumar – Wedding Invitation">
-<meta name="twitter:description" content="Join us on March 7, 2026 at 02:38 A.M.">
-<meta name="twitter:image" content="https://yourdomain.com/couple.jpeg">
+<meta name="description" content="Wedding Invitation of Hemalatha & Aditya Sai Kumar – March 7, 2026">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ENTRY SCREEN -->
+<!-- ENTRY -->
 <div id="entry-screen">
-  <div class="ambient-bg"></div>
-
   <div class="entry-card">
-    <h2 class="welcome-text">Welcome</h2>
-    <div class="underline"></div>
-    <button id="enter-btn" type="button">Arvapalli's Marriage Invitation</button>
+    <h2>Welcome</h2>
+    <button id="enter-btn">Arvapalli's Marriage Invitation</button>
   </div>
 </div>
 
@@ -43,49 +25,60 @@
 </audio>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero reveal">
   <div class="hero-inner">
-    <div class="ganesha-wrapper">
-      <img src="ganesh.webp" alt="Lord Ganesha">
-    </div>
+    <img src="ganesh.webp" alt="Lord Ganesha">
 
-    <div class="invitation-title">Arvapalli’s Invitation</div>
-
-    <h1 class="main-names">
-      Hemalatha <span>&</span> Aditya Sai Kumar
-    </h1>
+    <h1>Hemalatha <span>&</span> Aditya Sai Kumar</h1>
 
     <p class="telugu">
       శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు<br><br>
       మా ప్రియమైన కుమార్తె వివాహ మహోత్సవమునకు<br>
       మీరు విచ్చేసి వధూవరులను ఆశీర్వదించవలసిందిగా మనవి.
     </p>
-
-    <div class="family-details">
-      <p>Daughter of</p>
-      <p><strong>Srinivasa Rao</strong> & <strong>Ratna Kumari</strong></p>
-      <p>Sister of <strong>Bala Prasanna</strong></p>
-    </div>
   </div>
 </section>
 
 <!-- CEREMONY -->
-<section class="details">
+<section class="details reveal">
   <h3>Wedding Ceremony</h3>
+
   <p>
     Saturday, March 7, 2026<br>
     at <strong>02:38</strong><br>
     <em>(Early hours of Sunday)</em>
   </p>
-  <p>Swathi Nakshatra Yukta Dhanur Lagna</p>
+
   <p>
     Sri Vasavi Arya Vysya Kalyana Mandapam<br>
     Valaparla Village, Martur (Mandal), Bapatla District
   </p>
+
+  <div class="buttons">
+
+    <!-- Exact Google Maps Link -->
+    <a class="btn"
+       href="https://www.google.com/maps/place/Sri+Vasavi+Arya+vysya+kalyana+mandapam/@15.9235777,80.0472545,18z/data=!4m6!3m5!1s0x3a4af50d9e9f7917:0x2eb69d1c723fc85c!8m2!3d15.9232218!4d80.048424!16s%2Fg%2F11t1sjrjfs"
+       target="_blank">
+       View Location
+    </a>
+
+    <!-- Google Calendar -->
+    <a class="btn"
+       href="https://www.google.com/calendar/render?action=TEMPLATE&text=Hemalatha+%26+Aditya+Wedding&dates=20260307T210800Z/20260307T230800Z&details=Wedding+Ceremony&location=Sri+Vasavi+Arya+Vysya+Kalyana+Mandapam"
+       target="_blank">
+       Add to Google Calendar
+    </a>
+
+    <button class="btn" id="download-ics">
+       Download Calendar File
+    </button>
+
+  </div>
 </section>
 
 <!-- COUNTDOWN -->
-<section class="countdown-section">
+<section class="countdown-section reveal">
   <h3>Countdown to the Wedding</h3>
   <div class="countdown">
     <div class="time-box"><span id="days">00</span><p>Days</p></div>

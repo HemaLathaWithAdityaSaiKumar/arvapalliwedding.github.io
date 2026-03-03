@@ -4,78 +4,117 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>Arvapalli Wedding</title>
-  <!-- Fonts: compact & elegant -->
+  
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Cormorant:wght@500;600&family=Montserrat:wght@300;400&family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Cormorant:wght@400;500;600&family=Montserrat:wght@300;400;500&family=Noto+Serif+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ENTRY SCREEN - minimal -->
+  <!-- Entry Screen -->
   <div id="entry-screen">
     <div class="entry-card">
-      <div class="telugu-welcome">శుభ వివాహం</div>
-      <div class="underline"></div>
-      <button id="enter-btn">అర్వపల్లి ఆహ్వానం</button>
+      <div class="telugu-title">అర్వపల్లి వివాహం</div>
+      <div class="entry-sub">Arvapalli's Wedding</div>
+      <div class="entry-decoration"></div>
+      <button id="enter-btn">తెరువండి</button>
     </div>
   </div>
 
-  <audio id="bg-music" loop><source src="music.mp3"></audio>
+  <audio id="bg-music" loop><source src="music.mp3" type="audio/mpeg"></audio>
 
-  <!-- HERO - tight -->
-  <section class="hero">
-    <img src="ganesh.webp" alt="Ganesha" class="ganesha" loading="lazy">
-    <div class="invitation-title">ARVAPALLI INVITATION</div>
-    <h1 class="main-names">Hemalatha <span>&</span> Aditya</h1>
-    <div class="telugu">శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు<br>మా ప్రియమైన కుమార్తె వివాహ మహోత్సవమునకు</div>
-    <div class="family">Srinivasa Rao & Ratna Kumari</div>
-  </section>
-
-  <!-- CEREMONY - compact -->
-  <section class="details">
-    <h3>Wedding</h3>
-    <p class="datetime">March 7, 2026 · 02:38<br>Swathi Nakshatra · Dhanur Lagna</p>
-    <p class="venue">Sri Vasavi Arya Vysya Kalyana Mandapam<br>Valaparla, Bapatla</p>
+  <!-- Main Content -->
+  <main id="main-content">
     
-    <div class="dinner">
-      <div class="dinner-title">భోజన కార్యక్రమం</div>
-      <p>Dinner · March 7 · 8PM onwards</p>
-    </div>
-
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1918.3614865276022!2d80.0472545!3d15.9235777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4af500777331e1%3A0xfecbdc883cceaad!2sSri%20Vasavi%20Arya%20Vysya%20Kalyana%20Mandapam!5e0!3m2!1sen!2sin" loading="lazy"></iframe>
-    </div>
-    <a href="#" class="dir-btn">Directions</a>
-  </section>
-
-  <!-- COUNTDOWN - minimal -->
-  <section class="countdown">
-    <h3>Countdown</h3>
-    <div class="counter">
-      <div><span id="days">00</span>d</div>
-      <div><span id="hours">00</span>h</div>
-      <div><span id="minutes">00</span>m</div>
-      <div><span id="seconds">00</span>s</div>
-    </div>
-  </section>
-
-  <!-- PORTRAITS - animated -->
-  <section class="portraits">
-    <h3>Couple</h3>
-    <div class="portrait-grid">
-      <div class="portrait">
-        <img src="bride.jpeg" alt="Hemalatha" loading="lazy">
-        <div class="name">Hemalatha</div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img src="ganesh.webp" alt="Ganesha" class="ganesha-img" loading="lazy">
+      <p class="invitation-label">ARVAPALLI'S INVITATION</p>
+      <h1 class="couple-names">Hemalatha <span>&</span> Aditya Sai Kumar</h1>
+      
+      <div class="telugu-invite">
+        శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు<br>
+        మా ప్రియమైన కుమార్తె వివాహ మహోత్సవమునకు<br>
+        మీరు విచ్చేసి వధూవరులను ఆశీర్వదించవలసిందిగా మనవి.
       </div>
-      <div class="portrait">
-        <img src="groom.jpeg" alt="Aditya" loading="lazy">
-        <div class="name">Aditya Sai</div>
+      
+      <div class="family-info">
+        <p>Srinivasa Rao & Ratna Kumari (Parents)</p>
+        <p>Bala Prasanna (Sister)</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>Blessings</footer>
+    <!-- Wedding Details -->
+    <section class="wedding-details">
+      <h2>Wedding</h2>
+      
+      <div class="date-time">
+        <div class="day-date">Saturday, March 7, 2026</div>
+        <div class="time">02:38 <span class="small">(early Sunday)</span></div>
+        <div class="nakshatra">Swathi Nakshatra · Dhanur Lagna</div>
+      </div>
+      
+      <div class="venue">
+        <strong>Sri Vasavi Arya Vysya Kalyana Mandapam</strong>
+        <p>Valaparla Village, Martur Mandal, Bapatla District</p>
+      </div>
+      
+      <div class="dinner-card">
+        <div class="dinner-telugu">భోజన కార్యక్రమం</div>
+        <p class="dinner-info">Dinner · Saturday, March 7 · 8:00 PM onwards</p>
+      </div>
+      
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1918.3614865276022!2d80.0472545!3d15.9235777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4af500777331e1%3A0xfecbdc883cceaad!2sSri%20Vasavi%20Arya%20Vysya%20Kalyana%20Mandapam!5e0!3m2!1sen!2sin"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      
+      <a href="https://maps.google.com/?q=Sri+Vasavi+Arya+Vysya+Kalyana+Mandapam" class="direction-btn" target="_blank">Get Directions</a>
+    </section>
+
+    <!-- Countdown -->
+    <section class="countdown-section">
+      <h2>Countdown</h2>
+      <div class="countdown-grid">
+        <div class="count-box"><span id="days">00</span>Days</div>
+        <div class="count-box"><span id="hours">00</span>Hours</div>
+        <div class="count-box"><span id="minutes">00</span>Mins</div>
+        <div class="count-box"><span id="seconds">00</span>Secs</div>
+      </div>
+    </section>
+
+    <!-- Portraits with Animation -->
+    <section class="portraits-section">
+      <h2>The Couple</h2>
+      <div class="portrait-grid">
+        <div class="portrait-card">
+          <div class="image-frame">
+            <img src="bride.jpeg" alt="Hemalatha" loading="lazy">
+          </div>
+          <p class="portrait-name">Hemalatha</p>
+        </div>
+        
+        <div class="portrait-card">
+          <div class="image-frame">
+            <img src="groom.jpeg" alt="Aditya Sai Kumar" loading="lazy">
+          </div>
+          <p class="portrait-name">Aditya Sai Kumar</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>With Divine Blessings</p>
+    </footer>
+    
+  </main>
 
   <script src="script.js"></script>
 </body>

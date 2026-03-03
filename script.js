@@ -21,8 +21,6 @@
       
       // Simply hide the entry screen
       entryScreen.style.display = 'none';
-      
-      // No need for complex class management
     });
   }
   

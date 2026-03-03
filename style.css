@@ -1,4 +1,4 @@
-/* style.css - ULTRA LARGE for Mobile, Fixed Bride Photo, NO SCROLL ISSUE */
+/* style.css - FIXED COUNTDOWN UI, PERFECT MOBILE DISPLAY */
 
 * {
   margin: 0;
@@ -14,14 +14,14 @@ html, body {
   font-size: 18px;
   height: 100%;
   width: 100%;
-  overflow: hidden; /* CRITICAL: Prevent any scrolling on body */
-  position: fixed; /* CRITICAL: Lock the viewport */
+  overflow: hidden;
+  position: fixed;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 20px;
 }
 
 /* ===== Ganesha ===== */
@@ -33,11 +33,11 @@ html, body {
 }
 
 .ganesha-img {
-  width: 90px;
+  width: 80px;
   height: auto;
 }
 
-/* ===== ENTRY SCREEN - MASSIVE FOR MOBILE ===== */
+/* ===== ENTRY SCREEN ===== */
 #entry-screen {
   position: fixed;
   top: 0;
@@ -49,87 +49,83 @@ html, body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
   padding: 20px;
-  opacity: 1;
-  visibility: visible;
 }
 
-#entry-screen.hide {
-  opacity: 0;
-  visibility: hidden;
+#entry-screen[style*="display: none"] {
+  display: none !important;
 }
 
 .entry-card {
   background: #fffaf0;
-  padding: 60px 35px;
-  border-radius: 80px 30px 80px 30px;
-  max-width: 550px;
+  padding: 50px 30px;
+  border-radius: 70px 25px 70px 25px;
+  max-width: 500px;
   width: 100%;
   position: relative;
-  box-shadow: 0 50px 60px rgba(0,0,0,0.4);
+  box-shadow: 0 40px 50px rgba(0,0,0,0.4);
 }
 
 .entry-ganesha-corner {
   position: absolute;
-  top: -25px;
-  right: -20px;
+  top: -20px;
+  right: -15px;
   background: white;
   border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  padding: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .ganesha-corner-img {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .entry-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 700;
   color: #6d4f34;
-  margin: 20px 0 10px;
+  margin: 15px 0 8px;
   line-height: 1.3;
 }
 
 .entry-english {
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
+  font-size: 26px;
   color: #9a7b5c;
   font-weight: 500;
 }
 
 .entry-decoration {
-  width: 100px;
-  height: 5px;
+  width: 80px;
+  height: 4px;
   background: #d4b48c;
-  margin: 35px auto;
+  margin: 25px auto;
 }
 
 .entry-btn {
   width: 100%;
   background: #6d4f34;
   border: none;
-  padding: 28px;
-  border-radius: 70px 20px 70px 20px;
+  padding: 22px;
+  border-radius: 60px 15px 60px 15px;
   color: white;
   cursor: pointer;
 }
 
 .btn-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 600;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .btn-english {
-  font-size: 22px;
+  font-size: 18px;
   opacity: 0.9;
   letter-spacing: 2px;
 }
@@ -138,35 +134,33 @@ html, body {
 #main-content {
   height: 100%;
   width: 100%;
-  overflow-y: auto; /* Only main content scrolls */
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  position: relative;
   background: #fffbf5;
 }
 
 /* ===== HERO SECTION ===== */
 .hero {
-  padding: 90px 0 70px;
+  padding: 70px 0 50px;
   position: relative;
-  background: #fffbf5;
 }
 
 .invitation-badge {
   text-align: center;
-  font-size: 20px;
-  letter-spacing: 6px;
+  font-size: 18px;
+  letter-spacing: 5px;
   color: #9a7b5c;
   font-weight: 600;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .couple-name {
   font-family: 'Playfair Display', serif;
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 900;
   text-align: center;
-  line-height: 1.4;
-  margin-bottom: 45px;
+  line-height: 1.3;
+  margin-bottom: 35px;
 }
 
 .couple-name .bride { 
@@ -176,9 +170,9 @@ html, body {
 
 .couple-name .ampersand { 
   color: #d4b48c; 
-  font-size: 48px; 
+  font-size: 42px; 
   display: block;
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .couple-name .groom { 
@@ -188,68 +182,68 @@ html, body {
 
 .telugu-invitation {
   background: #faf3ea;
-  padding: 45px 30px;
-  border-radius: 80px 20px 80px 20px;
-  margin: 45px 0 40px;
+  padding: 35px 25px;
+  border-radius: 60px 15px 60px 15px;
+  margin: 35px 0 30px;
 }
 
 .telugu-text {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 24px;
-  line-height: 2.2;
-  margin-bottom: 20px;
+  font-size: 22px;
+  line-height: 2;
+  margin-bottom: 18px;
   font-weight: 500;
 }
 
 .family-details {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .family-card {
   background: #f5ede1;
-  padding: 35px;
-  border-radius: 60px 15px 60px 15px;
-  border-left: 10px solid #8b6b4d;
+  padding: 30px;
+  border-radius: 50px 12px 50px 12px;
+  border-left: 8px solid #8b6b4d;
 }
 
 .family-label {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #8b6b4d;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 25px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
 }
 
 .family-names {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   color: #2c2419;
-  margin-bottom: 18px;
-  line-height: 1.5;
+  margin-bottom: 15px;
+  line-height: 1.4;
 }
 
 .relation-tag {
-  font-size: 20px;
+  font-size: 18px;
   color: #8b6b4d;
   font-weight: 500;
-  margin-left: 12px;
+  margin-left: 10px;
 }
 
 /* ===== WEDDING SECTION ===== */
 .wedding-section {
-  padding: 80px 0;
+  padding: 60px 0;
   background: white;
 }
 
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
+  font-size: 42px;
   color: #6d4f34;
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
   font-weight: 800;
 }
 
@@ -257,45 +251,45 @@ html, body {
 
 .details-card {
   background: #faf3ea;
-  padding: 60px 30px;
-  border-radius: 80px 20px 80px 20px;
+  padding: 50px 25px;
+  border-radius: 60px 15px 60px 15px;
 }
 
 .date-block { text-align: center; }
 .day { 
-  font-size: 24px; 
-  letter-spacing: 6px; 
+  font-size: 20px; 
+  letter-spacing: 5px; 
   color: #9a7b5c; 
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .date { 
-  font-size: 54px; 
+  font-size: 48px; 
   font-weight: 900; 
   color: #6d4f34; 
-  margin: 18px 0; 
+  margin: 15px 0; 
 }
 .time { 
-  font-size: 80px; 
+  font-size: 72px; 
   font-weight: 900; 
   color: #8b6b4d; 
   display: block; 
   line-height: 1.1; 
 }
 .time-note { 
-  font-size: 22px; 
+  font-size: 20px; 
   color: #9a7b5c; 
   font-weight: 500;
-  margin-top: 12px;
+  margin-top: 10px;
   display: block;
 }
 
 .astro-info {
-  padding: 35px 0;
+  padding: 25px 0;
   border-top: 3px solid #e8d9c8;
   border-bottom: 3px solid #e8d9c8;
-  margin: 40px 0;
-  font-size: 24px;
+  margin: 30px 0;
+  font-size: 22px;
   text-align: center;
   font-weight: 600;
   color: #6d4f34;
@@ -303,119 +297,125 @@ html, body {
 
 .venue-block { text-align: center; }
 .venue-block i { 
-  font-size: 48px; 
+  font-size: 42px; 
   color: #8b6b4d; 
-  margin-bottom: 30px; 
+  margin-bottom: 20px; 
 }
 .venue-block h3 { 
-  font-size: 32px; 
+  font-size: 28px; 
   font-weight: 700;
-  margin: 0 0 15px; 
+  margin: 0 0 10px; 
   color: #2c2419;
 }
 .venue-block p { 
-  font-size: 24px; 
+  font-size: 22px; 
   color: #6d4f34;
   font-weight: 500;
 }
 
 .dinner-card {
   background: #f9f1e7;
-  padding: 40px 30px;
-  border-radius: 70px 18px 70px 18px;
-  margin: 50px 0;
-  border-left: 10px solid #8b6b4d;
+  padding: 30px 25px;
+  border-radius: 50px 12px 50px 12px;
+  margin: 40px 0;
+  border-left: 8px solid #8b6b4d;
 }
 
 .dinner-telugu {
   font-family: 'Noto Serif Telugu', serif;
-  font-size: 36px;
+  font-size: 32px;
   color: #6d4f34;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 
 .dinner-details {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 500;
 }
 
 .map-container {
-  border-radius: 70px 18px 70px 18px;
+  border-radius: 50px 12px 50px 12px;
   overflow: hidden;
-  height: 300px;
-  margin: 45px 0 40px;
+  height: 250px;
+  margin: 40px 0 30px;
 }
 
 .direction-btn {
   display: inline-block;
   background: #6d4f34;
   color: white;
-  padding: 28px 45px;
-  border-radius: 70px 18px 70px 18px;
+  padding: 22px 40px;
+  border-radius: 50px 12px 50px 12px;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   width: 100%;
   text-align: center;
 }
 
-/* ===== COUNTDOWN ===== */
+/* ===== COUNTDOWN - FIXED UI ===== */
 .countdown-section {
-  padding: 80px 0;
+  padding: 60px 0;
   background: linear-gradient(135deg, #6d4f34, #8b6b4d);
 }
 
 .countdown-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-  max-width: 650px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .count-item {
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(5px);
-  padding: 35px 20px;
-  border-radius: 60px 15px 60px 15px;
+  padding: 20px 10px;
+  border-radius: 40px 8px 40px 8px;
   text-align: center;
   color: white;
-  border: 3px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .count-item span {
-  display: block;
-  font-size: 72px;
+  font-size: 48px;
   font-weight: 900;
   font-family: 'Playfair Display', serif;
   line-height: 1;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  color: white;
 }
 
 .count-label {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
 }
 
-/* ===== PORTRAITS - FIXED BRIDE PHOTO ===== */
+/* ===== PORTRAITS ===== */
 .portraits-section {
-  padding: 80px 0;
+  padding: 60px 0;
   background: #fffbf5;
 }
 
 .portraits-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
-  max-width: 550px;
+  gap: 40px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .portrait-card {
   perspective: 2000px;
-  height: 550px;
+  height: 500px;
 }
 
 .portrait-inner {
@@ -426,8 +426,8 @@ html, body {
   transition: transform 0.8s;
   transform-style: preserve-3d;
   cursor: pointer;
-  border-radius: 80px 25px 80px 25px;
-  box-shadow: 0 40px 50px -15px rgba(0,0,0,0.4);
+  border-radius: 60px 15px 60px 15px;
+  box-shadow: 0 30px 40px -15px rgba(0,0,0,0.4);
 }
 
 .portrait-front, .portrait-back {
@@ -435,11 +435,10 @@ html, body {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 80px 25px 80px 25px;
+  border-radius: 60px 15px 60px 15px;
   overflow: hidden;
 }
 
-/* Fixed image container for proper display */
 .image-container {
   width: 100%;
   height: 100%;
@@ -456,7 +455,6 @@ html, body {
   display: block;
 }
 
-/* Bride photo specific fix - if photo is portrait orientation */
 .bride-img {
   object-position: center 20%;
 }
@@ -468,11 +466,11 @@ html, body {
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
   color: white;
-  padding: 40px 25px 30px;
+  padding: 30px 20px 20px;
 }
 
 .portrait-overlay h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 800;
 }
 
@@ -484,31 +482,31 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 45px 35px;
+  padding: 40px 30px;
 }
 
 .portrait-back i {
-  font-size: 70px;
-  margin-bottom: 35px;
+  font-size: 60px;
+  margin-bottom: 30px;
   color: #ffd700;
 }
 
 .portrait-back h3 {
-  font-size: 36px;
-  margin-bottom: 30px;
+  font-size: 32px;
+  margin-bottom: 25px;
   font-weight: 800;
 }
 
 .back-detail {
-  font-size: 24px;
+  font-size: 22px;
   opacity: 0.9;
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .back-name {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
-  margin: 12px 0 25px;
+  margin: 10px 0 20px;
   color: #ffd700;
 }
 
@@ -516,44 +514,68 @@ html, body {
 .footer {
   background: #4a3a2a;
   color: white;
-  padding: 80px 0 70px;
+  padding: 60px 0 50px;
   text-align: center;
 }
 
 .blessing {
-  font-size: 40px;
-  margin-bottom: 35px;
+  font-size: 36px;
+  margin-bottom: 25px;
   font-weight: 600;
 }
 
 .family-name {
-  font-size: 32px;
-  letter-spacing: 5px;
+  font-size: 28px;
+  letter-spacing: 4px;
   opacity: 0.9;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .footer-note {
-  font-size: 24px;
+  font-size: 22px;
   opacity: 0.8;
 }
 
-/* ===== MOBILE ONLY ADJUSTMENTS ===== */
+/* ===== MOBILE OPTIMIZATION ===== */
 @media (max-width: 480px) {
-  .entry-telugu { font-size: 36px; }
-  .entry-english { font-size: 26px; }
-  .btn-telugu { font-size: 30px; }
-  .btn-english { font-size: 20px; }
-  .ganesha-corner-img { width: 75px; height: 75px; }
-  .ganesha-img { width: 70px; }
-  .couple-name { font-size: 44px; }
+  .entry-telugu { font-size: 32px; }
+  .entry-english { font-size: 22px; }
+  .btn-telugu { font-size: 26px; }
+  .ganesha-corner-img { width: 70px; height: 70px; }
+  .ganesha-img { width: 60px; }
+  
+  .couple-name { font-size: 40px; }
   .telugu-text { font-size: 20px; }
-  .time { font-size: 64px; }
-  .date { font-size: 44px; }
-  .count-item span { font-size: 56px; }
-  .portrait-card { height: 500px; }
-  .portrait-back h3 { font-size: 30px; }
-  .back-name { font-size: 24px; }
+  .family-names { font-size: 22px; }
+  
+  .time { font-size: 60px; }
+  .date { font-size: 40px; }
+  
+  /* Countdown mobile fix */
+  .countdown-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  
+  .count-item {
+    padding: 15px 5px;
+  }
+  
+  .count-item span {
+    font-size: 36px;
+  }
+  
+  .count-label {
+    font-size: 12px;
+  }
+  
+  .portrait-card { height: 450px; }
+  .portrait-back h3 { font-size: 28px; }
+  .back-name { font-size: 22px; }
+  
+  .blessing { font-size: 30px; }
+  .family-name { font-size: 24px; }
+  .footer-note { font-size: 20px; }
 }
 
 /* ===== DESKTOP ===== */
@@ -564,19 +586,28 @@ html, body {
   }
   .couple-name .ampersand {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
   }
   .family-details {
     flex-direction: row;
   }
   .portraits-grid {
     grid-template-columns: repeat(2, 1fr);
-    max-width: 1100px;
-    gap: 60px;
+    max-width: 1000px;
+    gap: 50px;
   }
-  .countdown-grid {
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 900px;
+  .portrait-card {
+    height: 550px;
+  }
+}
+
+/* ===== VERY SMALL DEVICES ===== */
+@media (max-width: 360px) {
+  .count-item span {
+    font-size: 30px;
+  }
+  .count-label {
+    font-size: 10px;
   }
 }
 

@@ -4,19 +4,15 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #fdfaf5;
   color: #222;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* ================= ENTRY SCREEN ================= */
+/* ================= ENTRY ================= */
 
 #entry-screen {
   position: fixed;
@@ -26,335 +22,229 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 2000;
-  overflow: hidden;
-  transition: opacity 1s ease;
-}
-
-#entry-screen.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.ambient-bg {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(168,124,31,0.25), transparent 70%);
-  animation: floatGlow 12s ease-in-out infinite alternate;
-  filter: blur(60px);
 }
 
 .entry-card {
-  position: relative;
-  padding: 70px 90px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(20px);
-  border-radius: 30px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  padding: 40px 30px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
   text-align: center;
+  width: 90%;
+  max-width: 400px;
 }
 
 .welcome-text {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
-}
-
-.underline {
-  height: 3px;
-  width: 120px;
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  margin: 20px auto 40px;
+  font-size: 2.3rem;
+  color: #a87c1f;
+  margin-bottom: 20px;
 }
 
 #enter-btn {
-  padding: 16px 45px;
+  width: 100%;
+  padding: 14px;
   font-size: 1rem;
-  font-family: 'Playfair Display', serif;
-  border-radius: 50px;
+  border-radius: 30px;
   border: 2px solid #a87c1f;
   background: transparent;
   color: #a87c1f;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-#enter-btn:hover {
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* ================= HERO ================= */
 
 .hero {
-  padding: 120px 20px;
+  padding: 80px 20px 60px;
   text-align: center;
-  background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
-}
-
-.hero-inner {
-  max-width: 900px;
-  margin: auto;
 }
 
 .ganesha-wrapper img {
-  width: 150px;
-  border-radius: 10px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  margin-bottom: 25px;
+  width: 130px;
+  margin-bottom: 20px;
 }
 
 .invitation-title {
   font-family: 'Playfair Display', serif;
-  color: #a87c1f;
+  font-size: 1rem;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  color: #a87c1f;
+  margin-bottom: 10px;
 }
 
 .main-names {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
-  margin: 10px 0 20px;
-}
-
-.main-names span {
-  color: #c5a047;
+  font-size: 2.6rem;
+  margin: 10px 0;
 }
 
 .telugu {
-  font-family: 'Noto Serif Telugu', serif;
+  font-size: 0.95rem;
   margin-top: 20px;
-  line-height: 1.9;
-}
-
-.family-details {
-  margin-top: 30px;
-}
-
-/* ================= SECTION BASE ================= */
-
-.details,
-.countdown-section,
-.portraits {
-  padding: 100px 20px;
-  text-align: center;
 }
 
 /* ================= CEREMONY ================= */
 
 .details {
-  background: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  background: white;
 }
 
 .details h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #a87c1f;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .details p {
+  font-size: 0.95rem;
   margin-bottom: 12px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* ================= DINNER ================= */
+/* Dinner */
 
 .dinner-block {
-  margin: 40px auto 30px;
-  padding: 25px 30px;
+  margin: 30px 0;
+  padding: 18px;
   background: #f7f1e8;
-  border-radius: 14px;
-  max-width: 500px;
+  border-radius: 12px;
 }
 
-.dinner-block h4 {
-  font-family: 'Noto Serif Telugu', serif;
-  font-size: 1.3rem;
-  color: #a87c1f;
-  margin-bottom: 10px;
-}
-
-/* ================= MAP ================= */
+/* Map – FULL WIDTH on Mobile */
 
 .map-wrapper {
-  margin: 50px auto 25px;
-  width: 60%;
-  max-width: 700px;
-  border-radius: 18px;
+  width: 100%;
+  margin: 30px 0;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
 }
 
 .map-wrapper iframe {
   width: 100%;
-  height: 320px;
-  border: 0;
-}
-
-.map-wrapper:hover {
-  transform: translateY(-5px);
+  height: 260px;
 }
 
 .map-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
+  display: block;
+  width: 100%;
+  padding: 14px;
   border-radius: 30px;
   background: #a87c1f;
   color: white;
   text-decoration: none;
-  font-family: 'Playfair Display', serif;
-  transition: 0.3s ease;
-}
-
-.map-btn:hover {
-  background: #8f6618;
-  transform: translateY(-3px);
+  margin-top: 10px;
 }
 
 /* ================= COUNTDOWN ================= */
 
 .countdown-section {
+  padding: 70px 20px;
   background: #f7f1e8;
+  text-align: center;
 }
 
 .countdown-section h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #a87c1f;
 }
 
 .countdown {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .time-box {
   background: white;
-  padding: 25px 30px;
-  border-radius: 14px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  min-width: 110px;
-  transition: 0.3s ease;
-}
-
-.time-box:hover {
-  transform: translateY(-6px);
+  padding: 20px 10px;
+  border-radius: 12px;
 }
 
 .time-box span {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #a87c1f;
+  display: block;
 }
 
 .time-box p {
-  margin-top: 6px;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.8rem;
 }
 
 /* ================= PORTRAITS ================= */
 
 .portraits {
-  background: #ffffff;
+  padding: 70px 20px;
+  background: white;
+  text-align: center;
 }
 
 .portraits h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   color: #a87c1f;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .portrait-grid {
   display: flex;
-  justify-content: center;
-  gap: 80px;
-  flex-wrap: wrap;
-}
-
-.portrait-panel {
-  text-align: center;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
 }
 
 .portrait-inner {
-  padding: 6px;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 340px;
   border: 2px solid #d4af37;
-  background: white;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.08);
-  transition: 0.4s ease;
+  border-radius: 18px;
+  overflow: hidden;
 }
 
 .portrait-inner img {
-  width: 320px;
-  height: 440px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.portrait-inner:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 40px 90px rgba(0,0,0,0.15);
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .portrait-name {
-  margin-top: 25px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  margin-top: 15px;
+  font-size: 1.4rem;
   color: #a87c1f;
 }
 
 /* ================= FOOTER ================= */
 
 footer {
-  padding: 60px;
+  padding: 40px 20px;
   text-align: center;
-  background: #ffffff;
-  font-family: 'Playfair Display', serif;
 }
 
-/* ================= ANIMATIONS ================= */
+/* ================= DESKTOP ENHANCEMENTS ================= */
 
-@keyframes floatGlow {
-  from { transform: translate(-80px, -80px); }
-  to { transform: translate(80px, 80px); }
-}
+@media (min-width: 768px) {
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-
-  .map-wrapper {
-    width: 100%;
+  .hero {
+    padding: 120px 20px;
   }
 
-  .map-wrapper iframe {
-    height: 260px;
+  .main-names {
+    font-size: 3.5rem;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .map-wrapper {
+    width: 60%;
+    margin: 40px auto;
   }
 
   .portrait-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 60px;
-  }
-
-  .portrait-inner img {
-    width: 260px;
-    height: 360px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
   }
 
 }

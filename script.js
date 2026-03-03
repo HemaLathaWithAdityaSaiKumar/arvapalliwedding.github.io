@@ -1,4 +1,3 @@
-// IST Correct Muhurtham (March 8, 2026 – 02:38 IST)
 const weddingDate = new Date("2026-03-08T02:38:00+05:30").getTime();
 
 function updateCountdown(){
@@ -24,7 +23,6 @@ function updateCountdown(){
 setInterval(updateCountdown,1000);
 updateCountdown();
 
-// Scroll reveal
 window.addEventListener("scroll",()=>{
   document.querySelectorAll(".reveal").forEach(el=>{
     const windowHeight=window.innerHeight;

@@ -2,56 +2,66 @@ const enterBtn = document.getElementById("enter-btn");
 const entryScreen = document.getElementById("entry-screen");
 const music = document.getElementById("bg-music");
 
-if (music) music.volume = 0.25;
+music.volume = 0;
 
-if (enterBtn && entryScreen) {
-  enterBtn.addEventListener("click", async () => {
-    try {
-      if (music) await music.play();
-    } catch (err) {
-      console.warn("Autoplay blocked:", err);
-    }
+enterBtn.addEventListener("click", async () => {
+  await music.play();
 
-    entryScreen.classList.add("hide");
+  let vol = 0;
+  const fade = setInterval(() => {
+    vol += 0.02;
+    music.volume = vol;
+    if (vol >= 0.25) clearInterval(fade);
+  }, 100);
 
-    setTimeout(() => {
-      entryScreen.remove();
-    }, 1000);
-  });
-}
+  entryScreen.classList.add("hide");
+  setTimeout(() => entryScreen.remove(), 1000);
+});
 
 /* COUNTDOWN */
+const weddingDate = new Date("2026-03-08T02:38:00+05:30").getTime();
 
-const weddingDate = new Date("2026-03-07T02:38:00+05:30").getTime();
-
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
+const ids = ["days", "hours", "minutes", "seconds"];
 
 function updateCountdown() {
   const now = Date.now();
   const distance = weddingDate - now;
+  if (distance <= 0) return;
 
-  if (distance <= 0) {
-    clearInterval(timer);
-    daysEl.textContent = "00";
-    hoursEl.textContent = "00";
-    minutesEl.textContent = "00";
-    secondsEl.textContent = "00";
-    return;
-  }
+  const values = [
+    Math.floor(distance / (1000 * 60 * 60 * 24)),
+    Math.floor((distance / (1000 * 60 * 60)) % 24),
+    Math.floor((distance / (1000 * 60)) % 60),
+    Math.floor((distance / 1000) % 60)
+  ];
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  daysEl.textContent = String(days).padStart(2, "0");
-  hoursEl.textContent = String(hours).padStart(2, "0");
-  minutesEl.textContent = String(minutes).padStart(2, "0");
-  secondsEl.textContent = String(seconds).padStart(2, "0");
+  ids.forEach((id, i) => {
+    const el = document.getElementById(id);
+    el.textContent = String(values[i]).padStart(2, "0");
+  });
 }
 
-const timer = setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 1000);
 updateCountdown();
+
+/* ICS FILE DOWNLOAD (Correct UTC) */
+document.getElementById("download-ics").addEventListener("click", () => {
+
+const icsContent =
+`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20260307T210800Z
+DTEND:20260307T230800Z
+SUMMARY:Hemalatha & Aditya Wedding
+DESCRIPTION:Wedding Ceremony
+LOCATION:Sri Vasavi Arya Vysya Kalyana Mandapam
+END:VEVENT
+END:VCALENDAR`;
+
+  const blob = new Blob([icsContent], { type: "text/calendar" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "Hemalatha-Aditya-Wedding.ics";
+  link.click();
+});

@@ -17,7 +17,7 @@
 </head>
 <body>
 
-  <!-- Entry Screen - Now with larger text for mobile -->
+  <!-- Entry Screen - Ultra Large for Mobile -->
   <div id="entry-screen">
     <div class="entry-card">
       <div class="entry-ganesha-corner">
@@ -35,9 +35,175 @@
 
   <audio id="bg-music" loop><source src="music.mp3" type="audio/mpeg"></audio>
 
-  <!-- Main Content (rest remains same) -->
+  <!-- Main Content -->
   <main id="main-content">
-    <!-- ... rest of your content (unchanged from your last version) ... -->
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="ganesha-corner">
+        <img src="ganesh.webp" alt="Lord Ganesha" class="ganesha-img">
+      </div>
+      
+      <div class="container">
+        <p class="invitation-badge">ARVAPALLI FAMILY</p>
+        
+        <h1 class="couple-name">
+          <span class="bride">Hemalatha</span>
+          <span class="ampersand">&</span>
+          <span class="groom">Aditya Sai Kumar</span>
+        </h1>
+        
+        <div class="telugu-invitation">
+          <p class="telugu-text">శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు</p>
+          <p class="telugu-text">మా ప్రియమైన కుమార్తె వివాహ మహోత్సవమునకు</p>
+          <p class="telugu-text">మీరు విచ్చేసి వధూవరులను ఆశీర్వదించవలసిందిగా మనవి</p>
+        </div>
+        
+        <div class="family-details">
+          <div class="family-card">
+            <div class="family-label">👰 BRIDE'S FAMILY</div>
+            <div class="family-names">Srinivasa Rao & Ratna Kumari <span class="relation-tag">(Parents)</span></div>
+            <div class="family-names">Bala Prasanna <span class="relation-tag">(Brother)</span></div>
+          </div>
+          <div class="family-card">
+            <div class="family-label">🤵 GROOM'S FAMILY</div>
+            <div class="family-names">Srinivasarao & Padmavathi <span class="relation-tag">(Parents)</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wedding Details -->
+    <section class="wedding-section">
+      <div class="container">
+        <h2 class="section-title">💒 WEDDING CEREMONY 💒</h2>
+        
+        <div class="details-card">
+          <div class="date-block">
+            <div class="day">SATURDAY</div>
+            <div class="date">MARCH 7, 2026</div>
+            <div class="time-block">
+              <span class="time">02:38</span>
+              <span class="time-note">Early Sunday Morning</span>
+            </div>
+          </div>
+          
+          <div class="astro-info">
+            <p>✨ Swathi Nakshatra · Dhanur Lagna ✨</p>
+          </div>
+          
+          <div class="venue-block">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Sri Vasavi Arya Vysya Kalyana Mandapam</h3>
+            <p>Valaparla Village, Martur Mandal, Bapatla District</p>
+          </div>
+        </div>
+        
+        <div class="dinner-card">
+          <h3 class="dinner-telugu">🍛 భోజన కార్యక్రమం 🍛</h3>
+          <p class="dinner-details">
+            <i class="fas fa-utensils"></i>
+            Dinner · Saturday, March 7 · 8:00 PM onwards
+          </p>
+        </div>
+        
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1918.3614865276022!2d80.0472545!3d15.9235777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4af500777331e1%3A0xfecbdc883cceaad!2sSri%20Vasavi%20Arya%20Vysya%20Kalyana%20Mandapam!5e0!3m2!1sen!2sin"
+            loading="lazy">
+          </iframe>
+        </div>
+        
+        <a href="https://maps.google.com/?q=Sri+Vasavi+Arya+Vysya+Kalyana+Mandapam" target="_blank" class="direction-btn">
+          <i class="fas fa-directions"></i> GET DIRECTIONS
+        </a>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="countdown-section">
+      <div class="container">
+        <h2 class="section-title light">⏳ COUNTDOWN ⏳</h2>
+        <div class="countdown-grid">
+          <div class="count-item">
+            <span id="days">00</span>
+            <span class="count-label">DAYS</span>
+          </div>
+          <div class="count-item">
+            <span id="hours">00</span>
+            <span class="count-label">HOURS</span>
+          </div>
+          <div class="count-item">
+            <span id="minutes">00</span>
+            <span class="count-label">MINS</span>
+          </div>
+          <div class="count-item">
+            <span id="seconds">00</span>
+            <span class="count-label">SECS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portraits - Fixed Bride Photo Display -->
+    <section class="portraits-section">
+      <div class="container">
+        <h2 class="section-title">💑 THE WEDDING COUPLE 💑</h2>
+        <div class="portraits-grid">
+          
+          <div class="portrait-card">
+            <div class="portrait-inner">
+              <div class="portrait-front">
+                <div class="image-container">
+                  <img src="bride.jpeg" alt="Hemalatha" class="portrait-img bride-img">
+                </div>
+                <div class="portrait-overlay">
+                  <h3>HEMALATHA</h3>
+                </div>
+              </div>
+              <div class="portrait-back bride-back">
+                <i class="fas fa-heart"></i>
+                <h3>Hemalatha</h3>
+                <p class="back-detail">Daughter of</p>
+                <p class="back-name">Srinivasa Rao & Ratna Kumari</p>
+                <p class="back-detail">Sister of</p>
+                <p class="back-name">Bala Prasanna (Brother)</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="portrait-card">
+            <div class="portrait-inner">
+              <div class="portrait-front">
+                <div class="image-container">
+                  <img src="groom.jpeg" alt="Aditya Sai Kumar" class="portrait-img groom-img">
+                </div>
+                <div class="portrait-overlay">
+                  <h3>ADITYA SAI KUMAR</h3>
+                </div>
+              </div>
+              <div class="portrait-back groom-back">
+                <i class="fas fa-heart"></i>
+                <h3>Aditya Sai Kumar</h3>
+                <p class="back-detail">Son of</p>
+                <p class="back-name">Srinivasarao & Padmavathi</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="blessing">🙏 WITH DIVINE BLESSINGS 🙏</div>
+        <p class="family-name">Arvapalli Family</p>
+        <p class="footer-note">We eagerly await your gracious presence</p>
+      </div>
+    </footer>
+    
   </main>
 
   <script src="script.js"></script>

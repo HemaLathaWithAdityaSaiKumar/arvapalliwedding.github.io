@@ -216,3 +216,71 @@ footer {
     height: 280px;
   }
 }
+
+/* ================= PORTRAITS ================= */
+
+.portraits {
+  padding: 120px 20px;
+  text-align: center;
+  background: #fdfaf5;
+}
+
+.portraits h3 {
+  margin-bottom: 60px;
+}
+
+.portrait-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.portrait-card {
+  text-align: center;
+}
+
+.portrait-frame {
+  padding: 6px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #a87c1f, #d4af37);
+}
+
+.portrait-frame img {
+  width: 300px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: 0.4s ease;
+}
+
+.portrait-frame img:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+}
+
+.portrait-card h4 {
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #a87c1f;
+}
+
+.portrait-divider {
+  width: 2px;
+  height: 220px;
+  background: linear-gradient(to bottom, transparent, #a87c1f, transparent);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .portrait-divider {
+    display: none;
+  }
+
+  .portrait-frame img {
+    width: 240px;
+    height: 340px;
+  }
+}

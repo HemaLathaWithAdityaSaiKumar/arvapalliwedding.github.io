@@ -241,85 +241,74 @@ body {
   letter-spacing: 1px;
 }
 
-/* ================= COUPLE SECTION ================= */
+/* ================= COUPLE SECTION (Refined Individual Design) ================= */
 
 .portraits {
   padding: 120px 20px;
+  background: #ffffff;
   text-align: center;
-  background: linear-gradient(to bottom, #ffffff, #fdfaf5);
-  overflow: hidden;
 }
 
 .couple-title {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  color: #a87c1f;
   letter-spacing: 2px;
+  color: #a87c1f;
   margin-bottom: 70px;
 }
 
-.couple-wrapper {
+.portrait-grid {
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 0;
+  gap: 100px;
+  flex-wrap: wrap;
 }
 
-/* Card Base */
+/* Individual Panel */
 
-.couple-card {
-  position: relative;
-  width: 300px;
-  height: 420px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+.portrait-panel {
+  text-align: center;
   opacity: 0;
   transform: translateY(40px);
   animation: fadeUp 1s ease forwards;
 }
 
-.couple-card img {
-  width: 100%;
-  height: 100%;
+.portrait-panel:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.portrait-inner {
+  padding: 8px;
+  border: 2px solid #d4af37;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+  transition: 0.5s ease;
+}
+
+.portrait-inner img {
+  width: 320px;
+  height: 440px;
   object-fit: cover;
+  border-radius: 16px;
+  display: block;
 }
 
-/* Overlap effect */
+/* Hover effect */
 
-.bride {
-  z-index: 2;
-  margin-right: -60px;
-  animation-delay: 0.2s;
+.portrait-inner:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.15);
 }
 
-.groom {
-  z-index: 1;
-  margin-left: -60px;
-  animation-delay: 0.4s;
-}
+/* Name */
 
-/* Name Overlay */
-
-.name {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 18px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  color: white;
+.portrait-name {
+  margin-top: 25px;
   font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   letter-spacing: 1px;
-}
-
-/* Hover Effect */
-
-.couple-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 40px 80px rgba(0,0,0,0.2);
+  color: #a87c1f;
 }
 
 /* Animation */
@@ -331,22 +320,17 @@ body {
   }
 }
 
-/* Mobile */
+/* Responsive */
 
 @media (max-width: 768px) {
 
-  .couple-wrapper {
-    flex-direction: column;
-    gap: 40px;
+  .portrait-grid {
+    gap: 60px;
   }
 
-  .bride,
-  .groom {
-    margin: 0;
-  }
-
-  .couple-card {
+  .portrait-inner img {
     width: 260px;
     height: 360px;
   }
+
 }

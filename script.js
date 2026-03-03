@@ -1,50 +1,36 @@
-// ================= ENTRY =================
-
-const enterBtn = document.getElementById("enter-btn");
-const entryScreen = document.getElementById("entry-screen");
-const music = document.getElementById("bg-music");
-
-if (music) music.volume = 0.25;
-
-enterBtn.addEventListener("click", async () => {
-  try {
-    await music.play();
-  } catch (e) {}
-
-  entryScreen.classList.add("hide");
-
-  setTimeout(() => {
-    entryScreen.style.display = "none";
-  }, 1000);
-});
-
-// ================= COUNTDOWN =================
-
-// Actual Muhurtham: March 8, 2026 02:38 AM IST
+// IST Correct Muhurtham (March 8, 2026 – 02:38 IST)
 const weddingDate = new Date("2026-03-08T02:38:00+05:30").getTime();
 
-function updateCountdown() {
+function updateCountdown(){
   const now = Date.now();
-  const distance = weddingDate - now;
+  const gap = weddingDate - now;
+  if(gap <= 0) return;
 
-  if (distance <= 0) {
-    document.getElementById("days").textContent = "00";
-    document.getElementById("hours").textContent = "00";
-    document.getElementById("minutes").textContent = "00";
-    document.getElementById("seconds").textContent = "00";
-    return;
-  }
+  const values = [
+    Math.floor(gap/(1000*60*60*24)),
+    Math.floor((gap/(1000*60*60))%24),
+    Math.floor((gap/(1000*60))%60),
+    Math.floor((gap/1000)%60)
+  ];
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+  const ids=["days","hours","minutes","seconds"];
 
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  ids.forEach((id,i)=>{
+    document.getElementById(id).innerText =
+      String(values[i]).padStart(2,"0");
+  });
 }
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 updateCountdown();
+
+// Scroll reveal
+window.addEventListener("scroll",()=>{
+  document.querySelectorAll(".reveal").forEach(el=>{
+    const windowHeight=window.innerHeight;
+    const elementTop=el.getBoundingClientRect().top;
+    if(elementTop < windowHeight - 100){
+      el.classList.add("active");
+    }
+  });
+});

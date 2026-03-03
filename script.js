@@ -1,4 +1,4 @@
-// script.js - Mobile-First with Touch Optimization
+// script.js
 
 (function() {
   
@@ -19,7 +19,7 @@
     });
   }
   
-  // Countdown Timer
+  // Countdown
   const weddingDate = new Date('2026-03-08T02:38:00+05:30').getTime();
   
   const daysEl = document.getElementById('days');
@@ -55,15 +55,13 @@
     setInterval(updateCountdown, 1000);
   }
   
-  // Touch-optimized flip for mobile
+  // Touch flip for mobile
   const portraitCards = document.querySelectorAll('.portrait-card');
   
   portraitCards.forEach(card => {
     let isFlipped = false;
     
-    // For touch devices
-    card.addEventListener('touchstart', function(e) {
-      e.preventDefault();
+    card.addEventListener('click', function() {
       const inner = this.querySelector('.portrait-inner');
       
       if (!isFlipped) {
@@ -74,32 +72,6 @@
         isFlipped = false;
       }
     });
-    
-    // For mouse devices (desktop)
-    card.addEventListener('mouseenter', function() {
-      if (window.innerWidth > 768) {
-        const inner = this.querySelector('.portrait-inner');
-        inner.style.transform = 'rotateY(180deg)';
-      }
-    });
-    
-    card.addEventListener('mouseleave', function() {
-      if (window.innerWidth > 768) {
-        const inner = this.querySelector('.portrait-inner');
-        inner.style.transform = 'rotateY(0deg)';
-        isFlipped = false;
-      }
-    });
-  });
-  
-  // Reset flip state on window resize
-  window.addEventListener('resize', function() {
-    if (window.innerWidth > 768) {
-      portraitCards.forEach(card => {
-        const inner = card.querySelector('.portrait-inner');
-        inner.style.transform = 'rotateY(0deg)';
-      });
-    }
   });
   
 })();

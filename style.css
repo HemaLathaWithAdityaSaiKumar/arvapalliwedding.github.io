@@ -1,15 +1,18 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #fdfaf5;
   color: #222;
+  overflow-x: hidden;
 }
 
-/* ===============================
-   CINEMATIC ENTRY SCREEN
-================================= */
+/* ==========================================
+   ENTRY SCREEN – CINEMATIC WITH PARTICLES
+========================================== */
 
 #entry-screen {
   position: fixed;
@@ -24,24 +27,39 @@ body {
   text-align: center;
 }
 
-/* Subtle animated background glow */
-#entry-screen::before {
+/* Floating Particles */
+#entry-screen::before,
+#entry-screen::after {
   content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(circle, rgba(168,124,31,0.15) 2px, transparent 2px);
+  background-size: 60px 60px;
+  animation: floatParticles 20s linear infinite;
+}
+
+#entry-screen::after {
+  animation-duration: 35s;
+  opacity: 0.6;
+}
+
+/* Golden Glow */
+#entry-screen .glow {
   position: absolute;
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, rgba(168,124,31,0.15), transparent 70%);
-  animation: glowMove 8s ease-in-out infinite alternate;
+  animation: glowMove 10s ease-in-out infinite alternate;
 }
 
-/* Content */
 .entry-content {
   position: relative;
   z-index: 2;
   animation: fadeSlide 1.5s ease forwards;
 }
 
-/* Welcome Text */
 .entry-content h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3.2em;
@@ -51,7 +69,6 @@ body {
   position: relative;
 }
 
-/* Subtle underline animation */
 .entry-content h2::after {
   content: "";
   display: block;
@@ -62,7 +79,6 @@ body {
   animation: lineExpand 1.5s ease forwards;
 }
 
-/* Button */
 #enter-btn {
   padding: 18px 45px;
   font-size: 1.15em;
@@ -77,7 +93,6 @@ body {
   overflow: hidden;
 }
 
-/* Gold shimmer effect */
 #enter-btn::before {
   content: "";
   position: absolute;
@@ -105,47 +120,16 @@ body {
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* Hide animation */
 #entry-screen.hide {
   animation: fadeOut 1s ease forwards;
 }
 
-/* Animations */
+/* ==========================================
+   HERO SECTION
+========================================== */
 
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes glowMove {
-  from {
-    transform: translate(-100px, -100px);
-  }
-  to {
-    transform: translate(100px, 100px);
-  }
-}
-
-@keyframes lineExpand {
-  from { width: 0; }
-  to { width: 80px; }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-/* HERO */
 .hero {
-  padding: 90px 20px 130px;
+  padding: 100px 20px 140px;
   text-align: center;
   background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
@@ -159,6 +143,7 @@ body {
   width: 180px;
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  animation: floatGanesh 6s ease-in-out infinite;
 }
 
 .invitation-title {
@@ -171,26 +156,37 @@ body {
 
 .main-names {
   font-family: 'Playfair Display', serif;
-  font-size: 3.3em;
+  font-size: 3.4em;
+  margin: 20px 0;
 }
 
-.main-names span { color: #c5a047; }
+.main-names span {
+  color: #c5a047;
+}
 
 .telugu {
   font-family: 'Noto Serif Telugu', serif;
   line-height: 1.9em;
 }
 
-.family-details { margin-top: 35px; }
+.family-details {
+  margin-top: 35px;
+}
 
-/* CEREMONY */
+/* ==========================================
+   CEREMONY
+========================================== */
+
 .details {
   padding: 100px 20px;
   text-align: center;
   background: #ffffff;
 }
 
-/* DINNER */
+/* ==========================================
+   DINNER CARD
+========================================== */
+
 .dinner-section {
   padding: 110px 20px;
   background: #f7f1e8;
@@ -213,7 +209,9 @@ body {
   color: #a87c1f;
 }
 
-.dinner-details { line-height: 1.9em; }
+.dinner-details {
+  line-height: 1.9em;
+}
 
 .divider {
   height: 2px;
@@ -222,7 +220,10 @@ body {
   margin: 25px auto;
 }
 
-/* COUNTDOWN */
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
 .countdown-section {
   padding: 100px 20px;
   background: #fff;
@@ -240,6 +241,11 @@ body {
   background: #f7f1e8;
   padding: 25px 20px;
   border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.time-box:hover {
+  transform: translateY(-5px);
 }
 
 .time-box span {
@@ -248,7 +254,10 @@ body {
   color: #a87c1f;
 }
 
-/* PORTRAITS */
+/* ==========================================
+   PORTRAITS
+========================================== */
+
 .portrait-section {
   padding: 120px 20px;
   background: #fdfaf5;
@@ -268,10 +277,49 @@ body {
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  transition: transform 0.5s ease;
+}
+
+.portrait img:hover {
+  transform: scale(1.05);
 }
 
 footer {
   padding: 60px;
   text-align: center;
   background: #ffffff;
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowMove {
+  from { transform: translate(-100px, -100px); }
+  to { transform: translate(100px, 100px); }
+}
+
+@keyframes lineExpand {
+  from { width: 0; }
+  to { width: 80px; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes floatGanesh {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes floatParticles {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
 }

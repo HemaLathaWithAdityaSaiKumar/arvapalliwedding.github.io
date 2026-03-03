@@ -86,3 +86,101 @@ body {
   margin-top: 30px;
   font-size: 1.1rem;
 }
+
+/* ================= EVENT DETAILS ================= */
+
+.details {
+  padding: 100px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.details-inner {
+  max-width: 800px;
+  margin: auto;
+}
+
+.details-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.event-date {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.event-date strong {
+  font-size: 1.4rem;
+  color: #a87c1f;
+}
+
+.early-note {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.95rem;
+  color: #a87c1f;
+}
+
+.nakshatra {
+  margin-top: 25px;
+  font-style: italic;
+  color: #555;
+}
+
+.venue {
+  margin-top: 25px;
+  line-height: 1.7;
+}
+
+.map-btn-wrapper {
+  margin-top: 35px;
+}
+
+
+/* ================= COUNTDOWN ================= */
+
+.countdown-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.countdown-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 50px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  background: #f7f1e8;
+  padding: 25px 30px;
+  border-radius: 14px;
+  min-width: 100px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.time-box:hover {
+  transform: translateY(-5px);
+}
+
+.time-box span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #a87c1f;
+}
+
+.time-box p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}

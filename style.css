@@ -1,4 +1,4 @@
-/* style.css - ULTRA LARGE for Mobile, Fixed Bride Photo, No Scroll Issue */
+/* style.css - ULTRA LARGE for Mobile, Fixed Bride Photo, NO SCROLL ISSUE */
 
 * {
   margin: 0;
@@ -14,11 +14,8 @@ html, body {
   font-size: 18px;
   height: 100%;
   width: 100%;
-  overflow: hidden; /* Prevent scrolling on body */
-}
-
-body.entry-hidden {
-  overflow: auto; /* Allow scrolling when entry is hidden */
+  overflow: hidden; /* CRITICAL: Prevent any scrolling on body */
+  position: fixed; /* CRITICAL: Lock the viewport */
 }
 
 .container {
@@ -141,8 +138,10 @@ body.entry-hidden {
 #main-content {
   height: 100%;
   width: 100%;
-  overflow-y: auto; /* Make main content scrollable */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overflow-y: auto; /* Only main content scrolls */
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  background: #fffbf5;
 }
 
 /* ===== HERO SECTION ===== */

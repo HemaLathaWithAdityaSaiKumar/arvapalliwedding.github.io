@@ -1,12 +1,41 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #fdfaf5;
   color: #222;
+}
+
+/* ENTRY SCREEN */
+#entry-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #fdfaf5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 1s ease;
+}
+
+.entry-content { text-align: center; }
+
+#enter-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  background: #a87c1f;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+#entry-screen.hide {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* HERO */
@@ -21,75 +50,33 @@ body {
   margin: 0 auto;
 }
 
-/* GANESH */
-.ganesha-wrapper {
-  margin-bottom: 35px;
-}
-
 .ganesha-wrapper img {
   width: 180px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
-/* INVITATION TITLE */
 .invitation-title {
   font-family: 'Playfair Display', serif;
   font-size: 1.5em;
   font-weight: 600;
   color: #a87c1f;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-  padding: 10px 30px;
+  margin: 30px 0;
 }
 
-.invitation-title::before,
-.invitation-title::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 60px;
-  height: 2px;
-  background: #a87c1f;
-}
-
-.invitation-title::before {
-  left: -70px;
-}
-
-.invitation-title::after {
-  right: -70px;
-}
-
-/* NAMES */
 .main-names {
   font-family: 'Playfair Display', serif;
   font-size: 3.3em;
-  margin: 20px 0;
-  font-weight: 600;
 }
 
-.main-names span {
-  color: #c5a047;
-}
+.main-names span { color: #c5a047; }
 
-/* TELUGU */
 .telugu {
   font-family: 'Noto Serif Telugu', serif;
   line-height: 1.9em;
-  margin-top: 15px;
 }
 
-/* FAMILY */
-.family-details {
-  margin-top: 35px;
-  line-height: 1.8em;
-  font-size: 1.05em;
-}
+.family-details { margin-top: 35px; }
 
 /* CEREMONY */
 .details {
@@ -98,8 +85,7 @@ body {
   background: #ffffff;
 }
 
-/* DINNER SECTION — REFINED */
-
+/* DINNER */
 .dinner-section {
   padding: 110px 20px;
   background: #f7f1e8;
@@ -110,7 +96,6 @@ body {
 .dinner-card {
   background: #ffffff;
   max-width: 700px;
-  width: 100%;
   padding: 60px 40px;
   text-align: center;
   border-radius: 12px;
@@ -121,13 +106,9 @@ body {
   font-family: 'Noto Serif Telugu', serif;
   font-size: 1.9em;
   color: #a87c1f;
-  margin-bottom: 30px;
 }
 
-.dinner-details {
-  font-size: 1.1em;
-  line-height: 1.9em;
-}
+.dinner-details { line-height: 1.9em; }
 
 .divider {
   height: 2px;
@@ -139,7 +120,7 @@ body {
 /* COUNTDOWN */
 .countdown-section {
   padding: 100px 20px;
-  background: #f7f1e8;
+  background: #fff;
   text-align: center;
 }
 
@@ -151,21 +132,15 @@ body {
 }
 
 .time-box {
-  background: #ffffff;
+  background: #f7f1e8;
   padding: 25px 20px;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 .time-box span {
   font-family: 'Playfair Display', serif;
   font-size: 2.5em;
   color: #a87c1f;
-}
-
-.time-box p {
-  margin-top: 8px;
-  font-size: 0.9em;
 }
 
 /* PORTRAITS */
@@ -182,56 +157,16 @@ body {
   flex-wrap: wrap;
 }
 
-.portrait {
-  width: 300px;
-}
-
 .portrait img {
-  width: 100%;
+  width: 300px;
   height: 420px;
   object-fit: cover;
   border-radius: 18px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.12);
 }
 
-.portrait-name {
-  margin-top: 15px;
-  font-family: 'Playfair Display', serif;
-}
-
-/* FOOTER */
 footer {
   padding: 60px;
   text-align: center;
   background: #ffffff;
-}
-
-/* MUSIC BUTTON */
-
-#music-toggle {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background: #a87c1f;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  display: none;              /* Hidden initially */
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.3s ease;
-  z-index: 1000;
-}
-
-#music-toggle:hover {
-  transform: scale(1.1);
-}
-
-#music-toggle.show {
-  display: block;
-  opacity: 1;
 }

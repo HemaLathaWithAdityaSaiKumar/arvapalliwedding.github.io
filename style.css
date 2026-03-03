@@ -1,50 +1,68 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background: #fdfaf5;
   color: #222;
-  overflow-x: hidden;
 }
 
-/* ===============================
-   CLEAN ENTRY SCREEN
-================================= */
+/* ================= ENTRY ================= */
 
 #entry-screen {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #fdfaf5, #f3ece2);
+  inset: 0;
+  background: radial-gradient(circle at center, #fdfaf5 0%, #e8dcc8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
   overflow: hidden;
-  text-align: center;
 }
 
-.entry-content {
+.ambient-bg {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(168,124,31,0.25), transparent 70%);
+  animation: floatGlow 12s ease-in-out infinite alternate;
+  filter: blur(60px);
+}
+
+.entry-card {
   position: relative;
-  z-index: 2;
-  animation: fadeSlide 1.2s ease forwards;
+  padding: 70px 90px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeInScale 1.5s ease forwards;
 }
 
-.entry-content h2 {
+.welcome-text {
   font-family: 'Playfair Display', serif;
-  font-size: 3em;
-  color: #a87c1f;
-  margin-bottom: 50px;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  background: linear-gradient(90deg, #a87c1f, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.underline {
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #a87c1f, #d4af37);
+  margin: 20px auto 50px;
+  animation: expandLine 1.5s ease forwards;
 }
 
 #enter-btn {
-  padding: 18px 45px;
-  font-size: 1.1em;
+  padding: 18px 50px;
+  font-size: 1.1rem;
   font-family: 'Playfair Display', serif;
-  border-radius: 40px;
+  border-radius: 50px;
   border: 2px solid #a87c1f;
   background: transparent;
   color: #a87c1f;
@@ -53,174 +71,57 @@ body {
 }
 
 #enter-btn:hover {
-  background: #a87c1f;
+  background: linear-gradient(90deg, #a87c1f, #d4af37);
   color: white;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* Hide animation */
 #entry-screen.hide {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1s ease;
+  animation: fadeOut 1s ease forwards;
 }
 
-/* ===============================
-   FLOATING PARTICLES (SAFE)
-================================= */
-
-.particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-}
-
-.particles span {
-  position: absolute;
-  bottom: -20px;
-  width: 6px;
-  height: 6px;
-  background: rgba(168,124,31,0.4);
-  border-radius: 50%;
-  animation: floatUp 12s linear infinite;
-}
-
-.particles span:nth-child(1) { left: 10%; animation-duration: 10s; }
-.particles span:nth-child(2) { left: 25%; animation-duration: 14s; }
-.particles span:nth-child(3) { left: 40%; animation-duration: 11s; }
-.particles span:nth-child(4) { left: 55%; animation-duration: 13s; }
-.particles span:nth-child(5) { left: 70%; animation-duration: 9s; }
-.particles span:nth-child(6) { left: 85%; animation-duration: 12s; }
-.particles span:nth-child(7) { left: 35%; animation-duration: 15s; }
-.particles span:nth-child(8) { left: 60%; animation-duration: 10s; }
-
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ==========================================
-   HERO SECTION
-========================================== */
+/* ================= HERO ================= */
 
 .hero {
-  padding: 100px 20px 140px;
+  padding: 100px 20px;
   text-align: center;
   background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
 }
 
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-}
+.hero-inner { max-width: 900px; margin: auto; }
 
 .ganesha-wrapper img {
   width: 180px;
-  border-radius: 8px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  animation: floatGanesh 6s ease-in-out infinite;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
 .invitation-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  font-weight: 600;
   color: #a87c1f;
   margin: 30px 0;
 }
 
 .main-names {
   font-family: 'Playfair Display', serif;
-  font-size: 3.4em;
-  margin: 20px 0;
+  font-size: clamp(2.2rem, 6vw, 3.3rem);
 }
 
-.main-names span {
-  color: #c5a047;
-}
+.main-names span { color: #c5a047; }
 
 .telugu {
   font-family: 'Noto Serif Telugu', serif;
   line-height: 1.9em;
 }
 
-.family-details {
-  margin-top: 35px;
-}
-
-/* ==========================================
-   CEREMONY
-========================================== */
-
-.details {
+.details, .countdown-section {
   padding: 100px 20px;
   text-align: center;
   background: #ffffff;
 }
 
-/* ==========================================
-   DINNER CARD
-========================================== */
-
-.dinner-section {
-  padding: 110px 20px;
-  background: #f7f1e8;
-  display: flex;
-  justify-content: center;
-}
-
-.dinner-card {
-  background: #ffffff;
-  max-width: 700px;
-  padding: 60px 40px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-}
-
-.dinner-heading {
-  font-family: 'Noto Serif Telugu', serif;
-  font-size: 1.9em;
-  color: #a87c1f;
-}
-
-.dinner-details {
-  line-height: 1.9em;
-}
-
-.divider {
-  height: 2px;
-  width: 80px;
-  background: #a87c1f;
-  margin: 25px auto;
-}
-
-/* ==========================================
-   COUNTDOWN
-========================================== */
-
-.countdown-section {
-  padding: 100px 20px;
-  background: #fff;
-  text-align: center;
-}
+/* COUNTDOWN */
 
 .countdown {
   display: flex;
@@ -233,11 +134,7 @@ body {
   background: #f7f1e8;
   padding: 25px 20px;
   border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-
-.time-box:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
 .time-box span {
@@ -246,72 +143,27 @@ body {
   color: #a87c1f;
 }
 
-/* ==========================================
-   PORTRAITS
-========================================== */
-
-.portrait-section {
-  padding: 120px 20px;
-  background: #fdfaf5;
-  text-align: center;
-}
-
-.portrait-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: wrap;
-}
-
-.portrait img {
-  width: 300px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 18px;
-  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
-  transition: transform 0.5s ease;
-}
-
-.portrait img:hover {
-  transform: scale(1.05);
-}
-
+/* FOOTER */
 footer {
   padding: 60px;
   text-align: center;
   background: #ffffff;
 }
 
-/* ==========================================
-   ANIMATIONS
-========================================== */
+/* ANIMATIONS */
 
-@keyframes fadeSlide {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes glowMove {
+@keyframes expandLine { to { width: 120px; } }
+
+@keyframes floatGlow {
   from { transform: translate(-100px, -100px); }
   to { transform: translate(100px, 100px); }
 }
 
-@keyframes lineExpand {
-  from { width: 0; }
-  to { width: 80px; }
-}
-
 @keyframes fadeOut {
   to { opacity: 0; visibility: hidden; }
-}
-
-@keyframes floatGanesh {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes floatParticles {
-  from { transform: translateY(0); }
-  to { transform: translateY(-200px); }
 }

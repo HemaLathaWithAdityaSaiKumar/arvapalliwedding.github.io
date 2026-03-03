@@ -6,22 +6,19 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: 'Montserrat', sans-serif;
   background: #fffbf5;
   color: #2c2419;
   line-height: 1.5;
   font-size: 18px;
-  /* Prevent body scroll when entry screen is active */
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling on body */
 }
 
-body.entry-active {
-  overflow: hidden;
-}
-
-body.main-active {
-  overflow: auto;
+body.entry-hidden {
+  overflow: auto; /* Allow scrolling when entry is hidden */
 }
 
 .container {
@@ -57,7 +54,6 @@ body.main-active {
   z-index: 9999;
   transition: opacity 0.5s ease, visibility 0.5s ease;
   padding: 20px;
-  /* Ensure it covers everything */
   opacity: 1;
   visibility: visible;
 }
@@ -139,6 +135,14 @@ body.main-active {
   font-size: 22px;
   opacity: 0.9;
   letter-spacing: 2px;
+}
+
+/* ===== MAIN CONTENT ===== */
+#main-content {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto; /* Make main content scrollable */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 /* ===== HERO SECTION ===== */
@@ -455,7 +459,7 @@ body.main-active {
 
 /* Bride photo specific fix - if photo is portrait orientation */
 .bride-img {
-  object-position: center 20%; /* Adjust this value to show face properly */
+  object-position: center 20%;
 }
 
 .portrait-overlay {

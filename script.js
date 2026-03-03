@@ -1,5 +1,5 @@
 // ================= script.js =================
-// entry screen + countdown + music (with autoplay handling)
+// Entry screen, music, countdown, and subtle enhancements
 
 (function() {
   'use strict';
@@ -9,32 +9,31 @@
   const entryScreen = document.getElementById('entry-screen');
   const music = document.getElementById('bg-music');
 
-  // set low volume if music exists
-  if (music) music.volume = 0.25;
+  if (music) music.volume = 0.2; // low background
 
-  // ----- ENTER ACTION -----
+  // ----- ENTRY WITH TELUGU BUTTON -----
   if (enterBtn && entryScreen) {
     enterBtn.addEventListener('click', async () => {
-      // try to play music (may be blocked until user interaction)
+      // attempt music play (user interaction)
       if (music) {
         try {
           await music.play();
-        } catch (err) {
-          console.warn('Audio autoplay not allowed:', err);
+        } catch (e) {
+          console.log('Audio play failed (expected if no music.mp3)');
         }
       }
 
-      // hide entry screen smoothly
+      // hide entry screen
       entryScreen.classList.add('hide');
 
-      // remove from DOM after transition (clean)
+      // remove from DOM after transition
       setTimeout(() => {
         if (entryScreen.parentNode) entryScreen.remove();
-      }, 1000); // matches CSS transition duration
+      }, 800);
     });
   }
 
-  // ----- COUNTDOWN -----
+  // ----- COUNTDOWN (compact) -----
   const weddingDate = new Date('2026-03-08T02:38:00+05:30').getTime(); // Mar 8, 02:38 IST
 
   const daysEl = document.getElementById('days');
@@ -48,7 +47,6 @@
       const distance = weddingDate - now;
 
       if (distance <= 0) {
-        // wedding day passed or it's time
         daysEl.textContent = '00';
         hoursEl.textContent = '00';
         minutesEl.textContent = '00';
@@ -68,13 +66,13 @@
       secondsEl.textContent = String(seconds).padStart(2, '0');
     }
 
-    updateCountdown(); // immediate
+    updateCountdown();
     const timer = setInterval(updateCountdown, 1000);
   }
 
-  // optional: preload images (optional goodie)
-  window.addEventListener('load', function() {
-    // tiny performance: images already have loading="lazy"
+  // ----- small extra: preload portraits (optional) -----
+  window.addEventListener('load', () => {
+    // images already have loading="lazy" – fine
   });
 
 })();

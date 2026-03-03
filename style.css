@@ -10,15 +10,15 @@ body {
   overflow-x: hidden;
 }
 
-/* ==========================================
-   ENTRY SCREEN – CINEMATIC WITH PARTICLES
-========================================== */
+/* ===============================
+   CLEAN ENTRY SCREEN
+================================= */
 
 #entry-screen {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #fdfaf5, #f2eadf);
+  background: linear-gradient(to bottom, #fdfaf5, #f3ece2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,61 +27,22 @@ body {
   text-align: center;
 }
 
-/* Floating Particles */
-#entry-screen::before,
-#entry-screen::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background-image:
-    radial-gradient(circle, rgba(168,124,31,0.15) 2px, transparent 2px);
-  background-size: 60px 60px;
-  animation: floatParticles 20s linear infinite;
-}
-
-#entry-screen::after {
-  animation-duration: 35s;
-  opacity: 0.6;
-}
-
-/* Golden Glow */
-#entry-screen .glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(168,124,31,0.15), transparent 70%);
-  animation: glowMove 10s ease-in-out infinite alternate;
-}
-
 .entry-content {
   position: relative;
   z-index: 2;
-  animation: fadeSlide 1.5s ease forwards;
+  animation: fadeSlide 1.2s ease forwards;
 }
 
 .entry-content h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.2em;
-  margin-bottom: 50px;
+  font-size: 3em;
   color: #a87c1f;
-  letter-spacing: 1px;
-  position: relative;
-}
-
-.entry-content h2::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 3px;
-  background: #a87c1f;
-  margin: 15px auto 0;
-  animation: lineExpand 1.5s ease forwards;
+  margin-bottom: 50px;
 }
 
 #enter-btn {
   padding: 18px 45px;
-  font-size: 1.15em;
+  font-size: 1.1em;
   font-family: 'Playfair Display', serif;
   border-radius: 40px;
   border: 2px solid #a87c1f;
@@ -89,39 +50,70 @@ body {
   color: #a87c1f;
   cursor: pointer;
   transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-#enter-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.6),
-    transparent
-  );
-  transition: 0.8s;
-}
-
-#enter-btn:hover::before {
-  left: 100%;
 }
 
 #enter-btn:hover {
   background: #a87c1f;
   color: white;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
 }
 
+/* Hide animation */
 #entry-screen.hide {
-  animation: fadeOut 1s ease forwards;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+/* ===============================
+   FLOATING PARTICLES (SAFE)
+================================= */
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.particles span {
+  position: absolute;
+  bottom: -20px;
+  width: 6px;
+  height: 6px;
+  background: rgba(168,124,31,0.4);
+  border-radius: 50%;
+  animation: floatUp 12s linear infinite;
+}
+
+.particles span:nth-child(1) { left: 10%; animation-duration: 10s; }
+.particles span:nth-child(2) { left: 25%; animation-duration: 14s; }
+.particles span:nth-child(3) { left: 40%; animation-duration: 11s; }
+.particles span:nth-child(4) { left: 55%; animation-duration: 13s; }
+.particles span:nth-child(5) { left: 70%; animation-duration: 9s; }
+.particles span:nth-child(6) { left: 85%; animation-duration: 12s; }
+.particles span:nth-child(7) { left: 35%; animation-duration: 15s; }
+.particles span:nth-child(8) { left: 60%; animation-duration: 10s; }
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================

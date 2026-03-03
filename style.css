@@ -1,286 +1,557 @@
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* style.css - BIG TEXT, CLEAR, MOBILE OPTIMIZED */
 
-body {
+* {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #fdfaf5;
-  color: #222;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* ================= ENTRY ================= */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fffbf5;
+  color: #2c2419;
+  line-height: 1.5;
+  font-size: 18px;
+}
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Ganesha ===== */
+.ganesha-corner {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
+
+.ganesha-img {
+  width: 70px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(109,79,52,0.3));
+}
+
+/* ===== ENTRY SCREEN ===== */
 #entry-screen {
   position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #fdfaf5 0%, #e8dcc8 100%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(145deg, #8b6b4d, #6d4f34);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
-  overflow: hidden;
-}
-
-.ambient-bg {
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(168,124,31,0.25), transparent 70%);
-  animation: floatGlow 12s ease-in-out infinite alternate;
-  filter: blur(60px);
-}
-
-.entry-card {
-  position: relative;
-  padding: 70px 90px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(20px);
-  border-radius: 30px;
-  box-shadow: 0 40px 80px rgba(0,0,0,0.1);
-  text-align: center;
-  animation: fadeInScale 1.5s ease forwards;
-}
-
-.welcome-text {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0;
-}
-
-.underline {
-  height: 3px;
-  width: 0;
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  margin: 20px auto 50px;
-  animation: expandLine 1.5s ease forwards;
-}
-
-#enter-btn {
-  padding: 18px 50px;
-  font-size: 1.1rem;
-  font-family: 'Playfair Display', serif;
-  border-radius: 50px;
-  border: 2px solid #a87c1f;
-  background: transparent;
-  color: #a87c1f;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-#enter-btn:hover {
-  background: linear-gradient(90deg, #a87c1f, #d4af37);
-  color: white;
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  z-index: 9999;
+  transition: 0.5s;
+  padding: 16px;
 }
 
 #entry-screen.hide {
-  animation: fadeOut 1s ease forwards;
+  opacity: 0;
+  visibility: hidden;
 }
 
-/* ================= HERO ================= */
-
-.hero {
-  padding: 100px 20px;
-  text-align: center;
-  background: linear-gradient(to bottom, #fdfaf5, #f4efe6);
-}
-
-.hero-inner { max-width: 900px; margin: auto; }
-
-.ganesha-wrapper img {
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-}
-
-.invitation-title {
-  font-family: 'Playfair Display', serif;
-  color: #a87c1f;
-  margin: 30px 0;
-}
-
-.main-names {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 6vw, 3.3rem);
-}
-
-.main-names span { color: #c5a047; }
-
-.telugu {
-  font-family: 'Noto Serif Telugu', serif;
-  line-height: 1.9em;
-}
-
-.details, .countdown-section {
-  padding: 100px 20px;
-  text-align: center;
-  background: #ffffff;
-}
-
-/* COUNTDOWN */
-
-.countdown {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.time-box {
-  background: #f7f1e8;
-  padding: 25px 20px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-}
-
-.time-box span {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5em;
-  color: #a87c1f;
-}
-
-/* FOOTER */
-footer {
-  padding: 60px;
-  text-align: center;
-  background: #ffffff;
-}
-
-/* ANIMATIONS */
-
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes expandLine { to { width: 120px; } }
-
-@keyframes floatGlow {
-  from { transform: translate(-100px, -100px); }
-  to { transform: translate(100px, 100px); }
-}
-
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* ================= GOOGLE MAP ================= */
-
-.map-wrapper {
-  margin: 40px auto 20px;
-  width: 85%;
-  max-width: 800px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-  transition: 0.3s ease;
-}
-
-.map-wrapper iframe {
+.entry-card {
+  background: #fffaf0;
+  padding: 45px 30px;
+  border-radius: 60px 20px 60px 20px;
+  max-width: 450px;
   width: 100%;
-  height: 350px;
-  border: 0;
+  position: relative;
+  box-shadow: 0 30px 40px rgba(0,0,0,0.3);
 }
 
-.map-wrapper:hover {
-  transform: translateY(-6px);
+.entry-ganesha-corner {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.map-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  border-radius: 30px;
-  background: #a87c1f;
-  color: white;
-  text-decoration: none;
+.ganesha-corner-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.entry-telugu {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #6d4f34;
+  margin: 10px 0 5px;
+}
+
+.entry-english {
   font-family: 'Playfair Display', serif;
-  transition: 0.3s ease;
+  font-size: 22px;
+  color: #9a7b5c;
+  font-weight: 500;
 }
 
-.map-btn:hover {
-  background: #8f6618;
-  transform: translateY(-3px);
+.entry-decoration {
+  width: 70px;
+  height: 3px;
+  background: #d4b48c;
+  margin: 25px auto;
 }
 
-@media (max-width: 768px) {
-  .map-wrapper {
-    width: 100%;
-  }
-
-  .map-wrapper iframe {
-    height: 280px;
-  }
+.entry-btn {
+  width: 100%;
+  background: #6d4f34;
+  border: none;
+  padding: 18px;
+  border-radius: 50px 12px 50px 12px;
+  color: white;
+  cursor: pointer;
 }
 
-/* ================= PORTRAITS ================= */
+.btn-telugu {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 26px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
 
-.portraits {
-  padding: 120px 20px;
+.btn-english {
+  font-size: 16px;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  padding: 70px 0 50px;
+  position: relative;
+  background: #fffbf5;
+}
+
+.invitation-badge {
   text-align: center;
-  background: #fdfaf5;
+  font-size: 16px;
+  letter-spacing: 5px;
+  color: #9a7b5c;
+  font-weight: 600;
+  margin-bottom: 25px;
 }
 
-.portraits h3 {
-  margin-bottom: 60px;
+.couple-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 35px;
 }
 
-.portrait-wrapper {
+.couple-name .bride { 
+  color: #6d4f34; 
+  display: block;
+}
+
+.couple-name .ampersand { 
+  color: #d4b48c; 
+  font-size: 38px; 
+  display: block;
+  margin: 8px 0;
+}
+
+.couple-name .groom { 
+  color: #4a3a2a; 
+  display: block;
+}
+
+.telugu-invitation {
+  background: #faf3ea;
+  padding: 35px 25px;
+  border-radius: 60px 12px 60px 12px;
+  margin: 35px 0 30px;
+}
+
+.telugu-text {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 20px;
+  line-height: 2;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.family-details {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.family-card {
+  background: #f5ede1;
+  padding: 25px;
+  border-radius: 40px 10px 40px 10px;
+  border-left: 6px solid #8b6b4d;
+}
+
+.family-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #8b6b4d;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.family-names {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c2419;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.relation-tag {
+  font-size: 16px;
+  color: #8b6b4d;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+/* ===== WEDDING SECTION ===== */
+.wedding-section {
+  padding: 60px 0;
+  background: white;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #6d4f34;
+  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 800;
+}
+
+.section-title.light { color: white; }
+
+.details-card {
+  background: #faf3ea;
+  padding: 45px 25px;
+  border-radius: 60px 12px 60px 12px;
+}
+
+.date-block { text-align: center; }
+.day { 
+  font-size: 20px; 
+  letter-spacing: 5px; 
+  color: #9a7b5c; 
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.date { 
+  font-size: 42px; 
+  font-weight: 900; 
+  color: #6d4f34; 
+  margin: 12px 0; 
+}
+.time { 
+  font-size: 64px; 
+  font-weight: 900; 
+  color: #8b6b4d; 
+  display: block; 
+  line-height: 1.1; 
+}
+.time-note { 
+  font-size: 18px; 
+  color: #9a7b5c; 
+  font-weight: 500;
+  margin-top: 8px;
+  display: block;
+}
+
+.astro-info {
+  padding: 25px 0;
+  border-top: 2px solid #e8d9c8;
+  border-bottom: 2px solid #e8d9c8;
+  margin: 30px 0;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #6d4f34;
+}
+
+.venue-block { text-align: center; }
+.venue-block i { 
+  font-size: 36px; 
+  color: #8b6b4d; 
+  margin-bottom: 20px; 
+}
+.venue-block h3 { 
+  font-size: 24px; 
+  font-weight: 700;
+  margin: 0 0 10px; 
+  color: #2c2419;
+}
+.venue-block p { 
+  font-size: 20px; 
+  color: #6d4f34;
+  font-weight: 500;
+}
+
+.dinner-card {
+  background: #f9f1e7;
+  padding: 30px 25px;
+  border-radius: 50px 12px 50px 12px;
+  margin: 40px 0;
+  border-left: 6px solid #8b6b4d;
+}
+
+.dinner-telugu {
+  font-family: 'Noto Serif Telugu', serif;
+  font-size: 28px;
+  color: #6d4f34;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.dinner-details {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.dinner-details i {
+  margin-right: 12px;
+  color: #8b6b4d;
+}
+
+.map-container {
+  border-radius: 50px 12px 50px 12px;
+  overflow: hidden;
+  height: 250px;
+  margin: 35px 0 30px;
+  box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+}
+
+.direction-btn {
+  display: inline-block;
+  background: #6d4f34;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 50px 12px 50px 12px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== COUNTDOWN ===== */
+.countdown-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #6d4f34, #8b6b4d);
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.count-item {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(5px);
+  padding: 25px 15px;
+  border-radius: 40px 10px 40px 10px;
+  text-align: center;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.count-item span {
+  display: block;
+  font-size: 56px;
+  font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.count-label {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+/* ===== PORTRAITS ===== */
+.portraits-section {
+  padding: 60px 0;
+  background: #fffbf5;
+}
+
+.portraits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .portrait-card {
+  perspective: 2000px;
+  height: 450px;
+}
+
+.portrait-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  border-radius: 60px 15px 60px 15px;
+  box-shadow: 0 30px 40px -15px rgba(0,0,0,0.4);
+}
+
+.portrait-card:hover .portrait-inner {
+  transform: rotateY(180deg);
+}
+
+.portrait-front, .portrait-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 60px 15px 60px 15px;
+  overflow: hidden;
+}
+
+.portrait-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+  padding: 30px 20px 20px;
+}
+
+.portrait-overlay h3 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.portrait-back {
+  background: linear-gradient(145deg, #6d4f34, #8b6b4d);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 25px;
+}
+
+.portrait-back i {
+  font-size: 55px;
+  margin-bottom: 25px;
+  color: #ffd700;
+}
+
+.portrait-back h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.back-detail {
+  font-size: 20px;
+  opacity: 0.9;
+  margin: 8px 0;
+}
+
+.back-name {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 8px 0 15px;
+  color: #ffd700;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #4a3a2a;
+  color: white;
+  padding: 60px 0 50px;
   text-align: center;
 }
 
-.portrait-frame {
-  padding: 6px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #a87c1f, #d4af37);
+.blessing {
+  font-size: 32px;
+  margin-bottom: 25px;
+  font-weight: 600;
 }
 
-.portrait-frame img {
-  width: 300px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 16px;
-  transition: 0.4s ease;
+.family-name {
+  font-size: 24px;
+  letter-spacing: 4px;
+  opacity: 0.9;
+  margin-bottom: 15px;
+  font-weight: 500;
 }
 
-.portrait-frame img:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+.footer-note {
+  font-size: 20px;
+  opacity: 0.8;
+  font-style: italic;
 }
 
-.portrait-card h4 {
-  margin-top: 20px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  color: #a87c1f;
-}
-
-.portrait-divider {
-  width: 2px;
-  height: 220px;
-  background: linear-gradient(to bottom, transparent, #a87c1f, transparent);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .portrait-divider {
-    display: none;
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  .couple-name {
+    font-size: 56px;
   }
-
-  .portrait-frame img {
-    width: 240px;
-    height: 340px;
+  .couple-name .bride,
+  .couple-name .groom {
+    display: inline-block;
+  }
+  .couple-name .ampersand {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  .family-details {
+    flex-direction: row;
+  }
+  .portraits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    gap: 50px;
+  }
+  .countdown-grid {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 800px;
   }
 }
+
+@media (max-width: 480px) {
+  .time { font-size: 48px; }
+  .date { font-size: 32px; }
+  .count-item span { font-size: 42px; }
+  .portrait-card { height: 400px; }
+}
+
+#bg-music { display: none; }

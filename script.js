@@ -6,30 +6,41 @@
   const entryScreen = document.getElementById('entry-screen');
   const enterBtn = document.getElementById('enter-btn');
   const bgMusic = document.getElementById('bg-music');
+  const html = document.documentElement;
   const body = document.body;
-  
-  // Initially prevent scrolling on main content
-  body.classList.add('entry-active');
   
   if (bgMusic) bgMusic.volume = 0.2;
   
   if (enterBtn && entryScreen) {
-    enterBtn.addEventListener('click', function() {
+    enterBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
       if (bgMusic) bgMusic.play().catch(() => {});
       
       // Hide entry screen
       entryScreen.classList.add('hide');
       
-      // Allow scrolling on main content
-      body.classList.remove('entry-active');
-      body.classList.add('main-active');
+      // Allow scrolling on body
+      body.classList.add('entry-hidden');
       
+      // Remove entry screen after animation
       setTimeout(() => {
         if (entryScreen.parentNode) {
           entryScreen.style.display = 'none';
         }
       }, 500);
     });
+  }
+  
+  // Prevent touch events on entry screen from reaching main content
+  if (entryScreen) {
+    entryScreen.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+    }, { passive: false });
+    
+    entryScreen.addEventListener('scroll', function(e) {
+      e.preventDefault();
+    }, { passive: false });
   }
   
   // Countdown
@@ -74,7 +85,8 @@
   portraitCards.forEach(card => {
     let isFlipped = false;
     
-    card.addEventListener('click', function() {
+    card.addEventListener('click', function(e) {
+      e.stopPropagation();
       const inner = this.querySelector('.portrait-inner');
       
       if (!isFlipped) {
@@ -85,6 +97,11 @@
         isFlipped = false;
       }
     });
+    
+    // Handle touch events properly
+    card.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+    }, { passive: false });
   });
   
 })();
